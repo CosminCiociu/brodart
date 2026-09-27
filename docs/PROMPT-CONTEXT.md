@@ -17,6 +17,7 @@ Fișierele din `docs/` sunt sursa de referință a proiectului. Consultă docume
 - [UI-PATTERNS.md](UI-PATTERNS.md): tipare de interacțiune și layout.
 - [CONTENT-GUIDELINES.md](CONTENT-GUIDELINES.md): vocea brandului și redactare.
 - [IMAGE-GUIDELINES.md](IMAGE-GUIDELINES.md): imagini și utilizarea lor.
+- [STORE-INFORMATION.md](STORE-INFORMATION.md): informații despre magazin, surse de conținut și referințe externe.
 - [BLOCKSY-RULES.md](BLOCKSY-RULES.md): responsabilitățile Blocksy, Gutenberg și codului custom.
 - [ROADMAP.md](ROADMAP.md): milestone-uri și progresul proiectului.
 
@@ -27,5 +28,6 @@ Documentul specific domeniului taskului guvernează detaliile acelui domeniu. Da
 - Verifică milestone-ul și starea taskurilor din `ROADMAP.md` înainte de a începe.
 - Inspectează implementarea existentă și reutilizează sau extinde componentele înainte de a crea altele.
 - Respectă ghidurile relevante pentru design, structură, conținut, imagini și platformă.
+- Scrie implicit în română, cu diacritice, tot textul destinat vizitatorilor; urmează regulile din `CONTENT-GUIDELINES.md`.
 - Nu modifica header-ul sau footer-ul global fără o cerere explicită.
 - Păstrează schimbările la nivelul minim necesar și actualizează documentația când taskul schimbă decizii sau progresul proiectului.

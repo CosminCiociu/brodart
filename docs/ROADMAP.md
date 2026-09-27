@@ -6,12 +6,8 @@ adăuga conținut.
 
 ## Milestone 0 — Fundație tehnică ✅ (făcut)
 
-- [x] WordPress instalat local (XAMPP) în `brodart/`
-- [x] Temă **Blocksy** instalată și activată
-- [x] Plugin **Blocksy Companion** activat (header/footer builder, extensii)
-- [x] **WooCommerce** instalat și activat
-- [x] Plugin galerie **Modula** instalat și activat
-- [x] Permalinkuri SEO-friendly configurate
+- [x] Fișierele temei **Blocksy 2.1.57** instalate; activarea rămâne de făcut după instalarea WordPress
+- [ ] Configurează permalinkuri SEO-friendly după instalarea WordPress
 
 ## Milestone 1 — Design system global
 
@@ -23,11 +19,11 @@ adăuga conținut.
 
 ## Milestone 2 — Header & Footer (o singură dată, moștenite peste tot)
 
-- [x] Creează meniul principal (Acasă, Magazin) și atribuie-l headerului desktop și mobil
-- [ ] Configurează header-ul în Blocksy Header Builder (logo, cont, coș, wishlist)
-- [ ] Comportament header: transparent peste hero → solid la scroll
-- [ ] Construiește footer-ul (coloane: Despre, Ajutor, Newsletter, Social)
-- [ ] Testează header/footer pe mobil (meniu hamburger elegant)
+- [x] Creează meniul principal (Acasă, Magazin) și atribuie-l headerului desktop și mobil (Main Menu are doar aceste două linkuri și este atribuit ambelor locații)
+- [ ] Configurează header-ul în Blocksy Header Builder (logo, cont, coș, wishlist) (Logo, Account și Cart sunt active; wishlist nu este instalat)
+- [x] Comportament header: transparent peste hero → solid la scroll (Transparent este activ pe Home; Sticky este activ pe desktop și mobil în Blocksy)
+- [ ] Construiește footer-ul (coloane: Despre, Ajutor, Newsletter, Social) (conținutul demo a fost înlocuit cu Despre Brodart, Ajutor, Explorează și Din jurnal, cu linkuri locale; Newsletter nu are furnizor configurat, Social nu are URL-uri reale, iar fundalul este încă #050709 în loc de #F8F7F5)
+- [x] Testează header/footer pe mobil (meniu hamburger elegant) (testat la 390 px: drawer-ul afișează Acasă și Magazin, coloanele se așază vertical și nu există overflow; lipsește încă wishlist-ul)
 
 ## Milestone 3 — Pagina de start (Home)
 
