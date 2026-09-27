@@ -1,0 +1,271 @@
+.modula .modula-video {
+	.modula-video-player-wrap {
+		position: relative;
+		max-height: var(--modula-video-max-height, 100vh);
+		overflow: hidden;
+		box-sizing: border-box;
+	}
+
+	.modula-video-player-wrap.playlist_right {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	.modula-video-player-wrap.playlist_right .modula-video-main-item {
+		width: 80%;
+		position: relative;
+		max-height: 100%;
+		min-height: 0;
+	}
+
+	.modula-video-player-wrap.playlist_right .modula-video-items-wrap {
+		width: 20%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	/*
+	 * Bottom playlist: keep the composition within the gallery root width.
+	 * Without min/max-width containment, the horizontal flex strip's
+	 * min-content (and shared item `width: 100%`) expands past the viewport
+	 * at gallery width 100%. Extra thumbs scroll inside the strip.
+	 *
+	 * Max-height is a cap only (not a forced wrap height). Under the cap the
+	 * main player keeps 16:9; when the composition would exceed the cap the
+	 * player flex-shrinks so the playlist strip stays inside the wrap.
+	 * (Previously height matched the max-height token so Bottom looked like a
+	 * tall square player while Right stayed 16:9.)
+	 */
+	.modula-video-player-wrap.playlist_bottom {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		min-width: 0;
+		max-height: var(--modula-video-max-height, 100vh);
+	}
+
+	.modula-video-player-wrap.playlist_bottom .modula-video-main-item {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		min-height: 0;
+		position: relative;
+		aspect-ratio: 16 / 9;
+		flex: 0 1 auto;
+		overflow: clip;
+		contain: paint;
+	}
+
+	.modula-video-player-wrap.playlist_bottom .modula-video-main-item-content,
+	.modula-video-player-wrap.playlist_bottom .modula-video-main-item-aspect {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		max-height: none;
+		padding-top: 0;
+		aspect-ratio: auto;
+		overflow: hidden;
+	}
+
+	.modula-video-player-wrap.playlist_bottom .modula-video-items-wrap {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		position: relative;
+		flex: 0 0 auto;
+		margin-top: 10px;
+		z-index: 1;
+	}
+
+	.modula-video-player-wrap.playlist_right .modula-video-items {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		position: absolute;
+		right: 0;
+		left: 0;
+		height: 100%;
+		overflow-y: auto;
+		padding-right: 10px;
+		padding-bottom: 10px;
+	}
+
+	.modula-video-player-wrap.playlist_bottom .modula-video-items {
+		display: flex;
+		flex-direction: row;
+		column-gap: 10px;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		overflow-x: auto;
+	}
+
+	.modula-video-player-wrap.playlist_bottom .modula-video-item {
+		flex: 0 0 calc(20% - 8px);
+		width: auto;
+		min-width: 0;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+	}
+
+	/*
+	 * Playlist chrome: scrollbar hidden by default (see showPlaylistScrollbar).
+	 * Drag-to-scroll is wired in JS when this modifier is present.
+	 */
+	.modula-video-items--scrollbar-hidden {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		cursor: grab;
+
+		&:active {
+			cursor: grabbing;
+		}
+	}
+
+	.modula-video-items--scrollbar-hidden::-webkit-scrollbar {
+		display: none;
+	}
+
+	.modula-video-main-item-content,
+	.modula-video-main-item-aspect {
+		position: relative;
+		width: 100%;
+	}
+
+	.modula-video-main-item-aspect {
+		padding-top: 56.25%;
+		background: #000;
+	}
+
+	.modula-video-gallery__player-mount {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.modula-video-gallery__player-mount iframe,
+	.modula-video-gallery__player-mount video,
+	.modula-video-gallery__html5 {
+		width: 100%;
+		height: 100%;
+		border: 0;
+		display: block;
+		background: #000;
+	}
+
+	.modula-video-gallery__poster-btn {
+		position: absolute;
+		inset: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+		z-index: 2;
+	}
+
+	.modula_video_preview_image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.modula-video-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+		z-index: 3;
+		width: auto;
+		height: auto;
+	}
+
+	.modula-video-items .modula-video-item {
+		position: relative;
+		width: 100%;
+		flex-shrink: 0;
+		box-sizing: border-box;
+	}
+
+	.modula-video-items .modula-item-content {
+		position: relative;
+		background-color: #fff;
+		overflow: hidden;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+	}
+
+	.modula-video-gallery__thumb-frame {
+		display: block;
+		width: 100%;
+		height: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		line-height: 0;
+		position: relative;
+		z-index: 0;
+	}
+
+	.modula-video-gallery__thumb-frame .modula-video-icon {
+		z-index: 25;
+	}
+
+	.modula-video-list-overlay {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		z-index: 20;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+	}
+
+	/*
+	 * Playlist thumbs must not use legacy `.pic` (absolute fill + focal crop from modula.css).
+	 * Frame holds 16:9; image fills the frame centered.
+	 */
+	.modula-video-items img.modula-video-gallery__thumb {
+		display: block !important;
+		position: relative !important;
+		inset: auto !important;
+		top: auto !important;
+		left: auto !important;
+		width: 100% !important;
+		height: 100% !important;
+		max-width: 100% !important;
+		object-fit: contain !important;
+		object-position: center center !important;
+		background: #e8e8e8;
+	}
+
+	.modula-video-gallery__thumb--empty {
+		width: 100%;
+		height: 100%;
+		background: #e8e8e8;
+		object-fit: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+
+	.modula-video--empty {
+		padding: 1rem;
+		text-align: center;
+	}
+
+	.modula-video-gallery__empty {
+		margin: 0;
+		opacity: 0.7;
+	}
+}

@@ -1,0 +1,655 @@
+<?php
+
+/**
+ *
+ */
+class Modula_Shortcode {
+
+
+	private $loader;
+
+	/**
+	 * @var self|null
+	 */
+	private static $instance = null;
+
+	/**
+	 * Collected gallery CSS to be printed in the footer (keyed by gallery_id).
+	 *
+	 * @var array<string>
+	 */
+	private static $footer_css = array();
+
+	/**
+	 * @return self|null
+	 */
+	public static function get_instance() {
+		return self::$instance;
+	}
+
+	public function __construct() {
+		self::$instance = $this;
+
+		$this->loader = new Modula_Template_Loader();
+
+		// [modula] / [Modula] are owned by Modula\V2\Shortcode\Dispatcher.
+		add_shortcode( 'modula-make-money', array( $this, 'affiliate_shortcode_handler' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'add_gallery_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'maybe_enqueue_front_styles_early' ), 20 );
+		add_action( 'wp_footer', array( $this, 'print_gallery_css_in_footer' ), 10 );
+
+		// Add shortcode related hooks
+		add_filter( 'modula_shortcode_item_data', 'modula_generate_image_links', 10, 3 );
+		add_filter( 'modula_shortcode_item_data', 'modula_check_lightboxes_and_links', 15, 3 );
+		add_filter( 'modula_shortcode_item_data', 'modula_check_hover_effect', 20, 3 );
+		add_filter( 'modula_shortcode_item_data', 'modula_check_custom_grid', 25, 3 );
+		add_filter( 'modula_shortcode_item_data', 'modula_enable_lazy_load', 30, 3 );
+		add_filter( 'modula_gallery_template_data', 'modula_add_gallery_class', 10 );
+		add_filter( 'modula_gallery_template_data', 'modula_add_align_classes', 99 );
+		add_action( 'modula_shortcode_before_items', 'modula_edit_gallery', 100 );
+		add_action( 'modula_shortcode_after_items', 'modula_show_schemaorg', 90 );
+		add_action( 'modula_shortcode_after_items', 'modula_edit_gallery', 100 );
+
+		// The template image action, used to display the gallery image
+		add_action( 'modula_item_template_image', 'modula_sources_and_sizes', 35, 1 );
+
+		// Add js scripts
+		add_filter( 'modula_necessary_scripts', 'modula_add_scripts', 1, 2 );
+
+		add_action( 'modula_item_after_image', 'modula_mobile_share', 100 );
+
+		// Add custom body class (helps with stronger selectors for conflicting themes)
+		add_filter( 'body_class', array( $this, 'add_modula_body_class' ), 100 );
+	}
+
+	public function add_gallery_scripts() {
+		$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+		wp_register_style( 'modula-fancybox', MODULA_URL . 'assets/css/front/fancybox' . $suffix . '.css', null, MODULA_LITE_VERSION );
+		wp_register_style( 'modula', MODULA_URL . 'assets/css/front.css', null, MODULA_LITE_VERSION );
+
+		// Scripts necessary for some galleries
+		wp_register_script( 'dompurify', MODULA_URL . 'assets/js/front/purify.min.js', array(), MODULA_LITE_VERSION, true );
+		wp_register_script( 'modula-isotope', MODULA_URL . 'assets/js/front/isotope' . $suffix . '.js', array( 'jquery' ), MODULA_LITE_VERSION, true );
+		wp_register_script( 'modula-isotope-packery', MODULA_URL . 'assets/js/front/isotope-packery' . $suffix . '.js', array( 'jquery', 'modula-isotope' ), MODULA_LITE_VERSION, true );
+		wp_register_script( 'modula-grid-justified-gallery', MODULA_URL . 'assets/js/front/justifiedGallery' . $suffix . '.js', array( 'jquery' ), MODULA_LITE_VERSION, true );
+		wp_register_script( 'modula-fancybox', MODULA_URL . 'assets/js/front/fancybox' . $suffix . '.js', array( 'jquery', 'modulaFancybox' ), MODULA_LITE_VERSION, true );
+		wp_register_script( 'modulaFancybox', MODULA_URL . 'assets/js/front/modula-fancybox' . $suffix . '.js', array( 'dompurify' ), MODULA_LITE_VERSION, true );
+		Modula_Helper::add_lightbox_share_buttons_inline_script( 'modulaFancybox' );
+		wp_register_script( 'modula-lazysizes', MODULA_URL . 'assets/js/front/lazysizes' . $suffix . '.js', array( 'jquery' ), MODULA_LITE_VERSION, true );
+
+		// @todo: minify all css & js for a better optimization.
+		wp_register_script( 'modula', MODULA_URL . 'assets/js/front/jquery-modula' . $suffix . '.js', array( 'jquery', 'modula-isotope' ), MODULA_LITE_VERSION, true );
+	}
+
+	/**
+	 * Enqueue Modula front styles in the head when the content has [modula] shortcode.
+	 * Ensures styles load even when the shortcode runs after wp_head (e.g. with some themes or page builders).
+	 */
+	public function maybe_enqueue_front_styles_early() {
+		if ( ! apply_filters( 'modula_maybe_enqueue_front_styles_early', false ) ) {
+			return;
+		}
+
+		if ( ! is_singular() ) {
+			return;
+		}
+
+		$post = get_queried_object();
+		if ( ! $post instanceof \WP_Post ) {
+			return;
+		}
+
+		// Collect content to search: post_content + standard WP widget content.
+		$content_to_search = $post->post_content;
+		foreach (
+			array(
+				'widget_text'        => 'text',
+				'widget_custom_html' => 'content',
+			) as $option => $key
+		) {
+			foreach ( get_option( $option, array() ) as $instance ) {
+				if ( ! empty( $instance[ $key ] ) ) {
+					$content_to_search .= ' ' . $instance[ $key ];
+				}
+			}
+		}
+
+		if ( ! has_shortcode( $content_to_search, 'modula' ) && ! has_shortcode( $content_to_search, 'Modula' ) ) {
+			return;
+		}
+
+		wp_enqueue_style( 'modula' );
+		wp_enqueue_style( 'modula-fancybox' );
+
+		$pattern = get_shortcode_regex( array( 'modula', 'Modula' ) );
+
+		if ( preg_match_all( '/' . $pattern . '/s', $content_to_search, $matches ) ) {
+			foreach ( $matches[3] as $atts_string ) {
+				$atts = shortcode_parse_atts( $atts_string );
+				if ( empty( $atts['id'] ) ) {
+					continue;
+				}
+
+				$settings = get_post_meta( absint( $atts['id'] ), 'modula-settings', true );
+				if ( empty( $settings ) || ! is_array( $settings ) ) {
+					$settings = array();
+				}
+
+				foreach ( apply_filters( 'modula_necessary_styles', array(), $settings ) as $style_slug ) {
+					if ( ! wp_style_is( $style_slug, 'enqueued' ) ) {
+						wp_enqueue_style( $style_slug );
+					}
+				}
+			}
+		}
+	}
+
+
+	public function gallery_shortcode_handler( $atts ) {
+		$default_atts = array(
+			'id'    => false,
+			'align' => '',
+		);
+
+		$raw_atts = (array) $atts;
+		$atts     = wp_parse_args( $raw_atts, $default_atts );
+
+		if ( ! $atts['id'] ) {
+			Modula_Debug_Log::log_failure(
+				Modula_Debug_Log::CHANNEL_SHORTCODE_BOOTSTRAP,
+				'classic shortcode missing gallery id',
+				array( 'error_code' => 'classic_missing_id' )
+			);
+			return esc_html__( 'Gallery not found.', 'modula-best-grid-gallery' );
+		}
+
+		$script_manager = Modula_Script_Manager::get_instance();
+
+		/* Generate uniq id for this gallery (classic root; modern stack uses modula-{id}). */
+		$gallery_id = 'jtg-' . $atts['id'];
+
+		// Check if is an old Modula post or new.
+		$gallery = get_post( $atts['id'] );
+
+		if ( null === $gallery ) {
+			return;
+		}
+
+		if ( 'modula-gallery' !== get_post_type( $gallery ) ) {
+			$gallery_posts = get_posts(
+				array(
+					'post_type'   => 'modula-gallery',
+					'post_status' => 'publish',
+					'meta_query'  => array(
+						array(
+							'key'     => 'modula-id',
+							'value'   => $atts['id'],
+							'compare' => '=',
+						),
+					),
+				)
+			);
+
+			if ( empty( $gallery_posts ) ) {
+				Modula_Debug_Log::log_failure(
+					Modula_Debug_Log::CHANNEL_SHORTCODE_BOOTSTRAP,
+					'classic shortcode gallery not found',
+					array(
+						'gallery_id' => absint( $atts['id'] ),
+						'error_code' => 'classic_not_found',
+					)
+				);
+				return esc_html__( 'Gallery not found.', 'modula-best-grid-gallery' );
+			}
+
+			$atts['id'] = $gallery_posts[0]->ID;
+			$gallery    = $gallery_posts[0];
+		}
+
+		if ( ! Modula_Helper::is_visitor_readable_gallery( $gallery ) ) {
+			return Modula_Helper::visitor_shortcode_unavailable_message( $gallery );
+		}
+
+		/* Get gallery settings — repair wiped filter lists before visitor consume. */
+		if ( class_exists( '\Modula\V2\Meta_Sync' ) ) {
+			\Modula\V2\Meta_Sync::maybe_repair_gallery_filter_list( (int) $atts['id'] );
+		}
+		$settings = apply_filters( 'modula_backwards_compatibility_front', get_post_meta( $atts['id'], 'modula-settings', true ), $atts );
+
+		unset( $raw_atts['id'], $raw_atts['align'] );
+		if ( empty( $settings ) || ! is_array( $settings ) ) {
+			$settings = array();
+		}
+		// Override existing settings with shortcode atts (only if the key already exists).
+		foreach ( $raw_atts as $attr_key => $value ) {
+			$camel_key = Modula_Helper::snake_to_camel( $attr_key );
+
+			if ( array_key_exists( $camel_key, $settings ) ) {
+				$settings[ $camel_key ] = $value;
+			}
+		}
+
+		$default = Modula_CPT_Fields_Helper::get_defaults();
+
+		// Check "grid_type" before parsing and unset so defaults could be used.
+		if ( isset( $settings['type'] ) && 'grid' === $settings['type'] && empty( $settings['grid_type'] ) ) {
+			unset( $settings['grid_type'] );
+		}
+
+		$settings               = wp_parse_args( $settings, $default );
+		$settings['gallery_id'] = $gallery_id;
+
+		$type = 'creative-gallery';
+		if ( isset( $settings['type'] ) ) {
+			$type = $settings['type'];
+		} else {
+			$settings['type'] = 'creative-gallery';
+		}
+
+		$pre_gallery_html = apply_filters( 'modula_pre_output_filter_check', false, $settings, $gallery );
+
+		if ( false !== $pre_gallery_html ) {
+
+			// If there is HTML, then we stop trying to display the gallery and return THAT HTML.
+			$pre_output = apply_filters( 'modula_pre_output_filter', '', $settings, $gallery );
+			return $pre_output;
+		}
+
+		/* Get gallery images */
+		$meta_images = get_post_meta( $atts['id'], 'modula-images', true );
+
+		if ( empty( $meta_images ) || ! is_array( $meta_images ) ) {
+			$meta_images = array();
+		}
+
+		$images = apply_filters( 'modula_gallery_before_shuffle_images', $meta_images, $settings );
+
+		$shuffle_permitted = apply_filters( 'modula_shuffle_grid_types', array( 'creative-gallery', 'grid', 'polaroid' ), $settings );
+
+		if ( isset( $settings['shuffle'] ) && '1' === $settings['shuffle'] && in_array( $type, $shuffle_permitted, true ) ) {
+			shuffle( $images );
+		}
+		$images = $this->apply_reports( $images );
+		$images = apply_filters( 'modula_gallery_images', $images, $settings );
+
+		if ( empty( $settings ) || empty( $images ) ) {
+			Modula_Debug_Log::log_failure(
+				Modula_Debug_Log::CHANNEL_SHORTCODE_BOOTSTRAP,
+				'classic shortcode empty settings or images',
+				array(
+					'gallery_id' => absint( $atts['id'] ),
+					'error_code' => 'classic_empty',
+				)
+			);
+			return esc_html__( 'Gallery not found.', 'modula-best-grid-gallery' );
+		}
+
+		/**
+		 * Hook: modula_extra_scripts.
+		 *
+		 * Hook used to add extra scripts to the gallery.
+		 *
+		 * @param  array  $settings  Gallery settings.
+		 * @param  array  $images    Gallery images.
+		 *
+		 * @hooked modula_extra_scripts - 10
+		 */
+		do_action( 'modula_extra_scripts', $settings, $images );
+
+		// Main CSS & JS
+		$necessary_scripts = apply_filters( 'modula_necessary_scripts', array( 'modula' ), $settings );
+		$necessary_styles  = apply_filters( 'modula_necessary_styles', array( 'modula' ), $settings );
+
+		if ( ! empty( $necessary_scripts ) ) {
+			$script_manager->add_scripts( $necessary_scripts );
+		}
+
+		if ( ! empty( $necessary_styles ) ) {
+			foreach ( $necessary_styles as $style_slug ) {
+				if ( ! wp_style_is( $style_slug, 'enqueued' ) ) {
+					wp_enqueue_style( $style_slug );
+				}
+			}
+		}
+
+		$settings['align'] = $atts['align'];
+
+		$template_data = array(
+			'gallery_id'        => $gallery_id,
+			'settings'          => $settings,
+			'images'            => $images,
+			'loader'            => $this->loader,
+
+			// Gallery container attributes
+			'gallery_container' => array(
+				'id'    => $gallery_id,
+				'class' => array( 'modula', 'modula-gallery' ),
+			),
+
+			// Items container attributes
+			'items_container'   => array(
+				'class' => array( 'modula-items' ),
+			),
+		);
+
+		ob_start();
+
+		$inView           = false;
+		$inview_permitted = apply_filters( 'modula_loading_inview_grids', array( 'custom-grid', 'creative-gallery', 'grid', 'polaroid' ), $settings );
+		if ( isset( $settings['inView'] ) && Modula_Helper::is_truthy_flag( $settings['inView'] ) && in_array( $type, $inview_permitted, true ) ) {
+			$inView = true;
+		}
+
+		/* Config for gallery script */
+		$js_config = self::get_jsconfig( $settings, $type, $inView );
+
+		$template_data['gallery_container']['data-config'] = json_encode( $js_config );
+		/**
+		 * Hook: modula_gallery_template_data.
+		 *
+		 * @hooked modula_add_align_classes - 99
+		 */
+		$template_data = apply_filters( 'modula_gallery_template_data', $template_data );
+		$template_name = apply_filters( 'modula_gallery_template_name', 'gallery', $type );
+
+		// Queue gallery CSS for footer output via wp_footer.
+		self::$footer_css[ $gallery_id ] = $this->generate_gallery_css( $gallery_id, $settings );
+		do_action( 'modula_before_gallery', $settings );
+		$this->loader->set_template_data( $template_data );
+		$this->loader->get_template_part( 'modula', $template_name );
+		do_action( 'modula_after_gallery', $settings );
+
+		$html = ob_get_clean();
+		return $html;
+	}
+
+	public static function get_jsconfig( $settings, $type, $inView ) {
+
+		$js_config = apply_filters(
+			'modula_gallery_settings',
+			array(
+				'height'           => ( isset( $settings['height'][0] ) ) ? absint( $settings['height'][0] ) : false,
+				'tabletHeight'     => isset( $settings['height'][1] ) ? absint( $settings['height'][1] ) : false,
+				'mobileHeight'     => isset( $settings['height'][2] ) ? absint( $settings['height'][2] ) : false,
+				'desktopHeight'    => isset( $settings['height'][0] ) ? absint( $settings['height'][0] ) : false,
+				'enableTwitter'    => Modula_Helper::is_truthy_flag( $settings['enableTwitter'] ),
+				'enableWhatsapp'   => Modula_Helper::is_truthy_flag( $settings['enableWhatsapp'] ),
+				'enableFacebook'   => Modula_Helper::is_truthy_flag( $settings['enableFacebook'] ),
+				'enablePinterest'  => Modula_Helper::is_truthy_flag( $settings['enablePinterest'] ),
+				'enableLinkedin'   => Modula_Helper::is_truthy_flag( $settings['enableLinkedin'] ),
+				'enableEmail'      => Modula_Helper::is_truthy_flag( $settings['enableEmail'] ),
+				'randomFactor'     => ( absint( $settings['randomFactor'] ) / 100 ),
+				'type'             => $type,
+				'columns'          => 12,
+				'gutter'           => isset( $settings['gutter'] ) ? absint( $settings['gutter'] ) : 10,
+				'mobileGutter'     => isset( $settings['mobile_gutter'] ) ? absint( $settings['mobile_gutter'] ) : false,
+				'tabletGutter'     => isset( $settings['tablet_gutter'] ) ? absint( $settings['tablet_gutter'] ) : false,
+				'desktopGutter'    => isset( $settings['gutter'] ) ? absint( $settings['gutter'] ) : false,
+				'enableResponsive' => isset( $settings['enable_responsive'] ) ? $settings['enable_responsive'] : 0,
+				'tabletColumns'    => isset( $settings['tablet_columns'] ) ? $settings['tablet_columns'] : 2,
+				'mobileColumns'    => isset( $settings['mobile_columns'] ) ? $settings['mobile_columns'] : 1,
+				'lazyLoad'         => modula_run_lazy_load( $settings ) ? 1 : 0,
+				'lightboxOpts'     => apply_filters( 'modula_fancybox_options', Modula_Helper::lightbox_default_options(), $settings ),
+				'inView'           => $inView,
+				'email_subject'    => isset( $settings['emailSubject'] ) ? esc_html( $settings['emailSubject'] ) : esc_html__( 'Check out this awesome image !!', 'modula-best-grid-gallery' ),
+				'email_message'    => isset( $settings['emailMessage'] ) ? esc_html( $settings['emailMessage'] ) : esc_html__( 'Here is the link to the image : %%image_link%% and this is the link to the gallery : %%gallery_link%% ', 'modula-best-grid-gallery' ),
+			),
+			$settings
+		);
+
+		// Check for lightbox
+		$js_config['lightbox'] = function_exists( 'modula_coerce_lightbox_click_mode' )
+			? modula_coerce_lightbox_click_mode( $settings['lightbox'] )
+			: $settings['lightbox'];
+		if ( apply_filters( 'modula_disable_lightboxes', true ) && ! in_array( $js_config['lightbox'], array( 'no-link', 'external-url', 'attachment-page', 'lightbox-prefer-url' ), true ) ) {
+			$js_config['lightbox'] = 'fancybox';
+		}
+
+		$js_config['lightbox_devices'] = apply_filters(
+			'modula_lightbox_devices',
+			isset( $settings['open_Lightbox_on'] ) ? $settings['open_Lightbox_on'] : 'both',
+			$settings
+		);
+
+		if ( apply_filters( 'modula_lightbox_caption_copy', false ) && wp_is_mobile() ) {
+			$js_config['copyCaptionMobile'] = 1;
+		}
+
+		return $js_config;
+	}
+
+	/**
+	 * Print collected gallery CSS in the footer.
+	 *
+	 * Uses the wp_footer action so gallery styles load in the footer
+	 * instead of inline with the shortcode output.
+	 */
+	public function print_gallery_css_in_footer() {
+		if ( empty( self::$footer_css ) ) {
+			return;
+		}
+		echo '<style id="modula-gallery-styles">' . "\n";
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- CSS is built from sanitized values in generate_gallery_css.
+		echo implode( "\n", self::$footer_css );
+		echo "\n" . '</style>' . "\n";
+	}
+
+	private function generate_gallery_css( $gallery_id, $settings ) {
+
+		$css           = '';
+		$css_id        = Modula_Helper::classic_gallery_css_root_id( $gallery_id );
+		$gallery_type  = isset( $settings['type'] ) ? $settings['type'] : 'creative-gallery';
+		$tile_selector = 'polaroid' === $gallery_type
+			? "#{$css_id} .modula-item:not(.modula-polaroid-slot)"
+			: "#{$css_id} .modula-item";
+
+		if ( $settings['borderSize'] && 'polaroid' !== $gallery_type ) {
+			$css .= "{$tile_selector} { border: " . absint( $settings['borderSize'] ) . 'px solid ' . Modula_Helper::sanitize_rgba_colour( $settings['borderColor'] ) . '; }';
+		}
+
+		if ( $settings['borderRadius'] && 'polaroid' !== $gallery_type ) {
+			$css .= "{$tile_selector} { border-radius: " . absint( $settings['borderRadius'] ) . 'px; }';
+		}
+
+		if ( $settings['shadowSize'] && 'polaroid' !== $gallery_type ) {
+			$css .= "{$tile_selector} { box-shadow: " . Modula_Helper::sanitize_rgba_colour( $settings['shadowColor'] ) . ' 0px 0px ' . absint( $settings['shadowSize'] ) . 'px; }';
+		}
+
+		if ( 'polaroid' === $gallery_type ) {
+			$css .= "#{$css_id} .modula-polaroid-slot { box-shadow: none !important; border: none !important; border-radius: 0 !important; }";
+		}
+
+		if ( $settings['socialIconColor'] ) {
+			$css .= "#{$css_id} .modula-item .modula-social a, .lightbox-socials.modula-social a{ fill: " . Modula_Helper::sanitize_rgba_colour( $settings['socialIconColor'] ) . '; color: ' . Modula_Helper::sanitize_rgba_colour( $settings['socialIconColor'] ) . ' }';
+			$css .= "#{$css_id} .modula-item .modula-social-expandable a, #{$css_id} .modula-item .modula-social-expandable-icons a{ fill: " . Modula_Helper::sanitize_rgba_colour( $settings['socialIconColor'] ) . '; color: ' . Modula_Helper::sanitize_rgba_colour( $settings['socialIconColor'] ) . ' }';
+		}
+
+		if ( $settings['socialIconSize'] ) {
+			$css .= "#{$css_id} .modula-item .modula-social svg, .lightbox-socials.modula-social svg { height: " . absint( $settings['socialIconSize'] ) . 'px; width: ' . absint( $settings['socialIconSize'] ) . 'px }';
+			$css .= "#{$css_id} .modula-item .modula-social-expandable svg { height: " . absint( $settings['socialIconSize'] ) . 'px; width: ' . absint( $settings['socialIconSize'] ) . 'px }';
+			$css .= "#{$css_id} .modula-item .modula-social-expandable-icons svg { height: " . absint( $settings['socialIconSize'] ) . 'px; width: ' . absint( $settings['socialIconSize'] ) . 'px }';
+		}
+
+		if ( $settings['socialIconPadding'] ) {
+			$css .= "#{$css_id} .modula-item .modula-social a:not(:last-child), .lightbox-socials.modula-social a:not(:last-child) { margin-right: " . absint( $settings['socialIconPadding'] ) . 'px' . ' }';
+			$css .= "#{$css_id} .modula-item .modula-social-expandable-icons { gap: " . absint( $settings['socialIconPadding'] ) . 'px' . ' }';
+		}
+
+		if ( Modula_Helper::is_truthy_flag( $settings['socialDesktopCollapsed'] ) ) {
+			$css .= "#{$css_id} .modula-item .no-socials{ display:none; }";
+		}
+
+		if ( '' != $settings['captionColor'] || '' != $settings['captionFontSize'] ) {
+			$css .= "#{$css_id} .modula-item .figc {";
+			if ( '' != $settings['captionColor'] ) {
+				$css .= 'color:' . Modula_Helper::sanitize_rgba_colour( $settings['captionColor'] ) . ';';
+			}
+			$css .= '}';
+		}
+
+		if ( '' != $settings['titleFontSize'] && 0 != $settings['titleFontSize'] ) {
+			$css .= "#{$css_id} .modula-item .figc .modula-title {  font-size: " . absint( $settings['titleFontSize'] ) . 'px; }';
+		}
+		$inview_permitted    = apply_filters( 'modula_loading_inview_grids', array( 'custom-grid', 'creative-gallery', 'grid', 'polaroid' ), $settings );
+		$image_item_selector = "#{$css_id} .modula-item:not(.modula-item--embedded)";
+		if ( isset( $settings['inView'] ) && Modula_Helper::is_truthy_flag( $settings['inView'] ) && in_array( isset( $settings['type'] ) ? $settings['type'] : 'creative-gallery', $inview_permitted, true ) ) {
+			$css .= Modula_Helper::classic_inview_reveal_selector( $css_id ) . ' { animation:modulaScaling 1s;transition:0.5s all;opacity: 1; }';
+
+			$css .= '@keyframes modulaScaling { 0% {transform:scale(1)} 50%{transform: scale(' . absint( $settings['loadedScale'] ) / 100 . ')}100%{transform:scale(1)}}';
+		} else {
+			$css .= "{$image_item_selector} .modula-item-content { transform: scale(" . absint( $settings['loadedScale'] ) / 100 . '); }';
+		}
+
+		if ( 'custom-grid' != $settings['type'] ) {
+
+			// max-width is a fix for TwentyTwenty theme
+			$activeTheme = wp_get_theme(); // gets the current theme
+			$themeArray  = array( 'Twenty Twenty' ); // Themes that have this problem
+			if ( in_array( $activeTheme->name, $themeArray ) || in_array( $activeTheme->parent_theme, $themeArray ) ) {
+				$css .= "#{$css_id}{max-width:" . esc_attr( Modula_Helper::classic_gallery_css_width_value( isset( $settings['width'] ) ? $settings['width'] : '' ) ) . '}';
+			}
+
+			$css .= "#{$css_id} { width:" . esc_attr( Modula_Helper::classic_gallery_css_width_value( isset( $settings['width'] ) ? $settings['width'] : '' ) ) . ';}';
+
+			// We don't have and need height setting on grid type
+			if ( 'creative-gallery' === $settings['type'] ) {
+				$css .= "#{$css_id} .modula-items{height:" . ( ! empty( $settings['height'][0] ) ? absint( $settings['height'][0] ) : 800 ) . 'px;}';
+				$css .= "@media screen and (max-width: 992px) {#{$css_id} .modula-items{height:" . ( ! empty( $settings['height'][1] ) ? absint( $settings['height'][1] ) : 800 ) . 'px;}}';
+				$css .= "@media screen and (max-width: 768px) {#{$css_id} .modula-items{height:" . ( ! empty( $settings['height'][2] ) ? absint( $settings['height'][2] ) : 800 ) . 'px;}}';
+			}
+		}
+
+		if ( '' != $settings['captionFontSize'] && 0 != $settings['captionFontSize'] ) {
+			$css .= "#{$css_id} .modula-items .figc p.description,#{$css_id} .modula-items .figc .jtg-description { font-size:" . absint( $settings['captionFontSize'] ) . 'px; }';
+		}
+
+		$css .= "#{$css_id} .modula-items .figc p.description,#{$css_id} .modula-items .figc .jtg-description { color:" . Modula_Helper::sanitize_rgba_colour( $settings['captionColor'] ) . ';}';
+		if ( '' != $settings['titleColor'] ) {
+			$css .= "#{$css_id} .modula-items .figc .modula-title { color:" . Modula_Helper::sanitize_rgba_colour( $settings['titleColor'] ) . '; }';
+		}
+		if ( ! isset( $settings['lightbox'] ) || 'no-link' != $settings['lightbox'] ) {
+			$css .= "#{$css_id}.modula-gallery .modula-item > a, #{$css_id}.modula-gallery .modula-item a.modula-item-link, #{$css_id}.modula-gallery .modula-item-content > a:not(.modula-no-follow) { cursor:" . esc_attr( $settings['cursor'] ) . '; } ';
+		}
+
+		if ( isset( $settings['lightbox'] ) && 'no-link' === $settings['lightbox'] ) {
+			/* Allows text selection for hover effects titles and captions */
+			$css .= "#{$css_id}.modula-gallery .figc *:not(:has(*)), #{$css_id}.modula-gallery .figc .jtg-description, #{$css_id}.modula-gallery .figc .jtg-title, #{$css_id}.modula-gallery .figc .jtg-description:has(a) { position: relative; z-index: 2; }";
+		}
+
+		$css .= "#{$css_id}.modula-gallery .modula-item-content .modula-no-follow { cursor: default; } ";
+		$css .= Modula_Helper::classic_hover_overlay_css( $css_id, $settings );
+		$css  = apply_filters( 'modula_shortcode_css', $css, $gallery_id, $settings );
+
+		if ( strlen( $settings['style'] ) ) {
+			$css .= esc_html( $settings['style'] );
+		}
+
+		// Responsive fixes
+		$css .= '@media screen and (max-width:480px){';
+
+		if ( '' != $settings['mobileTitleFontSize'] && 0 != $settings['mobileTitleFontSize'] ) {
+			$css .= "#{$css_id} .modula-item .figc .modula-title {  font-size: " . absint( $settings['mobileTitleFontSize'] ) . 'px; }';
+		}
+
+		$css .= "#{$css_id} .modula-items .figc p.description,#{$css_id} .modula-items .figc .jtg-description { color:" . Modula_Helper::sanitize_rgba_colour( $settings['captionColor'] ) . ';font-size:' . absint( $settings['mobileCaptionFontSize'] ) . 'px; }';
+
+		$css .= '}';
+
+		if ( 'none' === Modula_Helper::classic_item_template_name( $settings ) ) {
+			$css .= "#{$css_id} .modula-items .modula-item:hover img{opacity:1;}";
+		}
+
+		return $css;
+	}
+
+
+	/**
+	 * Create our options for Fancybox
+	 *
+	 * @param $settings
+	 *
+	 * @return array
+	 *
+	 * @since 2.3.0
+	 */
+	public function fancybox_options( $settings ) {
+
+		/**
+		 * Hook: modula_fancybox_options.
+		 *
+		 */
+		return apply_filters( 'modula_fancybox_options', Modula_Helper::lightbox_default_options(), $settings );
+	}
+
+
+	public function affiliate_shortcode_handler( $atts ) {
+		// This functionality was removed.
+		return '';
+	}
+
+	public function add_modula_body_class( $classes ) {
+		$classes[] = 'modula-best-grid-gallery';
+		return $classes;
+	}
+
+	public function apply_reports( $images ) {
+		global $wpdb;
+
+		if ( empty( $images ) ) {
+			return $images;
+		}
+
+		$image_ids = array();
+		foreach ( $images as $image ) {
+			if ( isset( $image['id'] ) ) {
+				$image_ids[] = $image['id'];
+			}
+		}
+
+		if ( empty( $image_ids ) ) {
+			return $images;
+		}
+
+		//phpcs:ignore WordPress.DB
+		$alt_texts = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT post_id, meta_value FROM {$wpdb->postmeta} 
+				WHERE post_id IN (" . implode( ',', array_fill( 0, count( $image_ids ), '%d' ) ) . ") 
+				AND meta_key = '_wp_attachment_image_alt'",
+				$image_ids
+			),
+			OBJECT_K
+		);
+
+		//phpcs:ignore WordPress.DB
+		$post_data = $wpdb->get_results(
+			$wpdb->prepare(
+				"SELECT ID, post_title, post_excerpt, post_content FROM {$wpdb->posts} 
+				WHERE ID IN (" . implode( ',', array_fill( 0, count( $image_ids ), '%d' ) ) . ')',
+				$image_ids
+			),
+			OBJECT_K
+		);
+
+		foreach ( $images as &$image ) {
+			if ( ! isset( $image['id'] ) ) {
+				continue;
+			}
+
+			if ( isset( $alt_texts[ $image['id'] ] ) ) {
+				$image['alt'] = $alt_texts[ $image['id'] ]->meta_value;
+			}
+
+			if ( isset( $post_data[ $image['id'] ] ) ) {
+				$post                 = $post_data[ $image['id'] ];
+				$image['title']       = $post->post_title;
+				$image['description'] = $post->post_excerpt;
+				$image['caption']     = $post->post_excerpt;
+			}
+		}
+
+		return $images;
+	}
+}
+new Modula_Shortcode();

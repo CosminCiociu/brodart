@@ -1,0 +1,2882 @@
+# Translation of Plugins - Modula Image Gallery &#8211; Photo Grid &amp; Video Gallery - Stable (latest release) in Romanian
+# This file is distributed under the same license as the Plugins - Modula Image Gallery &#8211; Photo Grid &amp; Video Gallery - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2026-09-09 11:55:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n == 1) ? 0 : ((n == 0 || n % 100 >= 2 && n % 100 <= 19) ? 1 : 2);\n"
+"X-Generator: GlotPress/4.1.0\n"
+"Language: ro\n"
+"Project-Id-Version: Plugins - Modula Image Gallery &#8211; Photo Grid &amp; Video Gallery - Stable (latest release)\n"
+
+#: apps/general-settings/SaveButton.jsx:47
+#: assets/js/admin/general-settings/index.js:3
+msgid "Settings saved successfully!"
+msgstr "Am salvat cu succes setările!"
+
+#: apps/gallery-editor/components/preview/GalleryEditorHistoryJumpControl.jsx:251
+#: apps/gallery-editor/components/shell/EditorSaveBar.jsx:40
+#: apps/gallery-editor/components/shell/TakeoverTopBarSaveStatus.jsx:18
+#: apps/gallery-listing/ListingQuickEditModal.jsx:332
+#: apps/general-settings/SaveButton.jsx:41
+#: assets/js/admin/gallery-editor/502.js:5
+#: assets/js/admin/gallery-editor/701.js:15
+#: assets/js/admin/gallery-editor/index.js:6
+#: assets/js/admin/gallery-listing/index.js:155
+#: assets/js/admin/general-settings/index.js:3
+msgid "Saving…"
+msgstr "Salvez..."
+
+#: apps/general-settings/ai-settings/settings-form/claim-credits.jsx:86
+#: assets/js/admin/general-settings/index.js:2
+msgid "Insert an API key"
+msgstr "Inserează o cheie API"
+
+#: apps/general-settings/fields/ImportCheckboxGroupField.jsx:210
+#: assets/js/admin/general-settings/index.js:1
+msgid "Migrating…"
+msgstr "Fac migrarea..."
+
+#: apps/general-settings/fields/ImportCheckboxGroupField.jsx:85
+#: assets/js/admin/general-settings/index.js:1
+msgid "Unknown response"
+msgstr "Răspuns necunoscut"
+
+#: apps/extensions/components/extension-table.jsx:108
+#: assets/js/admin/extensions/index.js:7
+msgid "Extension"
+msgstr "Extensie"
+
+#. translators: %1$s: Plan name
+#: apps/extensions/components/extension-table-divider.jsx:15
+#: assets/js/admin/extensions/index.js:7
+msgid "Upgrade to %1$s plan to unlock these extensions."
+msgstr "Actualizează la planul %1$s pentru a debloca aceste extensii."
+
+#: apps/extensions/components/extension-bulk-actions.jsx:52
+#: assets/js/admin/extensions/index.js:6
+msgid "Apply"
+msgstr "Aplică"
+
+#: apps/extensions/components/extension-bulk-actions.jsx:23
+#: assets/js/admin/extensions/index.js:6
+msgid "Bulk Actions"
+msgstr "Acțiuni în masă"
+
+#: apps/extensions/components/extension-license-header.jsx:159
+#: assets/js/admin/extensions/index.js:6
+msgid "Unable to deactivate license. Please try again."
+msgstr "Nu pot să dezactivez licența. Te rog să încerci din nou."
+
+#: apps/extensions/components/extension-license-header.jsx:52
+#: apps/extensions/components/extension-license-header.jsx:63
+#: apps/extensions/components/extension-license-header.jsx:131
+#: assets/js/admin/extensions/index.js:6
+msgid "Unable to activate license. Please try again."
+msgstr "Nu pot să activez licența. Te rog să încerci din nou."
+
+#: apps/extensions/components/extension-license-header.jsx:263
+#: assets/js/admin/extensions/index.js:6
+msgid "Enter License Key"
+msgstr "Introdu cheia de licență"
+
+#: apps/extensions/components/extension-license-header.jsx:260
+#: assets/js/admin/extensions/index.js:6
+msgid "Hide License Key"
+msgstr "Ascunde cheia de licență"
+
+#: apps/extensions/components/extension-license-header.jsx:256
+#: assets/js/admin/extensions/index.js:6
+msgid "Change license key"
+msgstr "Schimbă cheia de licență"
+
+#: apps/extensions/components/extension-bulk-actions.jsx:31
+#: apps/extensions/components/extension-table-row.jsx:62
+#: assets/js/admin/extensions/index.js:1 assets/js/admin/extensions/index.js:6
+msgid "Deactivate"
+msgstr "Dezactivează"
+
+#: includes/features/telemetry/class-wpchill-telemetry-core.php:727
+msgid "Disabling..."
+msgstr "Dezactivez..."
+
+#: includes/features/telemetry/class-wpchill-telemetry-core.php:712
+msgid "Enabling..."
+msgstr "Activez..."
+
+#: includes/features/migrate/class-modula-migrator-detector.php:402
+msgid "Galleries from another plugin detected"
+msgstr "Am detectat galerii de la un alt modul"
+
+#: includes/features/migrate/class-modula-migrator-detector.php:400
+msgid "Activate & go to Migrate"
+msgstr "Activează și mergi la Migrează"
+
+#: includes/features/migrate/class-modula-migrator-detector.php:399
+msgid "Install & go to Migrate"
+msgstr "Instalează și mergi la Migrează"
+
+#: includes/features/migrate/class-modula-importer.php:245
+msgid "No galleries found"
+msgstr "Nu am găsit nicio galerie"
+
+#: includes/admin/settings/class-modula-settings.php:1608
+msgid "Edit Private Albums"
+msgstr "Editează albumele private"
+
+#: includes/admin/settings/class-modula-settings.php:1607
+msgid "Delete Others Albums"
+msgstr "Șterge alte albume"
+
+#: includes/admin/settings/class-modula-settings.php:1606
+msgid "Delete Own Albums"
+msgstr "Șterge albumele proprii"
+
+#: includes/admin/settings/class-modula-settings.php:1605
+msgid "Publish Albums"
+msgstr "Publică albumele"
+
+#: includes/admin/settings/class-modula-settings.php:1575
+#: includes/admin/settings/class-modula-settings.php:1639
+msgid "Upload Files"
+msgstr "Încarcă fișiere"
+
+#: includes/admin/settings/class-modula-settings.php:1546
+msgid "Edit Private Galleries"
+msgstr "Editează galeriile private"
+
+#: includes/admin/settings/class-modula-settings.php:1545
+msgid "Delete Others Galleries"
+msgstr "Șterge alte galerii"
+
+#: includes/admin/settings/class-modula-settings.php:1543
+msgid "Publish Galleries"
+msgstr "Publică galeriile"
+
+#: includes/admin/settings/class-modula-settings.php:1349
+msgid "Use AI Features"
+msgstr "Folosește funcționalitățile AI"
+
+#: includes/admin/settings/class-modula-settings.php:1314
+msgid "Vimeo Client Secret"
+msgstr "Secret client Vimeo"
+
+#: includes/admin/settings/class-modula-settings.php:1306
+msgid "Vimeo Client ID"
+msgstr "ID client Vimeo"
+
+#: includes/admin/settings/class-modula-settings.php:1286
+msgid "Connect to Vimeo"
+msgstr "Conectează-te la Vimeo"
+
+#: includes/admin/settings/class-modula-settings.php:1286
+msgid "Save your credentials first"
+msgstr "Mai întâi, salvează datele de conectare"
+
+#: includes/admin/settings/class-modula-settings.php:1276
+msgid "Vimeo credentials"
+msgstr "Date de conectare Vimeo"
+
+#: includes/admin/settings/class-modula-settings.php:1251
+msgid "Refresh token"
+msgstr "Reîmprospătează tokenul"
+
+#: includes/admin/settings/class-modula-settings.php:1239
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/admin/settings/class-modula-settings.php:1230
+#: includes/admin/settings/class-modula-settings.php:1268
+#: includes/admin/settings/class-modula-settings.php:1299
+msgid "Need help?"
+msgstr "Ai nevoie de ajutor?"
+
+#: includes/admin/settings/class-modula-settings.php:1221
+#: includes/admin/settings/class-modula-settings.php:1259
+#: includes/admin/settings/class-modula-settings.php:1290
+msgid "Disconnect"
+msgstr "Deconectează"
+
+#: includes/admin/settings/class-modula-settings.php:1218
+#: includes/admin/settings/class-modula-settings.php:1248
+msgid "Connect"
+msgstr "Conectează"
+
+#: includes/admin/settings/class-modula-settings.php:1214
+#: includes/admin/settings/class-modula-settings.php:1244
+#: includes/admin/settings/class-modula-settings.php:1282
+#: apps/gallery-editor/components/sidebar/settings-panel/resolveDrillSummaryParts.js:969
+msgid "Not connected"
+msgstr "Neconectat"
+
+#: includes/admin/settings/class-modula-settings.php:1213
+#: includes/admin/settings/class-modula-settings.php:1243
+#: includes/admin/settings/class-modula-settings.php:1281
+msgid "Connected"
+msgstr "Conectat"
+
+#: includes/admin/settings/class-modula-settings.php:1158
+#: includes/v2/rest/class-listing-controller.php:1692
+#: apps/gallery-listing/fields.js:23
+#: apps/gallery-listing/ListingQuickEditModal.jsx:180
+#: assets/js/admin/gallery-listing/index.js:143
+#: assets/js/admin/gallery-listing/index.js:155
+msgid "Album"
+msgstr "Album"
+
+#: includes/admin/settings/class-modula-settings.php:1033
+msgid "Watermark Margin"
+msgstr "Margini filigran"
+
+#: includes/admin/settings/class-modula-settings.php:1024
+msgid "Watermark Position"
+msgstr "Poziție filigran"
+
+#: includes/admin/settings/class-modula-settings.php:985
+msgid "Watermark Image"
+msgstr "Imagine filigran"
+
+#: includes/admin/settings/class-modula-settings.php:771
+msgid "Album Slug"
+msgstr "Descriptor album"
+
+#: includes/admin/settings/class-modula-settings.php:763
+msgid "Enable for Albums"
+msgstr "Activează pentru albume"
+
+#: includes/admin/settings/class-modula-settings.php:723
+msgid "Gallery Slug"
+msgstr "Descriptor galerie"
+
+#: includes/admin/settings/class-modula-settings.php:715
+msgid "Enable for Galleries"
+msgstr "Activează pentru galerii"
+
+#: includes/admin/settings/class-modula-settings.php:657
+msgid "Social Media"
+msgstr "Media socială"
+
+#: includes/admin/settings/class-modula-settings.php:649
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1216
+#: assets/js/admin/gallery-editor/index.js:3
+msgid "Protection"
+msgstr "Protecție"
+
+#: includes/admin/settings/class-modula-settings.php:641
+msgid "Optimization"
+msgstr "Optimizare"
+
+#: includes/admin/settings/class-modula-settings.php:632
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:694
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1082
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7318
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Display"
+msgstr "Afișează"
+
+#: includes/admin/settings/class-modula-settings.php:611
+msgid "Social Media Accounts"
+msgstr "Conturi pe Media socială"
+
+#: includes/admin/settings/class-modula-settings.php:582
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1449
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1675
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3067
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Performance"
+msgstr "Performanță"
+
+#: includes/admin/settings/class-modula-settings.php:552
+#: apps/gallery-editor/components/gallery-item-edit-modal/ContentBlockBackgroundFields.jsx:95
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4202
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6687
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Bottom left"
+msgstr "Stânga jos"
+
+#: includes/admin/settings/class-modula-settings.php:548
+#: apps/gallery-editor/components/gallery-item-edit-modal/ContentBlockBackgroundFields.jsx:99
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4201
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6689
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Bottom right"
+msgstr "Dreapta jos"
+
+#: includes/admin/settings/class-modula-settings.php:544
+#: apps/gallery-editor/components/gallery-item-edit-modal/ContentBlockBackgroundFields.jsx:91
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6683
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Top right"
+msgstr "Dreapta sus"
+
+#: includes/admin/settings/class-modula-settings.php:540
+#: apps/gallery-editor/components/gallery-item-edit-modal/ContentBlockBackgroundFields.jsx:87
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6681
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Top left"
+msgstr "Stânga sus"
+
+#: includes/admin/settings/class-modula-settings.php:524
+msgid "Disable Compresion"
+msgstr "Dezactivează comprimarea"
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:271
+msgid "Plugin deactivated."
+msgstr "Am dezactivat modulul."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:249
+msgid "Plugin activated."
+msgstr "Am activat modulul."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:217
+msgid "Plugin installed."
+msgstr "Am instalat modulul."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:208
+msgid "Installation failed."
+msgstr "Instalarea a eșuat."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:182
+msgid "Plugin is already installed."
+msgstr "Modulul este deja instalat."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:151
+msgid "Plugin path is not allowed."
+msgstr "Calea pentru modul nu este permisă."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:135
+#: includes/admin/rest-api/class-modula-migrator-rest.php:164
+#: includes/admin/rest-api/class-modula-migrator-rest.php:174
+msgid "Plugin slug is not allowed."
+msgstr "Descriptorul modulului nu este permis."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:117
+msgid "Sorry, you are not allowed to activate plugins."
+msgstr "Regret, nu ai voie să activezi module."
+
+#: includes/admin/rest-api/class-modula-migrator-rest.php:104
+msgid "Sorry, you are not allowed to install plugins."
+msgstr "Regret, nu ai voie să instalezi module."
+
+#: includes/admin/rest-api/class-modula-insights-base.php:991
+msgid "Images with comments"
+msgstr "Imagini cu comentarii"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:986
+msgid "Comments posted"
+msgstr "Comentarii publicate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:706
+msgid "Custom permissions"
+msgstr "Permisiuni personalizate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:714
+msgid "User roles that could have custom permissions"
+msgstr "Roluri de utilizator care pot să aibă permisiuni personalizate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:670
+msgid "Auto-generated galleries"
+msgstr "Galerii generate automat"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:640
+msgid "Synced galleries"
+msgstr "Galerii sincronizate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:477
+msgid "Images protected"
+msgstr "Imagini protejate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:214
+msgid "Images that can be optimized"
+msgstr "Imagini care pot fi optimizate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:203
+msgid "Optimized galleries"
+msgstr "Galerii optimizate"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:194
+msgid "Images optimized"
+msgstr "Imagini optimizate"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:213
+msgid "View Galleries"
+msgstr "Vezi galeriile"
+
+#: includes/admin/cpt/class-modula-cpt.php:116
+msgid "Uploaded to this Gallery"
+msgstr "Încărcată în această galerie"
+
+#: includes/admin/cpt/class-modula-cpt.php:115
+msgid "Insert into Gallery"
+msgstr "Inserează în galerie"
+
+#: includes/admin/cpt/class-modula-cpt.php:108
+msgid "Search Gallery"
+msgstr "Caută galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:106
+msgid "View Gallery"
+msgstr "Vezi galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:103
+msgid "New Gallery"
+msgstr "Galerie nouă"
+
+#: includes/admin/cpt/class-modula-cpt.php:99
+msgid "Parent Gallery:"
+msgstr "Galerie părinte:"
+
+#: includes/admin/cpt/class-modula-cpt.php:98
+msgid "Gallery Attributes"
+msgstr "Atribute galerie"
+
+#: includes/admin/cpt/class-modula-cpt.php:97
+msgid "Gallery Archives"
+msgstr "Arhive galerii"
+
+#: includes/admin/class-modula-admin.php:193
+msgid "You are not authorized to access this page."
+msgstr "Nu ești autorizat să accesezi această pagină."
+
+#: includes/admin/editor/class-modula-editor.php:62
+msgid "Security check failed."
+msgstr "Verificarea de securitate a eșuat."
+
+#: includes/admin/editor/class-modula-editor.php:52
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Nu ai permisiuni suficiente pentru a accesa această pagină."
+
+#: includes/admin/class-modula-admin.php:263
+#: includes/bound-gallery/class-bound-gallery-host.php:267
+msgid "You are not allowed to edit this gallery."
+msgstr "Nu ai voie să editezi această galerie."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:865
+msgid "Invalid extraction path."
+msgstr "Cale de extracție nu este validă."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:295
+msgid "File does not exist or is not readable."
+msgstr "Fișierul nu există sau nu poate fi citit."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:159
+#: includes/admin/helpers/class-modula-gallery-upload.php:287
+msgid "Invalid file path."
+msgstr "Calea pentru fișier nu este validă."
+
+#: includes/public/helpers/modula-helper-functions.php:1098
+#: includes/public/shortcode/class-modula-shortcode-modern.php:677
+#: includes/public/templates/items/item.php:29
+#: includes/v2/shortcode/class-shortcode.php:1650
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:21
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share on X"
+msgstr "Partajează pe X"
+
+#: includes/admin/templates/modal/modula-modal-instagram-upgrade.php:31
+msgid "Connect to your Instagram account;"
+msgstr "Conectează-te la contul tău Instagram;"
+
+#: includes/admin/settings/class-modula-settings.php:1097
+msgid "Choose license type"
+msgstr "Alege tipul de licență"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:693
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1587
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "On mobile"
+msgstr "Pe mobil"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:683
+msgid "On tablet"
+msgstr "Pe tabletă"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:657
+msgid "Image shadow color"
+msgstr "Culoare umbră imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:648
+msgid "Image shadow size"
+msgstr "Dimensiune umbră imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:641
+msgid "Image border color"
+msgstr "Culoare chenar imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:632
+msgid "Image border radius"
+msgstr "Rotunjire chenar imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:623
+msgid "Image border size"
+msgstr "Dimensiune chenar imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:554
+msgid "Space between icons"
+msgstr "Spațiu între iconuri"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:545
+msgid "Icons size"
+msgstr "Dimensiune iconuri"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:537
+msgid "Icons color"
+msgstr "Culoare iconuri"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:467
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2007
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "X"
+msgstr "X"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:389
+msgid "Hide image title"
+msgstr "Ascunde titlul imaginii"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:380
+msgid "Show arrows navigation"
+msgstr "Arată navigarea cu săgeți"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:347
+msgid "Randomize images"
+msgstr "Aranjează aleatoriu imaginile"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:340
+msgid "Gallery height"
+msgstr "Înălțime galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:333
+msgid "Gallery width"
+msgstr "Lățime galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:306
+msgid "Space between gallery images"
+msgstr "Spațiu între imaginile din galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:270
+msgid "Width x Height"
+msgstr "Lățime x înălțime"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:213
+msgid "Number of Columns"
+msgstr "Număr de coloane"
+
+#. translators: primary CTA when extension is on plan but disabled
+#: includes/admin/wpchill/class-wpchill-about-us.php:163
+#: apps/extensions/components/extension-bulk-actions.jsx:27
+#: apps/extensions/components/extension-license-header.jsx:374
+#: apps/extensions/components/extension-table-row.jsx:100
+#: apps/gallery-editor/components/upsell/EditorUpsellBlurb.jsx:89
+#: assets/js/admin/extensions/index.js:1 assets/js/admin/extensions/index.js:6
+#: assets/js/admin/gallery-editor/index.js:12
+#: includes/admin/wpchill/assets/js/about-us.js:19
+msgid "Activate"
+msgstr "Activează"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:163
+#: includes/admin/wpchill/assets/js/about-us.js:52
+msgid "Install"
+msgstr "Instalează"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:152
+msgid "Details"
+msgstr "Detalii"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:68
+msgid "Try plugin"
+msgstr "Încearcă modulul"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:67
+msgid "Website"
+msgstr "Site web"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:65
+msgid "Product"
+msgstr "Produs"
+
+#. Translators: %s represents the time elapsed (e.g., "5 minutes", "2 hours",
+#. "1 day").
+#: includes/admin/wpchill/class-wpchill-notifications.php:131
+msgid "%s ago"
+msgstr "acum %s"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:167
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4486
+#: assets/js/admin/gallery-editor/index.js:16
+#: includes/admin/wpchill/assets/js/about-us.js:15
+msgid "Active"
+msgstr "Activ"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:57
+msgid "About WPChill"
+msgstr "Despre WPChill"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:166
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:167
+#: includes/admin/rest-api/class-modula-extensions-base.php:143
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1698
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7280
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Comments"
+msgstr "Comentarii"
+
+#: apps/general-settings/ai-settings/settings-form/claim-credits.jsx:134
+#: assets/js/admin/general-settings/index.js:2
+msgid "Language used to generate reports"
+msgstr "Limbă folosită pentru a genera rapoartele"
+
+#: apps/gallery-listing-ai/finished-report.jsx:26
+#: assets/js/admin/gallery-listing-ai/index.js:1
+msgid "Since last optimization, you have added "
+msgstr "De la ultima optimizare, ai adăugat "
+
+#: apps/gallery-listing-ai/finished-report.jsx:15
+#: assets/js/admin/gallery-listing-ai/index.js:1
+msgid "Last optimization was on: "
+msgstr "Ultima optimizare a fost pe: "
+
+#: apps/gallery-listing-ai/optimizing.jsx:15
+#: assets/js/admin/gallery-listing-ai/index.js:1
+msgid "Optimizing images…"
+msgstr "Optimizez imaginile..."
+
+#: apps/gallery-listing-ai/actions.jsx:85
+#: assets/js/admin/gallery-listing-ai/index.js:1
+msgid "Optimize all"
+msgstr "Optimizează tot"
+
+#: apps/gallery-listing-ai/report.jsx:17
+#: assets/js/admin/gallery-listing-ai/index.js:1
+msgid "Total images:"
+msgstr "Total imagini:"
+
+#. translators: %d refers to how many scheduled tasks were found to run
+#: includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:150
+msgid "Found %d scheduled task"
+msgid_plural "Found %d scheduled tasks"
+msgstr[0] "Am găsit o sarcină programată"
+msgstr[1] "Am găsit %d sarcini programate"
+msgstr[2] "Am găsit %d de sarcini programate"
+
+#. translators: 1: action ID 2: exception message
+#: includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:168
+msgid "Error processing action %1$s: %2$s"
+msgstr "Eroare la procesarea acțiunii %1$s: %2$s"
+
+#. translators: %s refers to the action ID
+#: includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:140
+msgid "Started processing action %s"
+msgstr "Acțiunea de procesare %s a început"
+
+#. translators: %d: amount of actions
+#: includes/libraries/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_QueueRunner.php:99
+msgid "Running %d action"
+msgid_plural "Running %d actions"
+msgstr[0] "Rulez o acțiune"
+msgstr[1] "Rulez %d acțiuni"
+msgstr[2] "Rulez %d de acțiuni"
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Create_Command.php:108
+msgid "Unable to create a scheduled action."
+msgstr "Nu pot să creez o acțiune programată."
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:114
+msgid "scheduled action"
+msgstr "acțiune programată"
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:114
+msgid "scheduled actions"
+msgstr "acțiuni programate"
+
+#. translators: %1$s: singular or plural %2$s: refers to the exception error
+#. message.
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:113
+msgid "There was an error cancelling the %1$s: %2$s"
+msgstr "A fost o eroare la anularea %1$s: %2$s"
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:98
+msgid "Scheduled action cancelled."
+msgstr "Am anulat acțiunea programată."
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:89
+msgid "Request to cancel scheduled actions completed."
+msgstr "Cererea de anulare a acțiunilor programate este finalizată."
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:76
+msgid "Please specify hook and/or group of actions to cancel."
+msgstr "Te rog să specifici cârligul și/sau grupul de acțiuni de anulat."
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:59
+msgid "Unable to cancel scheduled action: check the logs."
+msgstr "Nu pot să anulez acțiunea programată: verifică jurnalele."
+
+#: includes/libraries/action-scheduler/classes/WP_CLI/Action/Cancel_Command.php:49
+msgid "Please specify hook of action to cancel."
+msgstr "Te rog să specifici cârligul pentru acțiunea de anulat."
+
+#. translators: 1: source action ID 2: source store class 3: destination action
+#. ID 4: destination store class
+#: includes/libraries/action-scheduler/classes/migration/Runner.php:141
+msgid "Migrated action with ID %1$d in %2$s to ID %3$d in %4$s"
+msgstr "Acțiunea cu ID-ul %1$d din %2$s a fost migrată la ID-ul %3$d din %4$s"
+
+#: includes/libraries/action-scheduler/classes/migration/Controller.php:183
+msgid "Action Scheduler migration in progress. The list of scheduled actions may be incomplete."
+msgstr "Migrarea cu ajutorul Programatorului de acțiuni este în desfășurare. Lista acțiunilor programate poate fi incompletă."
+
+#: includes/libraries/action-scheduler/classes/migration/Config.php:146
+msgid "Destination logger must be configured before running a migration"
+msgstr "Înregistratorul de date de destinație trebuie să fie configurat înainte de a rula o migrare"
+
+#: includes/libraries/action-scheduler/classes/migration/Config.php:123
+msgid "Destination store must be configured before running a migration"
+msgstr "Magazinul de destinație trebuie să fie configurat înainte de a rula o migrare"
+
+#: includes/libraries/action-scheduler/classes/migration/Config.php:100
+msgid "Source logger must be configured before running a migration"
+msgstr "Înregistratorul de date sursă trebuie să fie configurat înainte de a rula o migrare"
+
+#: includes/libraries/action-scheduler/classes/migration/Config.php:77
+msgid "Source store must be configured before running a migration"
+msgstr "Magazinul sursă trebuie să fie configurat înainte de a rula o migrare"
+
+#. translators: %s is an action ID.
+#: includes/libraries/action-scheduler/classes/migration/ActionMigrator.php:109
+msgid "Unable to remove source migrated action %s"
+msgstr "Nu pot să înlătur acțiunea migrată din sursa %s"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_TaxonomyRegistrar.php:22
+msgid "Action Group"
+msgstr "Grup de acțiuni"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:46
+msgid "No actions found in trash"
+msgstr "Nu am găsit nicio acțiune la gunoi"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:45
+msgid "No actions found"
+msgstr "Nu am găsit nicio acțiune"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:44
+msgid "Search Scheduled Actions"
+msgstr "Caută acțiuni programate"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:42
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:43
+msgid "View Action"
+msgstr "Vezi acțiunea"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:41
+msgid "New Scheduled Action"
+msgstr "Acțiune programată nouă"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:40
+msgid "Edit Scheduled Action"
+msgstr "Editează acțiunea programată"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:38
+msgid "Add New Scheduled Action"
+msgstr "Adaugă acțiune programată nouă"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:37
+#: apps/gallery-editor/components/preview/selection-bar/GalleryPreviewSelectionBar.jsx:284
+#: assets/js/admin/gallery-editor/701.js:11
+msgid "Add"
+msgstr "Adaugă"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:36
+msgctxt "Admin menu name"
+msgid "Scheduled Actions"
+msgstr "Acțiuni programate"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:35
+msgid "Scheduled Action"
+msgstr "Acțiune programată"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:24
+msgid "Scheduled actions are hooks triggered on a certain date and time."
+msgstr "Acțiunile programate sunt cârlige declanșate la o anumită dată și oră."
+
+#. translators: %s: count
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:58
+msgid "In-Progress <span class=\"count\">(%s)</span>"
+msgid_plural "In-Progress <span class=\"count\">(%s)</span>"
+msgstr[0] "În desfășurare <span class=\"count\">(%s)</span>"
+msgstr[1] "În desfășurare <span class=\"count\">(%s)</span>"
+msgstr[2] "În desfășurare <span class=\"count\">(%s)</span>"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:56
+msgctxt "post"
+msgid "In-Progress"
+msgstr "În desfășurare"
+
+#. translators: %s: count
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:43
+msgid "Failed <span class=\"count\">(%s)</span>"
+msgid_plural "Failed <span class=\"count\">(%s)</span>"
+msgstr[0] "Eșuată <span class=\"count\">(%s)</span>"
+msgstr[1] "Eșuate <span class=\"count\">(%s)</span>"
+msgstr[2] "Eșuate <span class=\"count\">(%s)</span>"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:41
+msgctxt "post"
+msgid "Failed"
+msgstr "Eșuate"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:696
+msgid "Unable to claim actions. Database error."
+msgstr "Nu pot să susțin acțiunile. Eroare la baza de date."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:318
+msgid "Invalid schedule. Cannot save action."
+msgstr "Programarea nu este validă. Nu pot să salvez acțiunea."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:101
+msgid "Unable to save action."
+msgstr "Nu pot să salvez acțiunea."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1290
+msgid "Unknown status found for action."
+msgstr "Am găsit o stare necunoscută pentru acțiune."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1288
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:904
+msgid "Invalid action ID. No status found."
+msgstr "ID-ul acțiunii nu este valid. Nu am găsit nicio stare."
+
+#. translators: %s is the action ID
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1253
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:987
+msgid "Unidentified action %s: we were unable to mark this action as having completed. It may may have been deleted by another process."
+msgstr "Acțiunea %s nu este identificată: nu am putut să marcăm această acțiune ca finalizată. Probabil a fost ștearsă printr-un alt proces."
+
+#. translators: 1: action ID. 2: status slug.
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1216
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:967
+msgid "Unable to update the status of action %1$d to %2$s."
+msgstr "Nu pot să actualizez starea acțiunii %1$d la %2$s."
+
+#. translators: %s is the action ID
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1185
+msgid "Unidentified action %s: we were unable to mark this action as having failed. It may may have been deleted by another process."
+msgstr "Acțiunea %s nu este identificată: nu am putut să marcăm această acțiune ca eșuată. Probabil a fost ștearsă printr-un alt proces."
+
+#. translators: %d is an id.
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1131
+msgid "Unable to release actions from claim id %d."
+msgstr "Nu pot să eliberez acțiunile din cererea cu ID-ul %d."
+
+#. translators: %s database error.
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1019
+msgid "Unable to claim actions. Database error: %s."
+msgstr "Nu pot să susțin acțiunile. Eroare la baza de date: %s."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1013
+msgctxt "database error"
+msgid "unknown"
+msgstr "necunoscută"
+
+#. translators: %s is the action ID
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:838
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:564
+msgid "Unidentified action %s: we were unable to determine the date of this action. It may may have been deleted by another process."
+msgstr "Acțiunea %s nu este identificată: nu am putut să determinăm data acestei acțiuni. Probabil a fost ștearsă printr-un alt proces."
+
+#. translators: %s is the action ID
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:801
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:534
+msgid "Unidentified action %s: we were unable to delete this action. It may may have been deleted by another process."
+msgstr "Acțiunea %s nu este identificată: nu am putut să ștergem această acțiune. Probabil a fost ștearsă printr-un alt proces."
+
+#. translators: %s: action ID
+#. translators: %s is the action ID
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:699
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:515
+msgid "Unidentified action %s: we were unable to cancel this action. It may may have been deleted by another process."
+msgstr "Acțiunea %s nu este identificată: nu am putut să anulăm această acțiune. Probabil a fost ștearsă printr-un alt proces."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:530
+msgid "Unknown partial args matching value."
+msgstr "Valoare necunoscută pentru potrivirea argumentelor parțiale."
+
+#. translators: %s: provided value type
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:508
+msgid "The value type for the JSON partial matching is not supported. Must be either integer, boolean, double or string. %s type provided."
+msgstr "Tipul de valoare pentru potrivirea parțială JSON nu este acceptat. Trebuie să fie un număr întreg, boolean, dublu sau un șir de caractere. Tipul dat este %s."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:490
+msgid "JSON partial matching not supported in your environment. Please check your MySQL/MariaDB version."
+msgstr "Potrivirea parțială JSON nu este acceptată în mediul tău. Te rog verifică versiunea MySQL/MariaDB."
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:425
+msgid "Invalid value for select or count parameter. Cannot query actions."
+msgstr "Valoarea pentru parametrul de selectare sau numărare nu este validă. Nu pot să interoghez acțiunile."
+
+#. translators: %s: error message
+#. translators: %s: action error message
+#. translators: %s is an error message.
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:138
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore.php:49
+#: includes/libraries/action-scheduler/classes/migration/ActionScheduler_DBStoreMigrator.php:49
+msgid "Error saving action: %s"
+msgstr "Eroare la salvarea acțiunii: %s"
+
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:130
+msgid "Database error."
+msgstr "Eroare la baza de date."
+
+#. translators: 1: next cleanup message 2: github issue URL
+#: includes/libraries/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:122
+msgid "Action Scheduler has migrated data to custom tables; however, orphaned log entries exist in the WordPress Comments table. %1$s <a href=\"%2$s\">Learn more &raquo;</a>"
+msgstr "Programatorul de acțiuni a migrat datele în tabele personalizate; cu toate acestea, în tabelul Comentarii din WordPress există intrări orfane în jurnal. %1$s <a href=\"%2$s\">Află mai multe &raquo;</a>"
+
+#. translators: %s: date interval
+#: includes/libraries/action-scheduler/classes/ActionScheduler_WPCommentCleaner.php:117
+msgid "This data will be deleted in %s."
+msgstr "Aceste date vor fi șterse în %s."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:122
+msgid "Action Status"
+msgstr "Stare acțiune"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:118
+msgid "Data store:"
+msgstr "Magazin de date:"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "This section shows details of Action Scheduler."
+msgstr "Această secțiune prezintă detalii despre Programatorul de acțiuni."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_wcSystemStatus.php:111
+msgid "Action Scheduler"
+msgstr "Programator de acțiuni"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_QueueRunner.php:249
+msgid "Every minute"
+msgstr "În fiecare minut"
+
+#. Translators: %s is the exception message.
+#: includes/libraries/action-scheduler/classes/ActionScheduler_QueueCleaner.php:70
+msgid "It was not possible to determine a valid cut-off time: %s."
+msgstr "Nu a fost posibil să determin o oră limită validă: %s."
+
+#. translators: 1: action ID 2: exception message.
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:516
+msgid "Action Scheduler was unable to delete action %1$d. Reason: %2$s"
+msgstr "Programatorul de acțiuni nu a putut să șteargă acțiunea %1$d. Motiv: %2$s"
+
+#. translators: %s: date interval
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:490
+msgid " (%s)"
+msgstr " (%s)"
+
+#. translators: %s: date interval
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:487
+msgid " (%s ago)"
+msgstr " (acum %s)"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:473
+msgid "async"
+msgstr "asincron"
+
+#. translators: 1: action HTML 2: action ID 3: error message
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:437
+msgid "Could not process change for action: \"%1$s\" (ID: %2$d). Error: %3$s"
+msgstr "Nu am putut să procesez modificarea pentru acțiunea: „%1$s” (ID: %2$d). Eroare: %3$s"
+
+#. translators: %s: action HTML
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:431
+msgid "Successfully processed change for action: %s"
+msgstr "Am procesat cu succes modificarea pentru acțiunea: %s"
+
+#. translators: %s: action HTML
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:427
+msgid "Successfully canceled action: %s"
+msgstr "Am anulat cu succes acțiunea: %s"
+
+#. translators: %s: action HTML
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:423
+msgid "Successfully executed action: %s"
+msgstr "Am executat cu succes acțiunea: %s"
+
+#. translators: %d: seconds
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:401
+msgid "The next queue will begin processing in approximately %d seconds."
+msgstr "Procesarea pentru următoarea coadă de așteptare va începe în aproximativ %d secunde."
+
+#. translators: %s: process URL
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:398
+msgid "A new queue has begun processing. <a href=\"%s\">View actions in-progress &raquo;</a>"
+msgstr "A început procesarea pentru o coadă de așteptare nouă. <a href=\"%s\">Vezi acțiunile în curs de desfășurare &raquo;</a>"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:365
+msgid "It appears one or more database tables were missing. Attempting to re-create the missing table(s)."
+msgstr "Se pare că lipseau tabele (unul sau mai multe) din baza de date. Încerc să recreez tabelele lipsă."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:267
+msgid "Non-repeating"
+msgstr "Fără repetare"
+
+#. translators: %s: time interval
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:261
+msgid "Every %s"
+msgstr "La fiecare %s"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:224
+msgid "Now!"
+msgstr "Acum!"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:134
+msgid "Cancel the action now to avoid it being run in future"
+msgstr "Anulează acțiunea acum pentru a evita rularea ei în viitor"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:130
+msgid "Process the action now as if it were run as part of a queue"
+msgstr "Procesează acțiunea acum ca și cum ar fi rulat ca parte a unei cozi de așteptare"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:129
+msgid "Run"
+msgstr "Rulează"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:101
+msgid "Scheduled Date"
+msgstr "Dată programată"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:92
+msgid "Delete"
+msgstr "Șterge"
+
+#. translators: 1: action ID 2: arguments
+#: includes/libraries/action-scheduler/classes/ActionScheduler_InvalidActionException.php:40
+msgid "Action [%1$s] has invalid arguments. It cannot be JSON decoded to an array. $args = %2$s"
+msgstr "Acțiunea [%1$s] are argumente invalide. JSON nu poate fi decodat într-un tablou. $args = %2$s"
+
+#. translators: 1: action ID 2: schedule
+#: includes/libraries/action-scheduler/classes/ActionScheduler_InvalidActionException.php:22
+msgid "Action [%1$s] has an invalid schedule: %2$s"
+msgstr "Acțiunea [%1$s] are o programare care nu este validă: %2$s"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_DataController.php:149
+msgid "Attempting to reduce used memory..."
+msgstr "Încerc să reduc memoria utilizată..."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:288
+msgid "Activity log for the action."
+msgstr "Jurnal de activități pentru acțiune."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:288
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:102
+msgid "Log"
+msgstr "Jurnal"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:287
+msgid "The date/time the action is/was scheduled to run."
+msgstr "Data/ora la care acțiunea este/a fost programată să ruleze."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:286
+msgid "The action's schedule frequency."
+msgstr "Frecvența de programare a acțiunilor."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:286
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:100
+msgid "Recurrence"
+msgstr "Recurență"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:285
+msgid "Optional action group."
+msgstr "Grup de acțiuni opțional."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:285
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:99
+msgid "Group"
+msgstr "Grup"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:284
+msgid "Optional data array passed to the action hook."
+msgstr "Tabloul de date opțional a fost transmis la cârligul de acțiune."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:284
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:98
+msgid "Arguments"
+msgstr "Argumente"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:283
+msgid "Action statuses are Pending, Complete, Canceled, Failed"
+msgstr "Stările acțiunilor sunt: în așteptare, finalizată, anulată, eșuată"
+
+#: includes/admin/settings/class-modula-settings.php:1493
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:283
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:97
+#: apps/extensions/components/extension-table.jsx:114
+#: apps/gallery-editor/components/shell/TakeoverTopBarDocumentStatus.jsx:92
+#: apps/gallery-editor/components/shell/TakeoverTopBarDocumentStatus.jsx:113
+#: apps/gallery-listing/fields.js:206
+#: apps/gallery-listing/ListingQuickEditModal.jsx:210
+#: assets/js/admin/extensions/index.js:7
+#: assets/js/admin/gallery-editor/index.js:6
+#: assets/js/admin/gallery-listing/index.js:155
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Status"
+msgstr "Stare"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:282
+msgid "Name of the action hook that will be triggered."
+msgstr "Numele cârligului de acțiune care va fi declanșat."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:282
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:96
+msgid "Hook"
+msgstr "Cârlig"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:280
+msgid "Scheduled Action Columns"
+msgstr "Coloane cu acțiuni programate"
+
+#. translators: %1$s is WP CLI command (not translatable)
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:268
+msgid "WP CLI commands are available: execute %1$s for a list of available commands."
+msgstr "Comenzile WP-CLI sunt disponibile: execută %1$s pentru o listă cu comenzi disponibile."
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:264
+msgid "WP CLI"
+msgstr "WP-CLI"
+
+#. translators: %s is the Action Scheduler version.
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:260
+msgid "About Action Scheduler %s"
+msgstr "Despre Programatorul de acțiuni %s"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:82
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:97
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:98
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:89
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:23
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:34
+msgid "Scheduled Actions"
+msgstr "Acțiuni programate"
+
+#. translators: %1$s is the name of the hook to be enqueued, %2$s is the
+#. exception message.
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ActionFactory.php:326
+msgid "Caught exception while enqueuing action \"%1$s\": %2$s"
+msgstr "Am detectat o excepție în timpul punerii în coadă a acțiunii „%1$s”: %2$s"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ActionFactory.php:233
+msgid "Invalid action - must be a recurring action."
+msgstr "Acțiunea nu este validă - trebuie să fie o acțiune recurentă."
+
+#. translators: 1: action hook.
+#: includes/libraries/action-scheduler/classes/actions/ActionScheduler_Action.php:80
+msgid "Scheduled action for %1$s will not be executed as no callbacks are registered."
+msgstr "Acțiunea programată pentru %1$s nu va fi executată deoarece nu sunt înregistrate apeluri-înapoi."
+
+#. translators: %d is a number (maximum length of action arguments).
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Store.php:377
+msgid "ActionScheduler_Action::$args too long. To ensure the args column can be indexed, action args should not be more than %d characters when encoded as JSON."
+msgstr "ActionScheduler_Action::$args este prea lung. Pentru a te asigura că această coloană de argumente poate fi indexată, argumentele acțiunilor nu ar trebui să aibă mai mult de %d de caractere când sunt codate ca JSON."
+
+#. translators: %s: exception message
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:238
+msgid "There was a failure scheduling the next instance of this action: %s"
+msgstr "Programarea următoarei instanțe a acestei acțiuni s-a soldat cu un eșec: %s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:224
+msgid "There was a failure fetching this action"
+msgstr "Preluarea acestei acțiuni s-a soldat cu un eșec"
+
+#. translators: %s: exception message
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:222
+msgid "There was a failure fetching this action: %s"
+msgstr "Preluarea acestei acțiuni s-a soldat cu un eșec: %s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:207
+msgid "action ignored"
+msgstr "acțiune ignorată"
+
+#. translators: %s: context
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:205
+msgid "action ignored via %s"
+msgstr "acțiune ignorată prin %s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:193
+msgid "action reset"
+msgstr "acțiune resetată"
+
+#. translators: 1: error message 2: filename 3: line
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:183
+msgid "unexpected shutdown: PHP Fatal error %1$s in %2$s on line %3$s"
+msgstr "oprire neașteptată: eroare fatală PHP %1$s în %2$s pe linia %3$s"
+
+#. translators: %s: amount of time
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:171
+msgid "action marked as failed after %s seconds. Unknown error occurred. Check server, PHP and database error logs to diagnose cause."
+msgstr "acțiune marcată ca eșuată după %s secunde. A apărut o eroare necunoscută. Pentru a diagnostica cauza, vezi jurnalele de erori pentru server, PHP și baza de date."
+
+#. translators: %s: exception message
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:158
+msgid "action failed: %s"
+msgstr "acțiune eșuată: %s"
+
+#. translators: 1: context 2: exception message
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:155
+msgid "action failed via %1$s: %2$s"
+msgstr "acțiune eșuată prin %1$s: %2$s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:140
+msgid "action complete"
+msgstr "acțiune finalizată"
+
+#. translators: %s: context
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:138
+msgid "action complete via %s"
+msgstr "acțiune finalizată prin %s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:123
+msgid "action started"
+msgstr "acțiune începută"
+
+#. translators: %s: context
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:121
+msgid "action started via %s"
+msgstr "acțiune începută prin %s"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:109
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_DBLogger.php:142
+msgid "action canceled"
+msgstr "acțiune anulată"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Logger.php:100
+msgid "action created"
+msgstr "acțiune creată"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_QueueRunner.php:169
+msgid "This action appears to be consistently failing. A new instance will not be scheduled."
+msgstr "Această acțiune pare să eșueze în mod constant. Nu va fi programată o instanță nouă."
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:786
+#: assets/js/admin/gallery-listing/index.js:14
+#: assets/js/admin/gallery-listing/index.js:65
+#: assets/js/admin/gallery-listing/index.js:137
+msgid "Search"
+msgstr "Caută"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:704
+msgctxt "status labels"
+msgid "Past-due"
+msgstr "Restante"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:703
+msgctxt "status labels"
+msgid "All"
+msgstr "Tot"
+
+#. translators: %s: search query
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:668
+msgid "Search results for \"%s\""
+msgstr "Rezultate de căutare pentru „%s”"
+
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler_Abstract_ListTable.php:541
+msgid "Filter"
+msgstr "Filtrează"
+
+#. translators: %s function name.
+#: includes/libraries/action-scheduler/classes/abstracts/ActionScheduler.php:271
+msgid "%s() was called before the Action Scheduler data store was initialized"
+msgstr "%s() a fost apelată înainte de inițializarea stocării datelor prin Programatorul de acțiuni"
+
+#: includes/features/ai/optimizer/class-processor.php:428
+msgid "Something went wrong, processing stopped."
+msgstr "Ceva nu a mers bine, procesarea este oprită."
+
+#: includes/features/ai/optimizer/class-optimizer.php:163
+msgid "The process was stopped manually"
+msgstr "Procesul a fost oprit manual"
+
+#: includes/features/ai/optimizer/class-checker.php:475
+msgid "Failed image update"
+msgstr "Actualizarea imaginii a eșuat"
+
+#: includes/features/ai/optimizer/class-checker.php:484
+msgid "Failed image:"
+msgstr "Imaginea a eșuat:"
+
+#: includes/features/ai/admin-area/class-admin-area.php:27
+msgid "Configure API Key"
+msgstr "Configurează cheia API"
+
+#: includes/features/ai/admin-area/class-admin-area.php:25
+msgid "Failed to generate report"
+msgstr "Generarea raportului a eșuat"
+
+#: includes/features/ai/admin-area/class-admin-area.php:23
+msgid "Generating report"
+msgstr "Generez raportul"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:834
+msgid "Could not open ZIP file."
+msgstr "Nu am putut să deschid fișierul ZIP"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:823
+msgid "ZIP extension is not installed on the server."
+msgstr "Extensia ZIP nu este instalată pe server."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:813
+#: includes/admin/helpers/class-modula-gallery-upload.php:1681
+msgid "No file was provided."
+msgstr "Nu ai furnizat niciun fișier."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1615
+msgid "Could not copy file to temporary location."
+msgstr "Nu am putut să copiez fișierul în locația temporară."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1526
+msgid "Validating folder(s). Please wait..."
+msgstr "Validez dosarul (dosarele). Te rog să aștepți..."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1525
+msgid "Gallery updated. Syncronizing gallery view..."
+msgstr "Am actualizat galeria. Sincronizez vizualizarea galeriei..."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1524
+msgid "Updating gallery. Please wait..."
+msgstr "Actualizez galeria. Te rog să aștepți..."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1523
+msgid "No folder(s) selected"
+msgstr "Nu ai selectat niciun dosar"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:535
+#: includes/admin/helpers/class-modula-gallery-upload.php:565
+#: includes/admin/helpers/class-modula-gallery-upload.php:614
+#: includes/admin/helpers/class-modula-gallery-upload.php:622
+msgid "No images were provided."
+msgstr "Nu ai furnizat nicio imagine."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:316
+msgid "The file could not be uploaded."
+msgstr "Fișierul nu a putut fi încărcat."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:276
+msgid "No files were provided."
+msgstr "Nu ai furnizat niciun fișier."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:249
+msgid "No valid files were provided."
+msgstr "Nu ai furnizat niciun fișier valid."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:213
+msgid "No valid paths were provided."
+msgstr "Nu ai furnizat nicio cale validă."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:238
+msgid "No paths were provided."
+msgstr "Nu ai furnizat nicio cale."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1141
+msgid "Import files from a folder"
+msgstr "Importă fișiere dintr-un dosar"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1134
+msgid "Delete files from folder after upload"
+msgstr "Șterge fișierele din dosar după încărcare"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1117
+msgid "Select a folder to upload images from"
+msgstr "Selectează un dosar din care să încarci imagini"
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:150
+msgid "No path was provided."
+msgstr "Nu ai furnizat nicio cale."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:142
+#: includes/admin/helpers/class-modula-gallery-upload.php:192
+#: includes/admin/helpers/class-modula-gallery-upload.php:230
+#: includes/admin/helpers/class-modula-gallery-upload.php:268
+#: includes/admin/helpers/class-modula-gallery-upload.php:517
+#: includes/admin/helpers/class-modula-gallery-upload.php:605
+#: includes/admin/helpers/class-modula-gallery-upload.php:805
+#: includes/v2/rest/class-gallery-upload-controller.php:274
+#: includes/v2/rest/class-gallery-upload-controller.php:297
+#: includes/v2/rest/class-gallery-upload-controller.php:320
+#: includes/v2/rest/class-gallery-upload-controller.php:342
+#: includes/v2/rest/class-gallery-upload-controller.php:370
+#: includes/v2/rest/class-gallery-upload-controller.php:496
+#: includes/v2/rest/class-gallery-upload-controller.php:543
+#: includes/v2/rest/class-gallery-upload-controller.php:590
+#: includes/v2/rest/class-gallery-upload-controller.php:769
+#: includes/v2/rest/class-gallery-upload-controller.php:841
+#: includes/v2/rest/class-gallery-upload-controller.php:880
+#: includes/v2/rest/class-gallery-upload-controller.php:926
+#: includes/v2/rest/class-gallery-upload-controller.php:983
+msgid "You do not have the rights to upload files."
+msgstr "Nu ai dreptul să încarci fișiere."
+
+#: includes/admin/helpers/class-modula-gallery-upload.php:1014
+#: apps/gallery-editor/utils/takeoverAddNewMenuModel.js:93
+#: assets/js/admin/gallery-editor/701.js:25
+msgid "From Folder"
+msgstr "Din dosar"
+
+#: includes/admin/cpt/class-modula-field-builder.php:117
+#: apps/gallery-editor/utils/takeoverAddNewMenuModel.js:46
+#: assets/js/admin/gallery-editor/701.js:25
+msgid "From Library"
+msgstr "Din bibliotecă"
+
+#: includes/admin/cpt/class-modula-field-builder.php:116
+#: apps/gallery-editor/utils/takeoverAddNewMenuModel.js:40
+#: assets/js/admin/gallery-editor/701.js:25
+msgid "Upload"
+msgstr "Încarcă"
+
+#: includes/admin/rest-api/class-modula-extensions-base.php:220
+#: includes/admin/settings/class-modula-settings.php:1209
+#: includes/admin/templates/modal/modula-modal-instagram-upgrade.php:20
+#: includes/admin/upsells/class-modula-button-handler.php:36
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1402
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1700
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7515
+#: apps/gallery-editor/utils/takeoverAddNewMenuModel.js:213
+#: assets/js/admin/gallery-editor/701.js:25
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/admin/templates/modal/modula-modal-bulk-editor-upgrade.php:44
+msgid "Set the filters for your images."
+msgstr "Setează filtrele pentru imaginile tale."
+
+#: includes/admin/templates/modal/modula-modal-bulk-editor-upgrade.php:23
+#: includes/admin/upsells/class-modula-button-handler.php:72
+#: apps/gallery-listing/listingHoverActions.js:48
+#: assets/js/admin/gallery-listing/index.js:141
+msgid "Bulk Editor"
+msgstr "Editor în masă"
+
+#: includes/admin/media/class-modula-media.php:46
+msgid "Gallery Without Name"
+msgstr "Galerie fără nume"
+
+#: includes/admin/class-modula-admin.php:247
+msgid "No images were selected."
+msgstr "Nu ai selectat nicio imagine."
+
+#: includes/public/helpers/modula-helper-functions.php:1094
+#: apps/gallery-shared/components/social/GalleryItemExpandableSocials.jsx:52
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/front/297.modula-gallery.js:1
+msgid "Click to share"
+msgstr "Dă clic pentru a partaja"
+
+#: includes/public/helpers/modula-helper-functions.php:1117
+#: includes/public/shortcode/class-modula-shortcode-modern.php:692
+#: includes/public/templates/items/item.php:48
+#: includes/v2/shortcode/class-shortcode.php:1665
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:56
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share by Email"
+msgstr "Partajează prin email"
+
+#: includes/public/helpers/modula-helper-functions.php:1109
+#: includes/public/shortcode/class-modula-shortcode-modern.php:686
+#: includes/public/templates/items/item.php:40
+#: includes/v2/shortcode/class-shortcode.php:1659
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:42
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share on Pinterest"
+msgstr "Partajează pe Pinterest"
+
+#: includes/public/helpers/modula-helper-functions.php:1105
+#: includes/public/shortcode/class-modula-shortcode-modern.php:683
+#: includes/public/templates/items/item.php:36
+#: includes/v2/shortcode/class-shortcode.php:1656
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:35
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share on Whatsapp"
+msgstr "Partajează prin WhatsApp"
+
+#: includes/public/helpers/modula-helper-functions.php:1101
+#: includes/public/shortcode/class-modula-shortcode-modern.php:680
+#: includes/public/templates/items/item.php:32
+#: includes/v2/shortcode/class-shortcode.php:1653
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:28
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share on Facebook"
+msgstr "Partajează pe Facebook"
+
+#: includes/admin/templates/modal/modula-modal-gallery-defaults-upgrade.php:21
+msgid "Save your galleries"
+msgstr "Salvează-ți galeriile"
+
+#: includes/public/helpers/modula-helper-functions.php:210
+#: includes/public/helpers/modula-helper-functions.php:304
+#: includes/public/shortcode/class-modula-item-data-processor.php:461
+msgid "Open external link"
+msgstr "Deschide legătura externă"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:263
+msgid "Join Facebook Community"
+msgstr "Alătură-te comunității pe Facebook"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:255
+msgid "Need help or advice?"
+msgstr "Ai nevoie de ajutor sau sfaturi?"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:281
+#: includes/admin/wpchill/class-wpchill-about-us.php:34
+#: includes/admin/wpchill/class-wpchill-about-us.php:35
+msgid "About Us"
+msgstr "Despre noi"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:228
+msgid "View Extensions"
+msgstr "Vezi extensiile"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:198
+msgid "View Settings"
+msgstr "Vezi setările"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:183
+msgid "View Documentation"
+msgstr "Vezi documentația"
+
+#: includes/admin/onboarding/class-modula-onboarding.php:31
+msgid "Create your first gallery"
+msgstr "Creează prima ta galerie"
+
+#: includes/admin/onboarding/class-modula-onboarding.php:20
+msgid "Hi, there!"
+msgstr "Bună!"
+
+#: apps/extensions/components/extension-table-divider.jsx:52
+#: assets/js/admin/extensions/index.js:7
+msgid "Upgrade Now"
+msgstr "Actualizează acum"
+
+#: includes/admin/rest-api/class-modula-extensions-base.php:283
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1689
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4470
+#: apps/gallery-listing/ListingPaginationFooter.jsx:106
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-listing/index.js:145
+msgid "Pagination"
+msgstr "Paginație"
+
+#: includes/admin/rest-api/class-modula-insights-base.php:516
+msgid "Albums created"
+msgstr "Am creat albumele"
+
+#: includes/public/helpers/modula-helper-functions.php:1113
+#: includes/public/shortcode/class-modula-shortcode-modern.php:689
+#: includes/public/templates/items/item.php:44
+#: includes/v2/shortcode/class-shortcode.php:1662
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderSocialPreview.jsx:49
+#: assets/js/admin/gallery-editor/352.js:2
+msgid "Share on LinkedIn"
+msgstr "Partajează pe LinkedIn"
+
+#: includes/admin/rest-api/class-modula-extensions-base.php:241
+#: includes/admin/settings/class-modula-settings.php:588
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:140
+msgid "Advanced Shortcodes"
+msgstr "Scurt-coduri avansate"
+
+#. translators: primary CTA on Lite lightbox upsell
+#: includes/admin/cpt/class-modula-cpt.php:1633
+#: includes/admin/templates/modal/modula-modal-albums-defaults-upgrade.php:23
+#: includes/admin/templates/modal/modula-modal-albums-upgrade.php:27
+#: includes/admin/templates/modal/modula-modal-bound-gallery-upgrade.php:55
+#: includes/admin/templates/modal/modula-modal-bulk-editor-upgrade.php:56
+#: includes/admin/templates/modal/modula-modal-content-galleries-upgrade.php:48
+#: includes/admin/templates/modal/modula-modal-gallery-defaults-upgrade.php:27
+#: includes/admin/templates/modal/modula-modal-image-licensing-upgrade.php:25
+#: includes/admin/templates/modal/modula-modal-image-proofing-upgrade.php:45
+#: includes/admin/templates/modal/modula-modal-instagram-upgrade.php:48
+#: includes/admin/templates/modal/modula-modal-video-upgrade.php:39
+#: includes/admin/upsells/class-modula-metabox-handler.php:78
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:55
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:88
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:120
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:152
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:184
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:214
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:257
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:289
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:321
+#: includes/admin/upsells/class-modula-tab-content-handler.php:47
+#: apps/gallery-editor/components/upsell/EditorUpsellBlurb.jsx:156
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:865
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2315
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3112
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4535
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4895
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5050
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5080
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5188
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5635
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6015
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6045
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6419
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6899
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7159
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7297
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7418
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7579
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7611
+#: assets/js/admin/gallery-editor/index.js:14
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Get Premium!"
+msgstr "Ia versiunea Premium!"
+
+#: includes/admin/class-modula-admin.php:82
+#: includes/admin/class-modula-admin.php:83
+#: includes/admin/rest-api/class-modula-extensions-base.php:178
+#: apps/gallery-listing/fields.js:314
+#: apps/gallery-listing/ListingSelectAllChooserDialog.jsx:24
+#: apps/gallery-listing/ListingStatusFilter.jsx:81
+#: assets/js/admin/gallery-listing/index.js:155
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Albums"
+msgstr "Albume"
+
+#: includes/admin/wpchill/class-wpchill-about-us.php:66
+#: apps/extensions/components/extension-table.jsx:111
+#: assets/js/admin/extensions/index.js:7
+msgid "Description"
+msgstr "Descriere"
+
+#: includes/admin/debug/class-modula-debug.php:104
+msgid "Total galleries"
+msgstr "Total galerii"
+
+#: includes/admin/debug/class-modula-debug.php:89
+msgid "Core Version"
+msgstr "Versiune nucleu"
+
+#: includes/admin/rest-api/class-modula-extensions-base.php:206
+#: includes/admin/settings/class-modula-settings.php:605
+msgid "Roles"
+msgstr "Roluri"
+
+#. Author URI of the plugin
+#: Modula.php
+msgid "https://www.wpchill.com/"
+msgstr "https://www.wpchill.com/"
+
+#. Author of the plugin
+#: Modula.php
+msgid "WPChill"
+msgstr "WPChill"
+
+#: includes/features/third-party-builders/divi-extension/includes/modules/ModulaDivi/ModulaDivi.php:86
+msgid "No galleries selected"
+msgstr "Nu ai selectat nicio galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:529
+msgid "Gallery Link"
+msgstr "Legătură la galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:528
+msgid "Image Link"
+msgstr "Legătură imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:525
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1908
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Email message"
+msgstr "Mesaj prin email"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:517
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1923
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Email subject"
+msgstr "Subiect email"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:507
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1938
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Email"
+msgstr "Email"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:152
+msgid "Watermark settings"
+msgstr "Setări filigran"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:164
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1110
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Toolbar"
+msgstr "Bară de unelte"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:152
+msgid "Title and Caption Position"
+msgstr "Poziție titlu și text asociat"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:148
+msgid "Show Image Caption"
+msgstr "Arată textul asociat pentru imagine"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:144
+msgid "Show Image Title"
+msgstr "Arată titlul imaginii"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:140
+msgid "Loop Navigation"
+msgstr "Navigare în buclă"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:499
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1980
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:491
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1966
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:483
+msgid "Whatsapp"
+msgstr "WhatsApp"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:475
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1952
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:290
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:298
+msgid "Crop Images"
+msgstr "Decupează imaginile"
+
+#: includes/admin/cpt/class-modula-field-builder.php:621
+msgid "Image Size"
+msgstr "Dimensiune imagine"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:236
+msgid "Row Height"
+msgstr "Înălțime rând"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:278
+#: apps/gallery-editor/data/editorFieldUi.js:498
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:523
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-editor/index.js:30
+msgid "Columns"
+msgstr "Coloane"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:66
+msgid "Hover effects"
+msgstr "Efect de trecere peste"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:252
+#: apps/gallery-editor/components/gallery-item-edit-modal/ContentBlockBackgroundFields.jsx:85
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:51
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:354
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:784
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1192
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1456
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4636
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4834
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4869
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5414
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5861
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7748
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Right"
+msgstr "Dreapta"
+
+#: includes/features/migrate/class-modula-importer.php:146
+#: includes/features/migrate/class-modula-importer.php:150
+#: apps/general-settings/fields/ImportCheckboxGroupField.jsx:211
+#: assets/js/admin/general-settings/index.js:1
+msgid "Migrate"
+msgstr "Migrează"
+
+#: apps/general-settings/fields/ImportCheckboxGroupField.jsx:131
+#: assets/js/admin/general-settings/index.js:1
+msgid "Select All"
+msgstr "Selectează tot"
+
+#: includes/features/migrate/class-modula-importer.php:122
+msgid "Gallery source"
+msgstr "Sursă galerie"
+
+#: apps/general-settings/fields/ImportCheckboxGroupField.jsx:138
+#: assets/js/admin/general-settings/index.js:1
+msgid "Deselect All"
+msgstr "Anulează toată selecția"
+
+#: includes/uninstall/class-modula-uninstall.php:132
+msgid "Delete all data"
+msgstr "Șterge toate datele"
+
+#: includes/uninstall/class-modula-uninstall.php:59
+#: includes/uninstall/class-modula-uninstall.php:111
+msgid "Uninstall"
+msgstr "Dezinstalează"
+
+#: includes/admin/cpt/class-modula-cpt.php:105
+#: includes/admin/cpt/class-modula-cpt.php:1428
+msgid "Update Gallery"
+msgstr "Actualizează galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:1420
+#: includes/admin/cpt/class-modula-cpt.php:1421
+msgid "Submit for Review"
+msgstr "Trimite pentru verificare"
+
+#: includes/admin/cpt/class-modula-cpt.php:1414
+msgid "Save Gallery"
+msgstr "Salvează galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:1408
+#: includes/admin/cpt/class-modula-cpt.php:1413
+msgid "Update "
+msgstr "Actualizează "
+
+#: includes/admin/cpt/class-modula-cpt.php:1403
+#: includes/admin/cpt/class-modula-cpt.php:1404
+msgctxt "post action/button label"
+msgid "Schedule"
+msgstr "Programează"
+
+#: includes/admin/cpt/class-modula-cpt.php:1385
+msgid "Move to Trash"
+msgstr "Aruncă la gunoi"
+
+#: includes/admin/cpt/class-modula-cpt.php:1383
+msgid "Delete Permanently"
+msgstr "Șterge definitiv"
+
+#. translators: %s: URL to the Customizer.
+#: includes/admin/cpt/class-modula-cpt.php:1330
+msgid "This draft comes from your <a href=\"%s\">unpublished customization changes</a>. You can edit, but there&#8217;s no need to publish now. It will be published automatically with those changes."
+msgstr "Această ciornă provine din <a href=\"%s\">modificări tale de personalizare nepublicate</a>. O poți edita, dar nu trebuie s-o publici acum. Ea va fi publicată automat cu aceste modificări."
+
+#: includes/admin/cpt/class-modula-cpt.php:1317
+msgid "Browse revisions"
+msgstr "Răsfoiește reviziile"
+
+#: includes/admin/cpt/class-modula-cpt.php:1316
+msgctxt "revisions"
+msgid "Browse"
+msgstr "Răsfoiește"
+
+#. translators: Post revisions heading. %s: The number of available revisions.
+#: includes/admin/cpt/class-modula-cpt.php:1312
+msgid "Revisions: %s"
+msgstr "Revizii: %s"
+
+#: includes/admin/rest-api/class-modula-extensions-base.php:248
+msgid "Password Protect"
+msgstr "Protejat cu parolă"
+
+#: includes/admin/cpt/class-modula-cpt.php:1301
+#: includes/libraries/action-scheduler/classes/ActionScheduler_ListTable.php:133
+#: apps/gallery-editor/components/custom-css-ai/CustomCssAiModal.jsx:144
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderPresetJsonModal.jsx:207
+#: apps/gallery-editor/components/modals/FocusPointLetterboxApplyConfirmModal.jsx:53
+#: apps/gallery-editor/components/modals/FocusPointModal.jsx:489
+#: apps/gallery-editor/components/modals/FocusPointModal.jsx:547
+#: apps/gallery-editor/components/modals/GalleryTypeChangeConfirmModal.jsx:41
+#: apps/gallery-editor/legacy-z/components/image-metadata-modal/ImageMetadataModalFooter.jsx:49
+#: apps/gallery-editor/legacy-z/components/modals/ContentBlockEditModal.jsx:162
+#: apps/gallery-listing/ListingQuickEditModal.jsx:324
+#: apps/gallery-listing/ListingSelectAllChooserDialog.jsx:52
+#: assets/js/admin/gallery-editor/680.js:4
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:17
+#: assets/js/admin/gallery-listing/index.js:29
+#: assets/js/admin/gallery-listing/index.js:155
+msgid "Cancel"
+msgstr "Anulează"
+
+#: includes/admin/cpt/class-modula-cpt.php:1299
+msgid "OK"
+msgstr "OK"
+
+#: includes/admin/cpt/class-modula-cpt.php:1276
+msgid "Set status"
+msgstr "Setează starea"
+
+#: includes/admin/cpt/class-modula-cpt.php:1271
+msgid "Edit status"
+msgstr "Editează starea"
+
+#: includes/admin/cpt/class-modula-cpt.php:1270
+#: includes/libraries/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:39
+#: apps/gallery-editor/components/bulk-edit/BulkEditRow.jsx:374
+#: apps/gallery-listing/listingHoverActions.js:33
+#: assets/js/admin/gallery-editor/318.js:1
+#: assets/js/admin/gallery-listing/index.js:141
+msgid "Edit"
+msgstr "Editează"
+
+#: includes/admin/cpt/class-modula-cpt.php:1257
+#: includes/admin/cpt/class-modula-cpt.php:1292
+#: includes/admin/cpt/class-modula-cpt.php:1295
+#: apps/gallery-listing/fields.js:16
+#: apps/gallery-listing/ListingQuickEditModal.jsx:16
+#: assets/js/admin/gallery-listing/index.js:143
+#: assets/js/admin/gallery-listing/index.js:155
+msgid "Draft"
+msgstr "Ciornă"
+
+#: includes/admin/cpt/class-modula-cpt.php:1253
+#: includes/admin/cpt/class-modula-cpt.php:1289
+msgid "Pending Review"
+msgstr "Așteaptă revizuire"
+
+#: includes/admin/cpt/class-modula-cpt.php:1239
+msgid "Status:"
+msgstr "Stare:"
+
+#. translators: Accessibility text.
+#: includes/admin/cpt/class-modula-cpt.php:1211
+msgid "(opens in a new tab)"
+msgstr "(se deschide într-o filă nouă)"
+
+#: includes/admin/cpt/class-modula-cpt.php:1204
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderCanvasModeNav.jsx:34
+#: apps/gallery-editor/components/preview/PreviewCustomGridZoomControls.jsx:42
+#: apps/gallery-listing/fields.js:97 assets/js/admin/gallery-editor/352.js:1
+#: assets/js/admin/gallery-editor/680.js:1
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Preview"
+msgstr "Previzualizează"
+
+#: includes/admin/cpt/class-modula-cpt.php:1202
+msgid "Preview Changes"
+msgstr "Previzualizează modificările"
+
+#: includes/admin/cpt/class-modula-cpt.php:1193
+msgid "Save as Pending"
+msgstr "Salvează ca în așteptare"
+
+#: includes/admin/cpt/class-modula-cpt.php:1188
+msgid "Save Draft"
+msgstr "Salvează ciorna"
+
+#: includes/admin/cpt/class-modula-cpt.php:1158
+msgid "Publish"
+msgstr "Publică"
+
+#: includes/libraries/action-scheduler/classes/ActionScheduler_AdminView.php:257
+msgid "About"
+msgstr "Despre"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:127
+msgid "Misc"
+msgstr "Diverse"
+
+#: includes/admin/editor/tinymce-galleries.php:99
+msgid "Images"
+msgstr "Imagini"
+
+#: includes/admin/editor/tinymce-galleries.php:84
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6876
+#: apps/gallery-listing/fields.js:304
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Type"
+msgstr "Tip"
+
+#: includes/admin/editor/tinymce-galleries.php:81
+msgid "Name"
+msgstr "Nume"
+
+#: includes/libraries/class-modula-review.php:22
+msgid "Remind me later"
+msgstr "Amintește-mi mai târziu"
+
+#: includes/libraries/class-modula-review.php:21
+msgid "Rate the plugin"
+msgstr "Evaluează modulul"
+
+#: includes/libraries/class-modula-review.php:23
+msgid "Don't show again"
+msgstr "Nu mai arăta"
+
+#: includes/features/widget/class-modula-widget.php:69
+msgid "Title:"
+msgstr "Titlu:"
+
+#: includes/features/widget/class-modula-widget.php:62
+msgid "Widget Title"
+msgstr "Titlu piesă"
+
+#: includes/features/migrate/wp-core-gallery/class-modula-wp-core-gallery-importer.php:126
+#: includes/features/third-party-builders/modula-beaver-block/includes/frontend.php:11
+msgid "No gallery was selected"
+msgstr "Nu ai selectat nicio galerie"
+
+#: includes/admin/cpt/class-modula-cpt.php:1135
+#: includes/admin/cpt/class-modula-field-builder.php:240
+#: apps/gallery-editor/components/shell/TakeoverTopBarShortcodes.jsx:367
+#: apps/gallery-listing/listingRowActions.js:100
+#: apps/gallery-listing/ShortcodeCell.jsx:43
+#: assets/js/admin/gallery-editor/index.js:6
+#: assets/js/admin/gallery-listing/index.js:140
+#: assets/js/admin/gallery-listing/index.js:142
+msgid "Copy shortcode"
+msgstr "Copiază scurt-codul"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:414
+msgid "Mobile Title Font Size"
+msgstr "Dimensiune font titlu pentru mobil"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:151
+#: includes/admin/rest-api/class-modula-extensions-base.php:192
+#: includes/admin/settings/class-modula-settings.php:594
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:897
+#: apps/gallery-editor/components/preview/selection-bar/GalleryPreviewSelectionBar.jsx:316
+#: apps/gallery-editor/components/preview/selection-bar/GalleryPreviewSelectionBar.jsx:323
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1275
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1695
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6386
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6426
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/701.js:11
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Watermark"
+msgstr "Filigran"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:143
+msgid "Pass Protect"
+msgstr "Protecție cu parolă"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:128
+msgid "Miscellaneous"
+msgstr "Diverse"
+
+#: includes/core/helpers/class-modula-helper.php:395
+msgid "Julia"
+msgstr "Julia"
+
+#: includes/core/helpers/class-modula-helper.php:394
+msgid "Milo"
+msgstr "Milo"
+
+#: includes/core/helpers/class-modula-helper.php:392
+msgid "Sarah"
+msgstr "Sarah"
+
+#: includes/core/helpers/class-modula-helper.php:391
+msgid "Dexter"
+msgstr "Dexter"
+
+#: includes/core/helpers/class-modula-helper.php:389
+msgid "Roxy"
+msgstr "Roxy"
+
+#: includes/core/helpers/class-modula-helper.php:388
+msgid "Ruby"
+msgstr "Ruby"
+
+#: includes/core/helpers/class-modula-helper.php:387
+msgid "Marley"
+msgstr "Marley"
+
+#: includes/core/helpers/class-modula-helper.php:386
+msgid "Oscar"
+msgstr "Oscar"
+
+#: includes/core/helpers/class-modula-helper.php:385
+msgid "Zoe"
+msgstr "Zoe"
+
+#: includes/core/helpers/class-modula-helper.php:384
+msgid "Layla"
+msgstr "Layla"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:159
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:160
+#: apps/gallery-editor/components/field/kinds/customCssTextareaKind.jsx:56
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3032
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3047
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-editor/index.js:17
+msgid "Custom CSS"
+msgstr "CSS personalizat"
+
+#: includes/features/third-party-builders/elementor/class-modula-elementor-check.php:108
+msgid "PHP"
+msgstr "PHP"
+
+#: includes/features/third-party-builders/elementor/class-modula-elementor-check.php:85
+msgid "Elementor"
+msgstr "Elementor"
+
+#: includes/features/third-party-builders/elementor/widgets/class-modula-elementor.php:65
+#: apps/gallery-editor/constants/contentBlockModalSections.js:11
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:289
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-editor/index.js:3
+msgid "Content"
+msgstr "Conținut"
+
+#: includes/features/duplicator/modula-duplicator-functions.php:111
+msgid "Untitled"
+msgstr "Fără titlu"
+
+#: includes/features/duplicator/modula-duplicator-functions.php:48
+#: includes/v2/admin/class-beta-gallery-admin.php:74
+#: includes/v2/admin/class-beta-gallery-admin.php:99
+#: includes/v2/admin/class-beta-gallery-admin.php:144
+#: includes/v2/admin/class-beta-gallery-admin.php:169
+msgid "Copy creation failed, could not find original:"
+msgstr "Crearea copiei a eșuat, nu am găsit originalul:"
+
+#: includes/admin/modula-js-templates.php:11
+msgid "Delete Image"
+msgstr "Șterge imaginea"
+
+#: includes/admin/modula-js-templates.php:9
+msgid "Edit Image"
+msgstr "Editează imaginea"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:397
+msgid "Title Color"
+msgstr "Culoare titlu"
+
+#: includes/features/third-party-builders/divi-extension/includes/modules/ModulaDivi/ModulaDivi.php:47
+msgid "Select Gallery"
+msgstr "Selectează galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:104
+#: assets/src/js/components/edit.js:328
+msgid "Edit Gallery"
+msgstr "Editează galeria"
+
+#: includes/admin/cpt/class-modula-cpt.php:101
+msgid "Add New Gallery"
+msgstr "Adaugă galerie nouă"
+
+#: includes/public/helpers/modula-helper-functions.php:558
+#: apps/gallery-listing/listingRowActions.js:23
+#: apps/gallery-shared/components/VisitorEditGalleryLink.jsx:26
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-listing/index.js:140
+#: assets/js/admin/wp-modula-gutenberg.js:253
+#: assets/js/front/modula-gallery.js:2 assets/src/js/components/edit.js:205
+#: assets/src/js/components/inspector.js:46
+msgid "Edit gallery"
+msgstr "Editează galeria"
+
+#: apps/gallery-editor/components/field/PlaceholderPatternControl.jsx:77
+#: assets/js/admin/gallery-editor/index.js:19
+#: assets/src/js/wp-modula-gutenberg.js:70
+msgid "gallery"
+msgstr "galerie"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:123
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4890
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Looking to add filters to your gallery?"
+msgstr "Vrei să adaugi filtre în galeria ta?"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:177
+#: apps/gallery-editor/components/sidebar/SidebarRailFooter.jsx:14
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Documentation"
+msgstr "Documentație"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:29
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:30
+#: apps/gallery-editor/components/bulk-edit/BulkEditTable.jsx:92
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:736
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:786
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:830
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1688
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4662
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4902
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7823
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7836
+#: assets/js/admin/gallery-editor/318.js:2
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Filters"
+msgstr "Filtre"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:124
+msgid "Ugrade to Modula Premium today and get access to filters and separate the images in your gallery."
+msgstr "Actualizează azi la Modula Premium ca să ai acces la filtre și separi imaginile din galerie."
+
+#: includes/admin/cpt/class-modula-field-builder.php:130
+msgid "Drag & Drop files here!"
+msgstr "Trage și plasează fișierele aici!"
+
+#: includes/admin/listing/class-gallery-listing-output.php:52
+#: includes/admin/listing/class-gallery-listing-output.php:88
+#: includes/v2/admin/class-beta-gallery-admin.php:666
+msgid "Beta"
+msgstr "Beta"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:121
+msgid "Responsive Settings"
+msgstr "Setări responsive"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:120
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:399
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1674
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3257
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Responsive"
+msgstr "Responsiv"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:32
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:61
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:76
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:91
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:99
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:107
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:115
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:130
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:138
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:146
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:154
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:169
+msgid "PRO"
+msgstr "Pro"
+
+#: includes/admin/cpt/class-modula-field-builder.php:132
+msgid "Drop files to upload"
+msgstr "Trage fișiere pentru a le încărca"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:113
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:3108
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Allow Modula to automatically optimize your images to load as fast as possible by reducing their file sizes, resizing them and serving them from StackPath's content delivery network."
+msgstr "Permite ca Modula să îți optimizeze automat imaginile pentru a fi încărcate cât mai repede posibil prin reducerea dimensiunilor, redimensionarea și servirea lor din rețeaua pentru livrarea conținutului oferită de StackPath."
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:112
+msgid "Looking to make your gallery load faster ?"
+msgstr "Vrei ca galeria ta să se încarce mai repede?"
+
+#: includes/admin/templates/modal/modula-modal-video-upgrade.php:32
+#: includes/admin/upsells/class-modula-tab-content-handler.php:101
+msgid "Trying to add a video to your gallery?"
+msgstr "Încerci să adăugi un video în galerie?"
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:79
+msgid "Not enough control?"
+msgstr "Nu ai destul control?"
+
+#: includes/admin/cpt/class-modula-field-builder.php:784
+msgid "This effect is compatible with:"
+msgstr "Acest efect este compatibil cu:"
+
+#: includes/core/helpers/class-modula-helper.php:380
+msgid "Comodo"
+msgstr "Comodo"
+
+#: includes/core/helpers/class-modula-helper.php:379
+msgid "Seemo"
+msgstr "Seemo"
+
+#: includes/core/helpers/class-modula-helper.php:378
+msgid "Crafty"
+msgstr "Crafty"
+
+#: includes/core/helpers/class-modula-helper.php:377
+msgid "Appear"
+msgstr "Appear"
+
+#: includes/core/helpers/class-modula-helper.php:376
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:855
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6301
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7036
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7988
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Lens"
+msgstr "Lens"
+
+#: includes/core/helpers/class-modula-helper.php:375
+msgid "Curtain"
+msgstr "Curtain"
+
+#: includes/core/helpers/class-modula-helper.php:374
+msgid "Reflex"
+msgstr "Reflex"
+
+#: includes/core/helpers/class-modula-helper.php:373
+msgid "Catinelle"
+msgstr "Catinelle"
+
+#: includes/core/helpers/class-modula-helper.php:372
+msgid "Quiet"
+msgstr "Quiet"
+
+#: includes/core/helpers/class-modula-helper.php:368
+msgid "Fluid Up"
+msgstr "Fluid Up"
+
+#: includes/core/helpers/class-modula-helper.php:355
+msgid "Pufrobo"
+msgstr "Pufrobo"
+
+#: includes/core/helpers/class-modula-helper.php:354
+#: includes/core/helpers/class-modula-helper.php:516
+#: includes/core/helpers/class-modula-helper.php:726
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderMotionSection.jsx:7
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderMotionSection.jsx:14
+#: apps/gallery-editor/components/hover-effect-builder/HoverBuilderMotionSection.jsx:31
+#: apps/gallery-editor/components/hover-effect-builder/hoverBuilderPresets.js:6
+#: apps/gallery-editor/components/sidebar/settings-panel/resolveDrillSummaryParts.js:612
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:910
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6870
+#: assets/js/admin/gallery-editor/680.js:2
+#: assets/js/admin/gallery-editor/index.js:15
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "None"
+msgstr "Niciunul"
+
+#: includes/admin/cpt/class-modula-field-builder.php:148
+msgid "Uploading image"
+msgstr "Încărcarea imaginii"
+
+#: includes/admin/cpt/class-modula-cpt.php:127
+#: includes/features/gutenberg/class-modula-gutenberg.php:115
+#: includes/features/third-party-builders/divi-extension/includes/modules/ModulaDivi/ModulaDivi.php:18
+#: includes/features/third-party-builders/divi-extension/includes/modules/ModulaDivi/ModulaDivi.php:24
+#: includes/features/third-party-builders/modula-beaver-block/class-modula-beaver-block.php:14
+#: includes/features/third-party-builders/modula-beaver-block/class-modula-beaver-block.php:33
+#: includes/features/widget/class-modula-widget.php:15
+msgid "Modula Gallery"
+msgstr "Galerie Modula"
+
+#: includes/admin/cpt/class-modula-field-builder.php:795
+msgid "Social Icons"
+msgstr "Iconuri sociale"
+
+#. Plugin URI of the plugin
+#: Modula.php
+msgid "https://wp-modula.com/"
+msgstr "https://wp-modula.com/"
+
+#. Plugin Name of the plugin
+#: Modula.php includes/admin/cpt/class-modula-cpt.php:95
+#: includes/admin/cpt/class-modula-cpt.php:96
+#: includes/features/third-party-builders/elementor/widgets/class-modula-elementor.php:49
+#: includes/features/third-party-builders/modula-beaver-block/class-modula-beaver-block.php:16
+#: apps/gallery-listing/GalleryListingApp.jsx:604
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Modula"
+msgstr "Modula"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:51
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1679
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2251
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Loading effects"
+msgstr "Încarc efectele"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:45
+msgid "Social Settings"
+msgstr "Setări sociale"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:37
+msgid "Captions"
+msgstr "Texte asociate"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:16
+msgid "General Settings"
+msgstr "Setări generale"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:15
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1672
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:26
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "General"
+msgstr "Generale"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:67
+msgid "Hover Effect Settings"
+msgstr "Setări efect de trecere peste"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:73
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:205
+#: includes/admin/rest-api/class-modula-extensions-base.php:185
+#: includes/admin/templates/modal/modula-modal-video-upgrade.php:27
+#: includes/admin/upsells/class-modula-button-handler.php:47
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:751
+#: apps/gallery-editor/components/gallery-reorder/buildGalleryReorderRows.js:96
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1495
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1685
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5269
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7842
+#: apps/gallery-editor/utils/takeoverAddNewMenuModel.js:58
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/701.js:9
+#: assets/js/admin/gallery-editor/701.js:25
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Video"
+msgstr "Video"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:74
+msgid "Video Settings"
+msgstr "Setări video"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:81
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:374
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1678
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2937
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6215
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Style"
+msgstr "Stil"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:82
+msgid "Style Settings"
+msgstr "Setări stil"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:89
+msgid "Optimize your images"
+msgstr "Optimizează imaginile"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:277
+#: includes/admin/settings/class-modula-settings.php:1049
+#: apps/gallery-editor/components/field/kinds/dimensionsKind.jsx:27
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6552
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-editor/index.js:25
+msgid "Height"
+msgstr "Înălțime"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:276
+#: includes/admin/settings/class-modula-settings.php:1043
+#: apps/gallery-editor/components/field/kinds/dimensionsKind.jsx:24
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:6577
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-editor/index.js:25
+msgid "Width"
+msgstr "Lățime"
+
+#: apps/gallery-editor/components/schema/SchemaCompositeRow.jsx:58
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Gutter"
+msgstr "Margine de legătură"
+
+#: includes/v2/rest/class-listing-controller.php:1684
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:228
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Custom grid"
+msgstr "Grilă personalizată"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:192
+msgid "Gallery Type"
+msgstr "Tip de galerie"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:180
+msgid "Explore our documentation"
+msgstr "Studiază documentația noastră"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:370
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:877
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "No link"
+msgstr "Nicio legătură"
+
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:565
+#: apps/gallery-editor/components/shell/TakeoverTopBarShortcodes.jsx:265
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7703
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/index.js:4
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Link"
+msgstr "Legătură"
+
+#: includes/admin/cpt/class-modula-cpt.php:114
+msgid "Use as featured image"
+msgstr "Folosește ca imagine reprezentativă"
+
+#: includes/admin/cpt/class-modula-cpt.php:113
+msgid "Remove featured image"
+msgstr "Înlătură imaginea reprezentativă"
+
+#: includes/admin/cpt/class-modula-cpt.php:111
+msgid "Featured Image"
+msgstr "Imagine reprezentativă"
+
+#: includes/admin/cpt/class-modula-cpt.php:107
+msgid "View Items"
+msgstr "Vezi elementele"
+
+#: includes/admin/dashboard/class-modula-dashboard.php:46
+#: apps/shared-ui/page-nav/adminPageTabs.js:22
+#: assets/js/admin/extensions/index.js:7
+#: assets/js/admin/gallery-editor/index.js:30
+#: assets/js/admin/general-settings/index.js:1
+#: assets/js/admin/insights/index.js:1
+msgid "Partners"
+msgstr "Parteneri"
+
+#: includes/admin/class-modula-admin.php:101
+#: includes/admin/class-modula-admin.php:102
+#: includes/admin/cpt/class-modula-cpt.php:1101
+#: includes/admin/dashboard/class-modula-dashboard.php:50
+#: includes/admin/dashboard/class-modula-dashboard.php:222
+#: apps/shared-ui/page-nav/adminPageTabs.js:29
+#: assets/js/admin/extensions/index.js:7
+#: assets/js/admin/gallery-editor/index.js:30
+#: assets/js/admin/general-settings/index.js:1
+#: assets/js/admin/insights/index.js:1
+msgid "Extensions"
+msgstr "Extensii"
+
+#: includes/admin/class-modula-admin.php:129
+#: includes/admin/class-modula-admin.php:130
+#: includes/admin/cpt/class-modula-cpt.php:153
+#: includes/admin/dashboard/class-modula-dashboard.php:192
+#: apps/extensions/components/extension-table-row.jsx:82
+#: apps/gallery-editor/components/sidebar/GallerySidebarRail.jsx:47
+#: apps/gallery-editor/components/sidebar/settings-panel/SettingsPanelHeader.jsx:22
+#: assets/js/admin/extensions/index.js:1
+#: assets/js/admin/gallery-editor/701.js:2
+#: assets/js/admin/gallery-editor/701.js:10
+msgid "Settings"
+msgstr "Setări"
+
+#: includes/admin/cpt/class-modula-cpt.php:102
+#: includes/admin/cpt/class-modula-field-builder.php:114
+#: apps/gallery-editor/components/preview/PreviewAddNewSplit.jsx:105
+#: assets/js/admin/gallery-editor/701.js:25
+msgid "Add New"
+msgstr "Adaugă nou"
+
+#: includes/admin/cpt/class-modula-cpt.php:94
+#: includes/admin/cpt/class-modula-cpt.php:147
+#: includes/admin/settings/class-modula-settings.php:1154
+#: includes/v2/admin/class-settings-editor-metabox.php:521
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemContentBlockPanel.jsx:137
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemContentBlockPanel.jsx:153
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:277
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:293
+#: apps/gallery-editor/components/gallery-reorder/GalleryReorderSetupStep.jsx:48
+#: apps/gallery-editor/components/preview/filters-preview/FiltersPreviewGalleryStub.jsx:13
+#: apps/gallery-listing/fields.js:126
+#: apps/gallery-listing/ListingQuickEditModal.jsx:184
+#: assets/js/admin/gallery-editor/352.js:7
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/701.js:8
+#: assets/js/admin/gallery-listing/index.js:155
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Gallery"
+msgstr "Galerie"
+
+#: includes/admin/cpt/class-modula-cpt.php:100
+#: includes/admin/dashboard/class-modula-dashboard.php:207
+#: includes/v2/admin/class-gallery-listing-admin.php:44
+#: includes/v2/admin/class-gallery-listing-admin.php:45
+#: apps/gallery-editor/components/shell/GalleryTakeoverTopBar.jsx:44
+#: apps/gallery-listing/fields.js:310
+#: apps/gallery-listing/GalleryListingApp.jsx:612
+#: apps/gallery-listing/ListingSelectAllChooserDialog.jsx:21
+#: assets/js/admin/gallery-editor/index.js:9
+#: assets/js/admin/gallery-listing/index.js:155
+#: assets/js/admin/gallery-listing/index.js:156
+msgid "Galleries"
+msgstr "Galerii"
+
+#: includes/admin/media/class-modula-image.php:146
+#: includes/admin/media/class-modula-image.php:158
+msgid "The dimensions of the original image could not be retrieved for cropping."
+msgstr "Dimensiunile imaginii originale nu au putut fi preluate pentru decupare."
+
+#: includes/admin/media/class-modula-image.php:133
+#: includes/admin/media/class-modula-image.php:138
+msgid "No file could be found for the image URL specified."
+msgstr "Nu a putut fi găsit niciun fișier la URL-ul imaginii specificat."
+
+#: includes/admin/media/class-modula-image.php:94
+msgid "No image with this ID."
+msgstr "Nicio imagine cu acest ID."
+
+#: includes/admin/upsells/class-modula-settings-tab-handler.php:277
+msgid "Modula Video"
+msgstr "Modula Video"
+
+#: includes/admin/modula-js-templates.php:176
+#: includes/admin/modula-js-templates.php:177
+msgid "Save & Close"
+msgstr "Salvează și închide"
+
+#: includes/admin/cpt/class-modula-cpt.php:1175
+#: includes/admin/modula-js-templates.php:174
+#: apps/gallery-editor/legacy-z/components/image-metadata-modal/ImageMetadataModalFooter.jsx:58
+#: apps/general-settings/SaveButton.jsx:42
+#: assets/js/admin/general-settings/index.js:3
+msgid "Save"
+msgstr "Salvează"
+
+#: includes/admin/modula-js-templates.php:173
+msgid "Save Metadata"
+msgstr "Salvează metadatele"
+
+#: includes/admin/modula-js-templates.php:111
+msgid "Opens your image links in a new browser window / tab."
+msgstr "Deschide legăturile imaginilor într-o fereastră/filă nouă a navigatorului."
+
+#: includes/admin/modula-js-templates.php:99
+msgid "URL"
+msgstr "URL"
+
+#: includes/admin/modula-js-templates.php:91
+msgid "bottom"
+msgstr "jos"
+
+#: includes/admin/modula-js-templates.php:90
+msgid "middle"
+msgstr "mijloc"
+
+#: includes/admin/modula-js-templates.php:89
+msgid "top"
+msgstr "sus"
+
+#: includes/admin/modula-js-templates.php:86
+msgid "right"
+msgstr "dreapta"
+
+#: includes/admin/modula-js-templates.php:85
+msgid "center"
+msgstr "centru"
+
+#: includes/admin/modula-js-templates.php:84
+msgid "left"
+msgstr "stânga"
+
+#: includes/admin/modula-js-templates.php:82
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:54
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:4872
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:5866
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Alignment"
+msgstr "Aliniere"
+
+#: includes/admin/modula-js-templates.php:75
+msgid "Caption Text"
+msgstr "Text asociat"
+
+#: includes/admin/modula-js-templates.php:69
+msgid "Very important for SEO, the Alt Text describes the image."
+msgstr "Foarte important pentru SEO, tag-ul Alt descrie imaginea."
+
+#: includes/admin/modula-js-templates.php:66
+msgid "Alt Text"
+msgstr "Text alternativ"
+
+#: includes/admin/modula-js-templates.php:36
+msgid "Edit Metadata"
+msgstr "Editează metadatele"
+
+#: includes/admin/modula-js-templates.php:33
+msgid "Edit next media item"
+msgstr "Editează următorul element media"
+
+#: includes/admin/modula-js-templates.php:32
+msgid "Edit previous media item"
+msgstr "Editează elementul media anterior"
+
+#: includes/admin/cpt/class-modula-field-builder.php:787
+#: includes/admin/modula-js-templates.php:56
+#: apps/gallery-editor/components/bulk-edit/BulkEditRow.jsx:270
+#: apps/gallery-editor/components/bulk-edit/BulkEditTable.jsx:82
+#: apps/gallery-editor/components/gallery-item-edit-panel/GalleryItemEditPanel.jsx:525
+#: apps/gallery-editor/components/hover-effect-builder/HoverEffectBuilderAuxiliaryPanel.jsx:96
+#: apps/gallery-editor/components/hover-effect-builder/HoverEffectBuilderCard.jsx:82
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:7670
+#: apps/gallery-listing/ListingQuickEditModal.jsx:193
+#: assets/js/admin/gallery-editor/318.js:1
+#: assets/js/admin/gallery-editor/318.js:2
+#: assets/js/admin/gallery-editor/352.js:6
+#: assets/js/admin/gallery-editor/680.js:5
+#: assets/js/admin/gallery-editor/701.js:4
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-listing/index.js:155
+msgid "Title"
+msgstr "Titlu"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:431
+msgid "Caption Color"
+msgstr "Culoare text asociat"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:439
+msgid "Caption Font Size"
+msgstr "Dimensiune font text asociat"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:405
+msgid "Title Font Size"
+msgstr "Dimensiune font titlu"
+
+#: includes/admin/media/class-modula-image.php:113
+msgid "No image URL specified for cropping."
+msgstr "Nicio URL imagine specificat pentru decupare."
+
+#: includes/admin/modula-js-templates.php:145
+msgid "Hide Title"
+msgstr "Ascunde titlul"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:357
+msgid "Shuffle images"
+msgstr "Amestecă imaginile"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:22
+msgid "Lightbox &amp; Links"
+msgstr "Casetă luminoasă și legături"
+
+#: includes/admin/media/class-modula-image.php:288
+msgid "No image editor could be selected. Please verify with your webhost that you have either the GD or Imagick image library compiled with your PHP install on your server."
+msgstr "Nu a putut fi seletat niciun editor de imagini. Te rog să îți întrebi webhost-ul dacă are fie biblioteca de imagini GD sau Imagick compilate cu instalarea PHP pe server."
+
+#. Description of the plugin
+#: Modula.php includes/admin/cpt/class-modula-cpt.php:128
+msgid "Modula is the most powerful, user-friendly WordPress gallery plugin. Add galleries, masonry grids and more in a few clicks."
+msgstr "Modula este cel mai performant şi uşor de utilizat modul WordPress pentru galerii. Adaugă galerii, grile compacte, şi multe altele cu doar câteva clicuri."
+
+#: includes/admin/upsells/class-modula-tab-content-handler.php:80
+msgid "Upgrade to Modula Premium today to unlock the ability to scale an image, and add horizontal/vertical slides..."
+msgstr "Actualizează astăzi la Modula Premium pentru a debloca posibilitatea de a redimensiona o imagine și de a adăuga diapozitive orizontale/verticale. "
+
+#: includes/admin/templates/modal/modula-modal-video-upgrade.php:35
+#: includes/admin/upsells/class-modula-tab-content-handler.php:102
+msgid "Adding a video gallery with self-hosted videos or videos from sources like YouTube and Vimeo to your website has never been easier."
+msgstr "Adăugarea unei galerii video pe site-ul tău web, cu videouri auto-găzduite sau cu videouri din surse, cum ar fi YouTube și Vimeo, nu a fost niciodată mai ușoară."
+
+#: includes/admin/cpt/class-modula-cpt.php:119
+msgid "Filter items list"
+msgstr "Filtrează lista cu elemente"
+
+#: includes/admin/cpt/class-modula-cpt.php:118
+msgid "Items list navigation"
+msgstr "Navigare în lista cu elemente"
+
+#: includes/admin/cpt/class-modula-cpt.php:110
+msgid "Not found in Trash"
+msgstr "Nu am găsit la gunoi"
+
+#: includes/admin/modula-js-templates.php:183
+msgid "Saved."
+msgstr "Am salvat."
+
+#: includes/core/helpers/class-modula-helper.php:371
+#: apps/gallery-editor/components/preview/selection-bar/GalleryPreviewSelectionBar.jsx:435
+#: apps/gallery-editor/components/schema/SchemaCollapsibleFieldGroup.jsx:48
+#: apps/gallery-editor/utils/boundGalleryChromePolicy.js:151
+#: assets/js/admin/gallery-editor/701.js:14
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:11
+msgid "Hide"
+msgstr "Ascunde"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:614
+#: apps/gallery-editor/components/hover-effect-builder/HoverEffectPresetRow.jsx:32
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:926
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2850
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+#: assets/js/admin/gallery-editor/index.js:30
+msgid "Hover effect"
+msgstr "Efect trecere peste"
+
+#: includes/admin/cpt/class-modula-cpt.php:117
+msgid "Items list"
+msgstr "Listă cu elemente"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:574
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:2282
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Scale"
+msgstr "Redimensionează"
+
+#: includes/admin/cpt/class-modula-cpt.php:112
+msgid "Set featured image"
+msgstr "Stabilește imaginea reprezentativă"
+
+#: includes/admin/cpt/class-modula-cpt.php:159
+#: includes/admin/cpt/class-modula-cpt.php:1124
+#: apps/gallery-editor/components/gallery-reorder/buildGalleryReorderRows.js:43
+#: assets/js/admin/gallery-editor/701.js:9
+msgid "Shortcode"
+msgstr "Scurt-cod"
+
+#: includes/admin/cpt/class-modula-field-builder.php:148
+msgid "of"
+msgstr "din"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:180
+msgid "Contact our support team."
+msgstr "Contactează echipa noastră pentru suport."
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:180
+msgid "Still stuck ?"
+msgstr "Încă ești blocat?"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:52
+msgid "Loading Effects Settings"
+msgstr "Încarc setările pentru efecte"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:44
+#: apps/gallery-editor/components/hover-effect-builder/HoverEffectBuilderAuxiliaryPanel.jsx:98
+#: apps/gallery-editor/components/hover-effect-builder/HoverEffectBuilderCard.jsx:84
+#: apps/gallery-editor/generated/modula-settings-editor-structure.js:1687
+#: apps/gallery-editor/generated/modula-settings-form-schema.js:1895
+#: assets/js/admin/gallery-editor/352.js:6
+#: assets/js/admin/gallery-editor/680.js:5
+#: assets/js/admin/gallery-editor/index.js:3
+#: assets/js/admin/gallery-editor/index.js:16
+msgid "Social"
+msgstr "Social"
+
+#: includes/admin/cpt/class-modula-cpt-fields-helper.php:38
+msgid "Caption Settings"
+msgstr "Setări texte asociate"
+
+#: apps/gallery-editor/components/shell/BoundGalleryBadge.jsx:183
+#: assets/js/admin/gallery-editor/index.js:9
+msgid "Upgrade to Pro"
+msgstr "Actualizează la Pro"
+
+#: includes/core/helpers/class-modula-helper.php:117
+#: includes/public/shortcode/class-modula-shortcode-modern.php:49
+#: includes/public/shortcode/class-modula-shortcode-modern.php:55
+#: includes/public/shortcode/class-modula-shortcode-modern.php:65
+#: includes/public/shortcode/class-modula-shortcode-modern.php:77
+#: includes/public/shortcode/class-modula-shortcode.php:164
+#: includes/public/shortcode/class-modula-shortcode.php:203
+#: includes/public/shortcode/class-modula-shortcode.php:285
+#: includes/v2/class-gallery-post.php:48
+#: includes/v2/rest/class-settings-controller.php:208
+#: includes/v2/rest/class-settings-controller.php:226
+#: includes/v2/rest/class-settings-controller.php:551
+#: includes/v2/rest/class-settings-controller.php:576
+#: includes/v2/shortcode/class-shortcode.php:85
+#: includes/v2/shortcode/class-shortcode.php:98
+#: includes/v2/shortcode/class-shortcode.php:115
+#: includes/v2/shortcode/class-shortcode.php:134
+msgid "Gallery not found."
+msgstr "Nu am găsit galeria."

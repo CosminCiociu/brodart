@@ -1,0 +1,167 @@
+<div <?php echo Modula_Helper::generate_attributes( $data->gallery_container ); ?>>
+	<?php
+	/**
+	 * Hook: modula_shortcode_before_items.
+	 *
+	 * @hooked modula_edit_gallery - 100
+	 */
+	do_action( 'modula_shortcode_before_items', $data->settings );
+	?>
+	<div <?php echo Modula_Helper::generate_attributes( $data->items_container ); ?>>
+		<?php
+
+		$item_data = array();
+
+		foreach ( $data->images as $image ) {
+			$image_object = get_post( $image['id'] );
+
+			$item_is_not_image = ( is_wp_error( $image_object ) || get_post_type( $image_object ) != 'attachment' );
+
+			if ( apply_filters( 'modula_check_item_not_image', $item_is_not_image, $image ) ) {
+				continue;
+			}
+			$mime_type = get_post_mime_type( $image['id'] );
+			if ( 'image/heic' === $mime_type || 'image/heif' === $mime_type ) {
+				$full_img_src = wp_get_attachment_image_src( $image['id'], 'full' );
+				if ( ! $full_img_src || ! isset( $full_img_src[0] ) ) {
+					continue;
+				}
+				$full_img_src = $full_img_src[0];
+			} else {
+				$full_img_src = wp_get_original_image_url( $image['id'] );
+			}
+
+			// Check per gallery & per image if we should show title.
+			$should_hide_title = ( Modula_Helper::is_truthy_flag( $data->settings['hide_title'] ) || ( isset( $image['hide_title'] ) && Modula_Helper::is_truthy_flag( $image['hide_title'] ) ) );
+			$is_slider         = isset( $data->settings['slider_image_crop'] );
+			$custom_size       = $is_slider ? 'custom' === $data->settings['slider_image_size'] : 'custom' === $data->settings['grid_image_size'];
+			$crop              = $is_slider ? boolval( $data->settings['slider_image_crop'] ) : boolval( $data->settings['grid_image_crop'] );
+
+			$enable_social              = Modula_Helper::is_truthy_flag( $data->settings['enableSocial'] );
+			$social_desktop_collapsed   = Modula_Helper::is_truthy_flag( $data->settings['socialDesktopCollapsed'] );
+
+			// Create array with data in order to send it to image template
+			$item_data = array(
+				/* Item Elements */
+				'title'                  => Modula_Helper::get_title( $image, 'title' ),
+				'description'            => Modula_Helper::get_description( $image, 'caption' ),
+				'lightbox'               => $data->settings['lightbox'],
+
+				/* What to show from elements */
+				'hide_title'             => $should_hide_title,
+				'hide_description'       => Modula_Helper::is_truthy_flag( $data->settings['hide_description'] ),
+				'enableSocial'           => $enable_social,
+				'hide_socials'           => ! $enable_social || $social_desktop_collapsed,
+				'enableTwitter'          => Modula_Helper::is_truthy_flag( $data->settings['enableTwitter'] ),
+				'enableWhatsapp'         => Modula_Helper::is_truthy_flag( $data->settings['enableWhatsapp'] ),
+				'enableFacebook'         => Modula_Helper::is_truthy_flag( $data->settings['enableFacebook'] ),
+				'enablePinterest'        => Modula_Helper::is_truthy_flag( $data->settings['enablePinterest'] ),
+				'enableLinkedin'         => Modula_Helper::is_truthy_flag( $data->settings['enableLinkedin'] ),
+				'enableEmail'            => Modula_Helper::is_truthy_flag( $data->settings['enableEmail'] ),
+				'socialDesktopCollapsed' => $social_desktop_collapsed,
+				'lazyLoad'               => modula_run_lazy_load( $data->settings ),
+				/* Full gallery settings for sizes/srcset estimate (modula_sources_and_sizes). */
+				'settings'               => $data->settings,
+				'gallery_type'           => $data->settings['type'],
+				// Video defaults (some extensions expect these properties to exist).
+				'video_template'         => false,
+				'video_type'             => false,
+
+				/* Item container attributes & classes */
+				'item_classes'           => array( 'modula-item' ),
+				'item_attributes'        => array(),
+
+				/* Item link attributes & classes */
+				'link_classes'           => array( 'tile-inner', 'modula-item-link' ),
+				'link_attributes'        => array(
+					'data-image-id' => $image['id'],
+					/*Accessibility */
+					'role'          => 'button',
+				),
+
+				/* Item img attributes & classes */
+				'img_classes'            => array( 'pic', 'wp-image-' . $image['id'] ),
+
+				'img_attributes'         => array(
+					'data-valign' => isset( $image['valign'] )
+					? esc_attr( $image['valign'] ) : 'center',
+					'data-halign' => isset( $image['halign'] )
+					? esc_attr( $image['halign'] ) :
+					'center',
+					'alt'         => isset( $image['alt'] ) ? $image['alt'] : '',
+					'data-full'   => $full_img_src,
+					'title'       => isset( $image['title'] ) ? $image['title'] : '',
+					'crop'        => $custom_size && $crop,
+				),
+				'social_attributes'      => array(
+					'data-modula-gallery-id' => preg_replace( '/[^0-9]/', '', $data->gallery_id ),
+					'data-modula-item-id'    => absint( $image['id'] ),
+					'data-modula-image-src'  => $full_img_src,
+				),
+			);
+
+			if ( isset( $image['togglelightbox'] ) && 1 === $image['togglelightbox'] ) {
+				$item_data['link_classes'][] = 'modula-simple-link'; //prevent the lightboxification
+				$item_data['link_classes'][] = 'modula-no-follow'; //prevent the opening of the image
+			}
+			// need this to model the image attributes.
+			$image = apply_filters( 'modula_shortcode_image_data', $image, $data->settings );
+
+			// Let's set the data used for the srcset and sizes behaviour.
+			// If the image size is custom and cropped, the srcset and sizes should not be set to avoid the browser
+			// to load the wrong image. This is particular problematic when using the SpeedUp extension.
+			if ( in_array( $data->settings['type'], array( 'creative-gallery', 'grid', 'custom-grid', 'polaroid' ), true ) ) {
+				// Specify if the image size is custom.
+				if ( 'custom' === $data->settings['grid_image_size'] ) {
+					$item_data['custom_grid'] = true;
+				}
+				// Custom grid has a different setting name for the image crop.
+				if ( 'custom-grid' !== $data->settings['type'] ) {
+					// Specify if the image is cropped.
+					if ( isset( $data->settings['grid_image_crop'] ) && '1' === $data->settings['grid_image_crop'] ) {
+						$item_data['crop'] = true;
+					}
+				} else {
+					// Specify if the image is cropped.
+					if ( isset( $data->settings['img_crop'] ) && '1' === $data->settings['img_crop'] ) {
+						$item_data['crop'] = true;
+					}
+				}
+			}
+
+			/**
+			 * Hook: modula_shortcode_item_data.
+			 *
+			 * @hooked modula_generate_image_links - 10
+			 * @hooked modula_check_lightboxes_and_links - 15
+			 * @hooked modula_check_hover_effect - 20
+			 * @hooked modula_check_custom_grid - 25
+			 * @hooked modula_enable_lazy_load - 30
+			 *
+			 */
+			$item_data = apply_filters( 'modula_shortcode_item_data', $item_data, $image, $data->settings, $data->images );
+
+			do_action( 'modula_shortcode_before_item', $data->settings, $item_data );
+			$data->loader->set_template_data( $item_data );
+			$slug = apply_filters( 'modula_item_template_slug', 'items/item', $data->settings, $image );
+			$default_item_tpl = Modula_Helper::classic_item_template_name( $data->settings );
+			$name = apply_filters( 'modula_item_template_name', $default_item_tpl, $data->settings, $image );
+			$data->loader->get_template_part( $slug, $name );
+			do_action( 'modula_shortcode_after_item', $data->settings, $item_data );
+		}
+
+		?>
+	</div>
+	<?php
+
+	/**
+	 * Hook: modula_shortcode_after_items.
+	 *
+	 * @hooked modula_edit_gallery - 100
+	 * @hooked modula_show_schemaorg - 90
+	 * @hooked modula_show_items_schemaorg - 91
+	 * @hooked modula_slider_syncing - 85
+	 */
+	do_action( 'modula_shortcode_after_items', $data->settings, $item_data, $data->images );
+	?>
+</div>

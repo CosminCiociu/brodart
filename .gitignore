@@ -1,0 +1,45 @@
+# ----------------------------------
+# WordPress sensitive/local files
+# ----------------------------------
+.htaccess
+wp-config.php
+
+# ----------------------------------
+# Generated WordPress data
+# ----------------------------------
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+wp-content/languages/*.mo
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/object-cache.php
+wp-content/debug.log
+wp-content/*.log
+
+# ----------------------------------
+# Local environment and editor files
+# ----------------------------------
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# ----------------------------------
+# Dependency folders / package managers
+# ----------------------------------
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+yarn.lock
+
+# Optional: if you keep custom theme/plugin code in Git, do NOT ignore:
+# wp-content/themes/
+# wp-content/plugins/
