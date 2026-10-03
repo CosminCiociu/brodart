@@ -28,10 +28,13 @@ alb, imagini mari, tipografie elegantă. Galeriile foto (lookbook) se inspiră d
 | Text muted           | `#6B6B6B` | Subtitluri, descrieri, meta info            |
 | Border / divider     | `#E5E3E0` | Linii separatoare, borduri de input/carduri |
 | Accent (opțional)    | `#A9A296` | Detalii discrete (badge-uri, linkuri hover) |
+| Accent hover         | `#8B8175` | Hover pentru linkuri și butoane secundare   |
 
 Reguli:
 
 - Nu se folosesc culori saturate (roșu, albastru electric, verde neon etc).
+- Albastrul electric, albastrul-gri și turcoazul nu se folosesc în Home sau în
+  componentele editoriale; înlocuiește-le cu accentul taupe și tonuri neutre.
 - Contrastul text/fundal trebuie să respecte minim AA (WCAG) pentru accesibilitate.
 - Aceleași variabile de culoare se aplică global din Customizer → Global Colors (Blocksy),
   nu hardcodat per pagină/bloc.
@@ -74,6 +77,8 @@ Reguli:
 - Toate imaginile produs/hero trebuie să fie de rezoluție mare, aspect ratio consistent
   (ex: 4:5 pentru produse, 16:9 sau full-width pentru hero-uri).
 - Fără filtre/culori artificiale — imagini naturale, lumină bună, fundal neutru.
+- Textul peste imagini folosește un overlay uniform, închis și discret, cu opacitate
+  suficientă pentru lizibilitate; nu se suprapun mai multe overlay-uri translucide.
 - Lazy-loading activat pentru toate imaginile sub fold.
 - Hover pe imagine produs: fade discret către a doua imagine (dacă există) sau zoom
   foarte ușor (scale 1.03, tranziție 400ms).

@@ -1,0 +1,228 @@
+.brodart-measurement {
+  clear: both;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border: 0;
+  border-block: 1px solid var(--theme-border-color, #e5e5e5);
+}
+
+.brodart-measurement legend {
+  padding-inline: 0;
+  font-weight: 600;
+}
+
+.brodart-measurement__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+}
+
+.brodart-measurement__fields label {
+  display: grid;
+  gap: 0.4rem;
+  font-weight: 500;
+}
+
+.brodart-measurement__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brodart-measurement__input-wrap input {
+  min-width: 0;
+  width: 100%;
+  min-height: 2.75rem;
+}
+
+.brodart-measurement__fields small,
+.brodart-measurement__note {
+  color: var(--theme-text-color, #555);
+  font-size: 0.875rem;
+}
+
+.brodart-measurement__note {
+  margin-block: 0.75rem 0;
+}
+
+.brodart-measurement__options {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.brodart-measurement__options legend {
+  margin-bottom: 0.25rem;
+}
+
+.brodart-measurement__option {
+  display: grid;
+  grid-template-columns: auto 1fr minmax(5rem, 7rem);
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+}
+
+.brodart-measurement__option img {
+  display: block;
+  width: 100%;
+  max-height: 4.5rem;
+  object-fit: contain;
+  object-position: right center;
+}
+
+.brodart-measurement__option strong {
+  font-size: 0.9rem;
+}
+
+.brodart-measurement__summary {
+  display: grid;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+}
+
+.brodart-measurement__summary > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brodart-measurement__summary dt,
+.brodart-measurement__summary dd {
+  margin: 0;
+}
+
+.brodart-measurement__summary .brodart-measurement__total {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--theme-border-color, #e5e5e5);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.brodart-measurement__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 0;
+  font-size: 1.125rem;
+}
+
+.brodart-price-unit {
+  font-size: 0.875em;
+  font-weight: 400;
+}
+
+/* Edit class to display inline */
+.brodart-color-swatches {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brodart-color-swatch {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  width: 120px;
+}
+
+.brodart-color-swatch:hover,
+.brodart-color-swatch[aria-pressed="true"] {
+  border-color: #111;
+}
+
+.brodart-color-swatch__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.brodart-color-swatch:focus-visible {
+  outline: 2px solid var(--theme-palette-color-1, #a99678);
+  outline-offset: 2px;
+}
+
+.brodart-color-swatch__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--theme-palette-color-6, #f2f2f2);
+}
+
+.brodart-color-swatch__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brodart-color-swatch__label {
+  display: block;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.875rem;
+}
+
+.brodart-color-select-accessible {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.brodart-purchase-guidance {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1rem 0 0;
+  color: var(--theme-text-color, #555);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.brodart-purchase-guidance p {
+  margin: 0;
+}
+
+.brodart-purchase-guidance a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.brodart-product-information {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--theme-border-color, #e5e5e5);
+}
+
+.brodart-product-information h2 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.brodart-product-information h2:first-child {
+  margin-top: 0;
+}
+
+.brodart-product-information p {
+  margin: 0 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .brodart-measurement__fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
