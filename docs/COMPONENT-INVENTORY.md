@@ -14,7 +14,8 @@ Shop archive (magazin, sidebar WooCommerce):
   Filtrul Culoare e legat explicit de atributul global `pa_culoare` (`attributeId: 2`),
   filtrul Colecție de `pa_colectie` (`attributeId: 1`) — nu se bazează pe fallback-ul
   automat WooCommerce. Filtrul de preț a fost eliminat (toate textilele au același
-  tarif pe metru liniar).
+  tarif pe metru liniar). Pe mobil, butonul „Filtre" din bara sortării deschide dialogul
+  nativ al aceluiași bloc WooCommerce; filtrele nu sunt duplicate într-un drawer custom.
 - „brodart-shop-tweaks" (mu-plugin) — traduceri ro_RO pentru șirurile de blocuri
   WooCommerce lipsă din pachetul oficial, sufixul „/ metru liniar" la prețurile
   produselor Mendola, badge „NOU" pentru produsele publicate în ultimele 30 de zile,

@@ -286,6 +286,19 @@ final class Brodart_Measurement_Calculator
     {
         if (is_front_page()) {
             $upload_base = wp_upload_dir()['baseurl'] . '/2026/09/';
+            $curtain_category = get_term_by('slug', 'perdele', 'product_cat');
+            $drapery_category = get_term_by('slug', 'draperii', 'product_cat');
+            $curtain_url = $curtain_category ? get_term_link($curtain_category) : wc_get_page_permalink('shop');
+            $drapery_url = $drapery_category ? get_term_link($drapery_category) : wc_get_page_permalink('shop');
+
+            if (is_wp_error($curtain_url)) {
+                $curtain_url = wc_get_page_permalink('shop');
+            }
+
+            if (is_wp_error($drapery_url)) {
+                $drapery_url = wc_get_page_permalink('shop');
+            }
+
             $slides = array(
                 array(
                     'image'       => $upload_base . 'Draperii-perdele.ro-Brodart-galerie-de-prezentare-1.jpg',
@@ -293,7 +306,7 @@ final class Brodart_Measurement_Calculator
                     'title'       => 'Alege lumina potrivită',
                     'description' => 'Perdele create pentru spații calme, luminoase și personale.',
                     'cta'         => 'Descoperă perdelele',
-                    'url'         => home_url('/product-category/perdele/'),
+                    'url'         => $curtain_url,
                 ),
                 array(
                     'image'       => $upload_base . 'Draperii-perdele.ro-Brodart-galerie-de-prezentare-2.jpg',
@@ -301,7 +314,7 @@ final class Brodart_Measurement_Calculator
                     'title'       => 'Dă spațiului mai mult caracter',
                     'description' => 'Texturi și tonuri atent alese pentru confort și echilibru.',
                     'cta'         => 'Vezi draperiile',
-                    'url'         => home_url('/product-category/draperii/'),
+                    'url'         => $drapery_url,
                 ),
                 array(
                     'image'       => $upload_base . 'Draperii-perdele.ro-Brodart-galerie-de-prezentare-5.jpg',
@@ -309,7 +322,7 @@ final class Brodart_Measurement_Calculator
                     'title'       => 'Construim atmosfera împreună',
                     'description' => 'Spune-ne ce îți dorești, iar noi te ajutăm să găsești soluția potrivită.',
                     'cta'         => 'Programează o consultanță',
-                    'url'         => home_url('/contact-us/'),
+                    'url'         => home_url('/contact/'),
                 ),
             );
 

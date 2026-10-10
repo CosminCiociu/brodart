@@ -106,7 +106,7 @@ product_id;product_name;scope;object_id;rule;old_image;new_image;note
 820;"Perdea Vicenza";product;820;_3;14-vicenza-t01.jpg;14-vicenza-t01_3.jpg;
 820;"Perdea Vicenza";"variation 14-VICENZA-T01";1138;_3;14-vicenza-t01.jpg;14-vicenza-t01_3.jpg;
 820;"Perdea Vicenza";"variation 14-VICENZA-T03";1143;_3;14-vicenza-t03.jpg;14-vicenza-t03_3.jpg;
-821;"Draperie Voile";product;821;already;14-ecco-r1700_3.jpg;14-ecco-r1700_3.jpg;
+821;"Draperie Voile";product;821;manual-correction;14-ecco-r1700_3.jpg;14-voile-r1700_4.jpg;replaced the unrelated Ecco featured image; gallery begins with 14-voile-r1700_5.jpg
 821;"Draperie Voile";"variation 14-VOILE-R1700";1146;skip;14-voile-r1700_4.jpg;;"fara _3 si doar 2 imagine/i in total"
 821;"Draperie Voile";"variation 14-VOILE-T001";1152;_3;14-voile-t001.jpg;14-voile-t001_3.jpg;
 821;"Draperie Voile";"variation 14-VOILE-T002";1158;_3;14-voile-t002.jpg;14-voile-t002_3.jpg;

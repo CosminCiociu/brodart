@@ -297,14 +297,35 @@ function brodart_hover_image(): void
         return;
     }
 
+    echo '<span class="brodart-hover-image-frame" aria-hidden="true">';
     echo wp_get_attachment_image(
         $gallery_ids[0],
         'woocommerce_thumbnail',
         false,
-        array('class' => 'brodart-hover-image', 'loading' => 'lazy')
+        array('class' => 'brodart-hover-image', 'loading' => 'lazy', 'alt' => '')
     );
+    echo '</span>';
 }
 add_action('woocommerce_before_shop_loop_item_title', 'brodart_hover_image', 11);
+
+function brodart_mobile_filter_trigger(): void
+{
+    if (
+        ! function_exists('is_shop')
+        || (! is_shop() && (! function_exists('is_product_taxonomy') || ! is_product_taxonomy()))
+    ) {
+        return;
+    }
+?>
+    <button class="brodart-mobile-filter-trigger" type="button" aria-label="Filtrează produsele" aria-haspopup="dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M10 17.5H14V16H10V17.5ZM6 6V7.5H18V6H6ZM8 12.5H16V11H8V12.5Z" fill="currentColor" />
+        </svg>
+        <span>Filtre</span>
+    </button>
+<?php
+}
+add_action('woocommerce_before_shop_loop', 'brodart_mobile_filter_trigger', 15);
 
 /**
  * Shop polish styles (badges, filters, hover image, price suffix).
@@ -338,7 +359,43 @@ function brodart_shop_styles(): void
             z-index: 2;
         }
 
-        /* Hover cu a doua imagine: fade discret, 400ms (Style Guide §6) */
+        /* Cardurile folosesc același cadru 4:5 pentru ambele fotografii. */
+        .woocommerce ul.products li.product figure {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .woocommerce ul.products li.product figure>a.ct-media-container {
+            position: absolute !important;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto !important;
+        }
+
+        .woocommerce ul.products li.product figure>a.ct-media-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: auto !important;
+        }
+
+        /* Imaginea secundară acoperă doar cadrul imaginii, nu cardul întreg. */
+        .woocommerce ul.products li.product .brodart-hover-image-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
         .woocommerce ul.products li.product .ct-woo-card-actions~a img,
         .woocommerce ul.products li.product>a .woocommerce-loop-product__link img {
             position: relative;
@@ -359,10 +416,72 @@ function brodart_shop_styles(): void
             opacity: 1;
         }
 
-        .woocommerce ul.products li.product figure,
         .woocommerce ul.products li.product .ct-image-container {
             position: relative;
             overflow: hidden;
+        }
+
+        .brodart-mobile-filter-trigger {
+            display: none;
+        }
+
+        @media (max-width: 1023px) {
+            .woocommerce .woo-listing-top {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .woocommerce .woo-listing-top .woocommerce-ordering {
+                margin-left: auto;
+            }
+
+            .woocommerce .brodart-mobile-filter-trigger {
+                display: inline-flex;
+                flex: 1 1 auto;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                min-height: 34px;
+                padding: 0 12px;
+                border: 1px solid #E5E3E0;
+                border-radius: 2px;
+                background: #FFFFFF;
+                color: #1A1A1A;
+                font-size: 13px;
+            }
+
+            #sidebar.ct-hidden-sm.ct-hidden-md {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                z-index: 10000;
+                display: block !important;
+                width: 0 !important;
+                height: 0 !important;
+                overflow: visible !important;
+                pointer-events: none;
+            }
+
+            #sidebar .ct-sidebar,
+            #sidebar .ct-widget,
+            #sidebar .wc-block-product-filters {
+                width: 0 !important;
+                height: 0 !important;
+                overflow: visible !important;
+            }
+
+            #sidebar .wc-block-product-filters__open-overlay {
+                display: none !important;
+            }
+
+            #sidebar .wc-block-product-filters__overlay {
+                pointer-events: none;
+            }
+
+            #sidebar .wc-block-product-filters.is-overlay-opened .wc-block-product-filters__overlay {
+                pointer-events: auto;
+            }
         }
 
         /* Sufix preț "/ metru liniar" discret */
@@ -408,6 +527,32 @@ function brodart_shop_styles(): void
 <?php
 }
 add_action('wp_head', 'brodart_shop_styles', 20);
+
+function brodart_mobile_filter_trigger_script(): void
+{
+    if (
+        ! function_exists('is_shop')
+        || (! is_shop() && (! function_exists('is_product_taxonomy') || ! is_product_taxonomy()))
+    ) {
+        return;
+    }
+?>
+    <script id="brodart-mobile-filter-trigger-script">
+        document.addEventListener('click', function(event) {
+            const target = event.target instanceof Element ?
+                event.target.closest('.brodart-mobile-filter-trigger') :
+                null;
+
+            if (!target) {
+                return;
+            }
+
+            document.querySelector('#sidebar .wc-block-product-filters__open-overlay')?.click();
+        });
+    </script>
+<?php
+}
+add_action('wp_footer', 'brodart_mobile_filter_trigger_script', 30);
 
 /**
  * Fixes alt text on the homepage collection cards (Perdele / Draperii).
@@ -501,3 +646,123 @@ function brodart_home_gallery_styles(): void
 <?php
 }
 add_action('wp_head', 'brodart_home_gallery_styles', 25);
+
+/**
+ * Improves text contrast on the homepage category cards and editorial banner.
+ */
+function brodart_home_text_panel_styles(): void
+{
+    if (! is_front_page()) {
+        return;
+    }
+?>
+    <style id="brodart-home-text-panels">
+        .stk-76abb28 .stk-d5f4d72-container,
+        .stk-9794fe2 .stk-14910d5-container {
+            background: rgba(248, 247, 245, 0.96) !important;
+            padding: 14px 20px !important;
+        }
+
+        .stk-76abb28 .stk-block-subtitle__text,
+        .stk-9794fe2 .stk-block-subtitle__text,
+        .stk-41508ab .stk-58f7d19-inner-blocks>.wp-block-stackable-text:first-child .stk-block-text__text {
+            color: #6B6B6B !important;
+        }
+
+        body.home .stk-76abb28 .stk-block-heading__text,
+        body.home .stk-9794fe2 .stk-block-heading__text,
+        .stk-41508ab .stk-58f7d19-inner-blocks .stk-block-heading__text,
+        .stk-41508ab .stk-58f7d19-inner-blocks .wp-block-stackable-text:not(:first-child) .stk-block-text__text {
+            color: #1A1A1A !important;
+        }
+
+        .stk-41508ab:before {
+            opacity: 0.24 !important;
+        }
+
+        .stk-41508ab .stk-58f7d19-inner-blocks {
+            background: rgba(248, 247, 245, 0.96);
+            padding: 28px 30px;
+        }
+
+        .stk-41508ab .stk-block-button .stk-button,
+        .stk-41508ab .stk-block-button .stk-button__inner-text {
+            color: #1A1A1A !important;
+        }
+
+        .stk-41508ab .stk-block-button .stk-button {
+            background: #A9A296 !important;
+        }
+
+        @media (max-width: 767px) {
+
+            .stk-76abb28 .stk-d5f4d72-container,
+            .stk-9794fe2 .stk-14910d5-container {
+                padding: 12px 16px !important;
+            }
+
+            .stk-41508ab .stk-58f7d19-inner-blocks {
+                padding: 22px 20px;
+            }
+        }
+    </style>
+<?php
+}
+add_action('wp_head', 'brodart_home_text_panel_styles', 26);
+
+/**
+ * Redirects legacy English URL bases to their Romanian equivalents.
+ */
+function brodart_redirect_legacy_english_routes(): void
+{
+    if (is_admin() || wp_doing_ajax() || (defined('REST_REQUEST') && REST_REQUEST)) {
+        return;
+    }
+
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    $request_path = wp_parse_url($request_uri, PHP_URL_PATH);
+
+    if (! is_string($request_path)) {
+        return;
+    }
+
+    $home_path = untrailingslashit((string) wp_parse_url(home_url('/'), PHP_URL_PATH));
+    if ('' !== $home_path && str_starts_with($request_path, $home_path . '/')) {
+        $request_path = substr($request_path, strlen($home_path));
+    }
+
+    $relative_path = trim($request_path, '/');
+    $routes = array(
+        'category/news'       => 'categorii/noutati',
+        'category/useful'     => 'categorii/ghiduri',
+        'product-category'    => 'categorii-produse',
+        'my-account'          => 'contul-meu',
+        'finalize-order'      => 'finalizare-comanda',
+        'about-us'            => 'despre-noi',
+        'contact-us'           => 'contact',
+        'checkout'            => 'finalizare-comanda',
+        'product'             => 'produs',
+        'category'            => 'categorii',
+        'cart'                => 'cos',
+        'blog'                => 'jurnal',
+        'shop'                => 'magazin',
+    );
+
+    foreach ($routes as $old_path => $new_path) {
+        if ($relative_path !== $old_path && ! str_starts_with($relative_path, $old_path . '/')) {
+            continue;
+        }
+
+        $new_path .= substr($relative_path, strlen($old_path));
+        $target_url = trailingslashit(home_url('/' . trim($new_path, '/') . '/'));
+        $query = wp_parse_url($request_uri, PHP_URL_QUERY);
+
+        if (is_string($query) && '' !== $query) {
+            $target_url .= '?' . $query;
+        }
+
+        wp_safe_redirect($target_url, 301, 'Brodart Romanian URL migration');
+        exit;
+    }
+}
+add_action('template_redirect', 'brodart_redirect_legacy_english_routes', 1);

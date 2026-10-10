@@ -32,7 +32,7 @@ adăuga conținut.
 - [x] Secțiune produse recomandate (grid WooCommerce, 4 coloane)
 - [x] Secțiune editorială/lookbook (imagine + text, stil revistă)
 - [x] Secțiune newsletter (fundal secundar, minimalist)
-- [x] Înlocuiește conținutul demo rămas (produse, articole și texte în engleză) și verifică traducerea integrală în română (site-ul e setat pe ro_RO, WooCommerce are pachetul oficial ro_RO, iar mu-plugin-ul brodart-shop-tweaks acoperă șirurile de blocuri netraduse; cele 12 produse demo au fost depublicate, rămânând cele 41 de produse reale Mendola + pilotul Alana)
+- [x] Înlocuiește conținutul demo rămas (produse, articole și texte în engleză) și verifică traducerea integrală în română (locale `ro_RO`, pachetul WooCommerce oficial, cataloage Loco Translate pentru Blocksy/Blocksy Companion/WooCommerce și completări în mu-plugin; site monolingv, fără selector; cele 12 produse demo au fost depublicate, rămânând cele 41 de produse reale Mendola + pilotul Alana)
 
 ## Milestone 4 — Shop & Produs (WooCommerce)
 

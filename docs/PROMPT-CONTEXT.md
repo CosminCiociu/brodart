@@ -4,7 +4,7 @@ Site WordPress cu o direcție vizuală premium, minimalistă, inspirată de Zara
 
 - Local: `C:\xampp\htdocs\brodart\`
 - URL: `http://localhost/brodart/`
-- Stack: WordPress, Blocksy, Blocksy Companion, WooCommerce, Modula Gallery, Gutenberg și **Yoast SEO** (activ — meta title/description, sitemap XML, schema.org și breadcrumb-urile se configurează prin Yoast).
+- Stack: WordPress, Blocksy, Blocksy Companion, WooCommerce, Modula Gallery, Gutenberg, **Yoast SEO** (activ — meta title/description, sitemap XML, schema.org și breadcrumb-urile se configurează prin Yoast) și **Loco Translate** pentru șirurile gettext netraduse ale temei și pluginurilor. Site-ul rămâne într-o singură limbă (`ro_RO`), fără selector; conținutul și slugurile URL se traduc direct în WordPress, deoarece Loco nu modifică pagini sau URL-uri.
 
 ## Documentație
 
@@ -29,7 +29,9 @@ Documentul specific domeniului taskului guvernează detaliile acelui domeniu. Da
 - Verifică milestone-ul și starea taskurilor din `ROADMAP.md` înainte de a începe.
 - Inspectează implementarea existentă și reutilizează sau extinde componentele înainte de a crea altele.
 - Respectă ghidurile relevante pentru design, structură, conținut, imagini și platformă.
-- Scrie implicit în română, cu diacritice, tot textul destinat vizitatorilor; urmează regulile din `CONTENT-GUIDELINES.md`.
+- Folosește un plugin de traduceri (recomandat: **TranslatePress**) configurat să blocheze schimbarea limbii și să mențină întregul site exclusiv în limba română.
+- Scrie implicit în română, cu diacritice, tot textul destinat vizitatorilor; orice text nou sau modificat trebuie tradus în română și nu trebuie lăsat conținut în engleză, franceză sau alte limbi.
+- Site-ul trebuie să fie 100% tradus în română, inclusiv textul din pagini, butoane, formulare, banner-uri, căsuțe informative, metadate, mesaje de eroare, căsuțe de cookie și traduceri de plugin-uri, fără opțiune de schimbare a limbii.
 - Aplică regulile din `SEO-RULES.md` pe orice pagină sau componentă pe care o modifici, indiferent de task.
 - Nu modifica header-ul sau footer-ul global fără o cerere explicită.
 - Păstrează schimbările la nivelul minim necesar și actualizează documentația când taskul schimbă decizii sau progresul proiectului.
