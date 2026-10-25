@@ -1,8 +1,8 @@
 # Audit mobil și recomandări — Brodart
 
-Document de lucru pentru alegerea îmbunătățirilor mobile. Observațiile descriu
-comportamentul verificat; recomandările sunt propuneri și nu au fost aplicate
-site-ului.
+Documentul consemnează constatările inițiale, deciziile adoptate și starea
+implementării. Toate observațiile M1–M7 și recomandările O1–O6 au fost adoptate;
+limitele și confirmările încă necesare sunt menționate la final.
 
 ## Audit efectuat
 
@@ -16,8 +16,8 @@ site-ului.
   categorii de produse și 38 de arhive de categorii, atribute și autor.
 - Toate URL-urile verificate au răspuns cu HTTP 200 și nu au prezentat overflow
   orizontal la lățimea testată.
-- Paginile și produsele au fost verificate pentru structura H1; homepage-ul este
-  singura pagină verificată fără H1.
+- La auditul inițial, homepage-ul era singura pagină verificată fără H1; ulterior
+  a fost corectat și verificat cu un singur H1.
 - Pagina pilot de produs a fost verificată și vizual. Pe celelalte produse și
   arhive verificarea a urmărit răspunsul, H1 și overflow, nu toate interacțiunile
   individuale.
@@ -46,8 +46,11 @@ cu HTTP 200. Recomandarea este să se verifice inițializarea încărcării imag
 principale și să nu fie amânată imaginea aflată în primul ecran. Lazy-loading-ul
 se păstrează pentru imaginile de sub fold.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat. Imaginea principală a produsului pilot se încarcă
+prioritar; imaginile galeriei de sub fold păstrează încărcarea amânată.
 
 ### M2 — Homepage-ul nu are un H1
 
@@ -56,8 +59,12 @@ descriptiv. Recomandarea este ca titlul principal deja existent să fie H1,
 fără a adăuga o secțiune nouă sau un titlu duplicat. Formularea poate urma
 direcția „Perdele și draperii Brodart”.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat. Homepage-ul are un singur H1. La verificarea ulterioară
+au fost reparate și cele 63 de fragmente CSS Stackable salvate fără etichetele
+`<style>`; pagina nu mai afișează CSS ca text, iar stilurile optimizate se încarcă.
 
 ### M3 — Sitemapul include pagini comerciale duplicate în engleză
 
@@ -70,8 +77,11 @@ publică o singură rută română pentru fiecare funcție. Paginile vechi pot f
 traduse, redirecționate sau scoase din indexare prin fluxurile WordPress/Yoast,
 după confirmarea rolului lor.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat reversibil. Paginile comerciale engleze au fost trecute
+în draft, păstrând conținutul pentru restaurare.
 
 ### M4 — Jurnalul publică articole demo cu text de tip Lorem ipsum
 
@@ -80,8 +90,11 @@ demonstrativ în latină. Recomandarea este să se decidă pentru fiecare artico
 dacă va fi rescris integral în română sau retras din publicare și din indexare.
 Nu păstra text de umplutură doar pentru a completa arhiva.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat reversibil. Articolele demo cu text de umplutură au fost
+trecute în draft; articolele românești au rămas publicate.
 
 ### M5 — Dialogul de consimțământ și un element din footer sunt în engleză
 
@@ -92,8 +105,11 @@ traducerea textelor vizibile și a textelor alternative în română, folosind
 setările pluginului sau Loco Translate unde este potrivit, fără a adăuga un
 selector de limbă.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat. A fost instalat pachetul de traducere română Complianz,
+iar conținutul extern din footer a fost înlocuit cu text/link în română.
 
 ### M6 — Datele de contact nu sunt consecvente, iar formularul nu funcționează
 
@@ -105,8 +121,14 @@ confirmă telefonul `0723 137 399`, dar adresa showroomului trebuie confirmată
 alegerea uneia dintre variante: repararea formularului sau afișarea clară a
 canalelor directe de contact, cu linkuri telefon/e-mail ușor de folosit pe mobil.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** parțial implementat. Telefonul a fost corectat, iar adresa și
+programul neconfirmate au fost eliminate; pagina oferă datele directe de
+contact. Formularul WPForms nu se inițializează în PHP-ul folosit de Apache,
+deoarece extensia cURL nu se încarcă; testul formularului rămâne blocat până la
+repararea configurației XAMPP. Nu a fost dezactivată verificarea SSL.
 
 ### M7 — O imagine externă din footer raportează o eroare de certificat în mediul local
 
@@ -116,8 +138,11 @@ certificatului pe mediul live; dacă imaginea poate fi găzduită local în mod
 autorizat, aceasta evită dependența de resursa externă. Nu dezactiva verificarea
 certificatului SSL.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat local fără dependența externă defectă. Imaginile remote
+din footer au fost înlocuite cu text și link; certificatul SSL nu a fost ocolit.
 
 ## Îmbunătățiri opționale de experiență mobilă
 
@@ -129,8 +154,12 @@ design, urmărește controale de aproximativ 44 × 44 px, cu spațiu între ele,
 stări de focus vizibile și etichete clare. Aceste ajustări pot folosi stilurile
 Blocksy existente, fără un nou sistem de componente.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat parțial. Au fost adăugate ținte minime pentru controalele
+mobile și indicatori de focus vizibili; verificarea completă la 390 px și pe
+dispozitive reale rămâne de făcut.
 
 ### O2 — Simplifică alegerea variantelor pe ecrane înguste
 
@@ -139,8 +168,11 @@ selectat pe ecran mic. Dacă lista devine prea lungă, testează gruparea sau
 restrângerea progresivă a opțiunilor, păstrând vizibile denumirea, selecția
 curentă și efectul asupra prețului. Nu ascunde informațiile necesare comenzii.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** opțiunile existente au fost păstrate; nu s-a introdus o grupare nouă
+fără validarea tuturor variantelor pe ecrane înguste.
 
 ### O3 — Optimizează imaginile mobile fără a sacrifica imaginea principală
 
@@ -150,8 +182,11 @@ prioritar imaginea principală vizibilă și amână imaginile de sub fold. Păs
 aspectul natural și tonurile calde/neutre din [IMAGE-GUIDELINES.md](IMAGE-GUIDELINES.md);
 nu folosi filtre sau overlay-uri artificiale.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat pentru produsul pilot. Imaginea principală are prioritate,
+iar imaginile ulterioare rămân lazy-loaded; nu au fost aplicate filtre vizuale.
 
 ### O4 — Clarifică pe mobil pașii coșului și ai finalizării comenzii
 
@@ -160,8 +195,11 @@ După configurarea corectă a paginilor WooCommerce, păstrează un traseu simpl
 revizuit și mesaje de eroare în română. Evită bannerele promoționale și
 pop-up-urile în checkout.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** paginile WooCommerce românești sunt atribuite corect; fluxul complet
+de checkout și comandă nu a fost testat.
 
 ### O5 — Menține consistența vizuală fără accente noi
 
@@ -171,8 +209,11 @@ Păstrează fonturile globale, butoanele cu colțuri drepte sau discret rotunjit
 tranzițiile subtile. Verifică contrastul AA, inclusiv pe textele mici și stările
 dezactivate; nu introduce culori saturate sau stiluri „pill”.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
+
+**Stare:** implementat fără culori noi; s-au păstrat paleta și stilurile
+existente.
 
 ### O6 — Refolosește comportamentele deja existente
 
@@ -182,15 +223,20 @@ gridul curat și lightbox-ul discret prevăzut de ghid. Nu adăuga un buton fix
 „Adaugă în coș” pentru configurator înainte de validarea fluxului și a regulilor
 comerciale din Milestone 4A.
 
-- [ ] Adoptă
+- [x] Adoptă
 - [ ] Amână / respinge
 
-## Decizii după parcurgerea listei
+**Stare:** păstrate comportamentele native existente; nu a fost adăugat un
+drawer duplicat, un buton fix de cumpărare sau altă interacțiune nevalidată.
 
-- Recomandări adoptate:
-- Recomandări amânate:
-- Confirmări necesare înainte de implementare:
-- Verificare următoare: 390 px, tabletă, desktop și un dispozitiv mobil real.
+## Decizii și confirmări rămase
+
+- Decizie: Adoptă pentru M1–M7 și O1–O6; nu au fost bifate respingeri.
+- Formularul de contact rămâne blocat până când Apache PHP încarcă extensia cURL.
+- Adresa showroomului și programul trebuie confirmate de proprietar înainte de
+  republicare.
+- Verificări rămase: 390 px, tabletă, dispozitiv mobil real și fluxul complet
+  de checkout.
 
 Orice implementare ulterioară trebuie să respecte [STYLE-GUIDE.md](STYLE-GUIDE.md),
 [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md), [BLOCKSY-RULES.md](BLOCKSY-RULES.md) și
