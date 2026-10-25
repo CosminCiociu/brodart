@@ -21,11 +21,105 @@ function brodart_category_labels(): void
     global $wp_taxonomies;
 
     if (isset($wp_taxonomies['product_cat'])) {
+        $wp_taxonomies['product_cat']->labels->name          = 'Categorii';
+        $wp_taxonomies['product_cat']->labels->menu_name     = 'Categorii';
         $wp_taxonomies['product_cat']->labels->singular_name = 'Categorie';
         $wp_taxonomies['product_cat']->label                 = 'Categorii';
     }
 }
 add_action('init', 'brodart_category_labels', 30);
+
+/**
+ * Reduces the category filter value to the last selected category.
+ */
+function brodart_normalize_category_filter_value(string $value): string
+{
+    $categories = array_values(array_filter(array_map('sanitize_title', explode(',', $value))));
+
+    return $categories ? (string) end($categories) : '';
+}
+
+/**
+ * Adapts category filter requests to WooCommerce while retaining a Romanian,
+ * single-category URL and selection.
+ *
+ * @param WP $wp WordPress request.
+ */
+function brodart_prepare_romanian_category_filter_request(WP $wp): void
+{
+    $shop_path = wp_parse_url(get_permalink(wc_get_page_id('shop')), PHP_URL_PATH);
+    $request_uri = $_SERVER['REQUEST_URI'] ?? '';
+    $request_path = wp_parse_url($request_uri, PHP_URL_PATH);
+
+    if (
+        ! is_string($shop_path)
+        || ! is_string($request_path)
+        || untrailingslashit($shop_path) !== untrailingslashit($request_path)
+    ) {
+        return;
+    }
+
+    $query = array();
+    $parsed_url = wp_parse_url($request_uri);
+
+    if (! empty($parsed_url['query'])) {
+        parse_str($parsed_url['query'], $query);
+    }
+
+    $parameter = isset($query['categories']) ? 'categories' : 'categorii';
+
+    if (! isset($query[$parameter]) || ! is_string($query[$parameter])) {
+        return;
+    }
+
+    $requested_category = sanitize_text_field($query[$parameter]);
+    $category = brodart_normalize_category_filter_value($requested_category);
+
+    if ('' === $category) {
+        return;
+    }
+
+    $GLOBALS['brodart_category_filter_request'] = array(
+        'parameter' => $parameter,
+        'value'     => $requested_category,
+        'url'       => $request_uri,
+    );
+
+    unset($query['categorii'], $query['categories']);
+    $query['categories'] = $category;
+    $_SERVER['REQUEST_URI'] = $request_path . '?' . build_query($query);
+    unset($_GET['categorii'], $_REQUEST['categorii']);
+    $_GET['categories'] = $category;
+    $_REQUEST['categories'] = $category;
+    $wp->query_vars['categories'] = $category;
+}
+add_action('parse_request', 'brodart_prepare_romanian_category_filter_request', 1);
+
+/**
+ * Keeps category filter URLs in Romanian and removes older multi-category
+ * values produced by WooCommerce's default multi-select behavior.
+ */
+function brodart_canonicalize_category_filter_url(): void
+{
+    $request = $GLOBALS['brodart_category_filter_request'] ?? null;
+
+    if (! is_shop() || ! is_array($request) || ! is_string($request['url'] ?? null)) {
+        return;
+    }
+
+    $category = brodart_normalize_category_filter_value((string) ($request['value'] ?? ''));
+
+    if ('' === $category || ('categorii' === ($request['parameter'] ?? '') && $category === $request['value'])) {
+        return;
+    }
+
+    $url = remove_query_arg(array('categories', 'categorii'), $request['url']);
+    $url = add_query_arg('categorii', $category, $url);
+
+    wp_safe_redirect($url, 302, 'Brodart Romanian category filter');
+    exit;
+}
+add_action('template_redirect', 'brodart_canonicalize_category_filter_url', 1);
 
 /**
  * Hides the page title ("Magazin") on the shop page only. Blocksy strips
@@ -657,6 +751,18 @@ function brodart_home_text_panel_styles(): void
     }
 ?>
     <style id="brodart-home-text-panels">
+        .brodart-home-category-card {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .brodart-home-category-card:focus-visible {
+            outline: 2px solid #A9A296;
+            outline-offset: 4px;
+        }
+
         .stk-76abb28 .stk-d5f4d72-container,
         .stk-9794fe2 .stk-14910d5-container {
             background: rgba(248, 247, 245, 0.96) !important;
@@ -709,6 +815,154 @@ function brodart_home_text_panel_styles(): void
 <?php
 }
 add_action('wp_head', 'brodart_home_text_panel_styles', 26);
+
+/**
+ * Links homepage category cards and the hero CTA to their shop filters.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function brodart_link_home_category_ctas(string $block_content, array $block): string
+{
+    if (is_admin()) {
+        return $block_content;
+    }
+
+    $unique_id = $block['attrs']['uniqueId'] ?? '';
+
+    if (is_front_page() && 'stackable/button' === ($block['blockName'] ?? '') && '4701e58' === $unique_id) {
+        $category = false !== strpos(strtolower(wp_strip_all_tags($block_content)), 'draperii')
+            ? 'draperii'
+            : 'perdele';
+        $url = esc_url(home_url('/magazin/?categorii=' . $category));
+
+        return preg_replace_callback(
+            '/(<a\b[^>]*\bhref=)(["\'])[^"\']*\2/i',
+            static function (array $matches) use ($url): string {
+                return $matches[1] . $matches[2] . $url . $matches[2];
+            },
+            $block_content,
+            1
+        ) ?? $block_content;
+    }
+
+    if ('stackable/image-box' !== ($block['blockName'] ?? '')) {
+        return $block_content;
+    }
+
+    $links = array(
+        '76abb28' => array(
+            'url' => home_url('/magazin/?categorii=perdele'),
+        ),
+        '9794fe2' => array(
+            'url' => home_url('/magazin/?categorii=draperii'),
+        ),
+    );
+
+    if (! isset($links[$unique_id])) {
+        return $block_content;
+    }
+
+    return sprintf(
+        '<a class="brodart-home-category-card" href="%1$s">%2$s</a>',
+        esc_url($links[$unique_id]['url']),
+        $block_content
+    );
+}
+add_filter('render_block', 'brodart_link_home_category_ctas', 10, 2);
+
+/**
+ * Renders the Contact page form when WPForms returns an empty block.
+ *
+ * @param string $block_content Rendered block HTML.
+ * @param array  $block         Parsed block data.
+ * @return string
+ */
+function brodart_render_contact_form_block(string $block_content, array $block): string
+{
+    if (
+        is_admin()
+        || ! is_page(630)
+        || '' !== $block_content
+        || 246 !== (int) ($block['attrs']['formId'] ?? 0)
+    ) {
+        return $block_content;
+    }
+
+    ob_start();
+    if (function_exists('wpforms_display') && function_exists('wpforms')) {
+        wpforms_display(246);
+    } elseif (class_exists('WPForms\\WPForms')) {
+        $frontend = WPForms\WPForms::instance()->obj('frontend');
+
+        if (is_object($frontend)) {
+            $frontend->output(246);
+        }
+    }
+
+    $form_html = (string) ob_get_clean();
+
+    if ('' === $form_html) {
+        error_log('Brodart Contact page: WPForms could not render form 246.');
+
+        return '<p class="brodart-form-unavailable">Formularul nu este disponibil momentan. Ne poți scrie la <a href="mailto:contact@brod-art.ro">contact@brod-art.ro</a>.</p>';
+    }
+
+    return $form_html;
+}
+add_filter('render_block_wpforms/form-selector', 'brodart_render_contact_form_block', 99, 2);
+
+/**
+ * Keeps homepage category buttons pointed at their shop filters.
+ */
+function brodart_home_category_button_links_script(): void
+{
+    $home_path    = untrailingslashit((string) wp_parse_url(home_url('/'), PHP_URL_PATH));
+    $request_path = wp_parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+
+    if (
+        is_admin()
+        || ! is_string($request_path)
+        || $home_path !== untrailingslashit($request_path)
+    ) {
+        return;
+    }
+
+    $filter_url = wp_json_encode(home_url('/magazin/?categorii='));
+?>
+    <script id="brodart-home-category-button-links">
+        (function () {
+            const filterUrl = <?php echo $filter_url; ?>;
+
+            function updateCategoryButtons() {
+                document.querySelectorAll('a.stk-button').forEach(function (button) {
+                    const text = (button.textContent || '').toLowerCase();
+                    const href = (button.getAttribute('href') || '').toLowerCase();
+                    const category = text.includes('draperii') || href.includes('/draperii/')
+                        ? 'draperii'
+                        : text.includes('perdele') || href.includes('/perdele/')
+                            ? 'perdele'
+                            : '';
+
+                    if (category && button.href !== filterUrl + category) {
+                        button.href = filterUrl + category;
+                    }
+                });
+            }
+
+            updateCategoryButtons();
+            new MutationObserver(updateCategoryButtons).observe(document.body, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['href']
+            });
+        }());
+    </script>
+<?php
+}
+add_action('wp_footer', 'brodart_home_category_button_links_script', 100);
 
 /**
  * Redirects legacy English URL bases to their Romanian equivalents.
@@ -766,3 +1020,40 @@ function brodart_redirect_legacy_english_routes(): void
     }
 }
 add_action('template_redirect', 'brodart_redirect_legacy_english_routes', 1);
+
+/**
+ * Keeps the Blocksy footer to three desktop columns and normalizes its titles.
+ */
+function brodart_footer_styles(): void
+{
+?>
+    <style id="brodart-footer-styles">
+        @media (min-width: 1000px) {
+            #footer [data-row="middle"] > .ct-container {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+        }
+
+        #footer [data-row="middle"] > .ct-container > [data-column="ghost"] {
+            display: none !important;
+        }
+
+        #footer [data-row="middle"] [data-column^="widget-area-"] .wp-block-heading {
+            margin-block: 0 16px !important;
+            color: #1A1A1A !important;
+            font-size: 20px !important;
+            font-weight: 600 !important;
+            line-height: 1.3 !important;
+        }
+
+        #block-7 > div > p > img.emoji {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            margin-inline-end: 0.25em;
+            vertical-align: -0.15em;
+        }
+    </style>
+<?php
+}
+add_action('wp_head', 'brodart_footer_styles', 27);

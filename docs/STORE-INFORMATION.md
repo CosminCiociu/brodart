@@ -6,14 +6,14 @@ Acest document centralizează datele comerciale furnizate pentru Brodart și mod
 
 - Brand folosit pe site: **Brodart**.
 - Categorie indicată în profilul Google: magazin de perdele din Brașov.
-- Denumire văzută/furnizată pentru profil: **Carmiram Brodart**.
+- Operatorul comercial: **Carmiram Brodart**; proprietar: **Manea Andrei**. Aceste date au fost confirmate direct de proprietar.
+- Adresa operatorului: **Bloc D5, Strada Zorilor 5, 500265 Brașov, România**. Forma juridică exactă și numărul de înregistrare/CUI nu au fost furnizate și nu trebuie deduse.
 - Număr de recenzii furnizat: **4.146** la 27 septembrie 2026. Este un număr dinamic, nu un rating cu stele; verifică profilul și cifra actuală înainte de a le afișa public. Scorul mediu nu a fost furnizat.
-- Adresă furnizată pentru profilul Google: **Bloc D5, Strada Zorilor 5, 500265 Brașov**.
 - Telefon: **0723 137 399**.
 
-Google nu a putut fi verificat automat în timpul redactării: pagina de căutare a cerut JavaScript, iar Google Maps a redirecționat la pagina de consimțământ. Tratează denumirea profilului, adresa și numărul de recenzii de mai sus ca informații furnizate de proiect până la confirmarea directă în Google Business Profile.
+Google nu a putut fi verificat automat în timpul redactării: pagina de căutare a cerut JavaScript, iar Google Maps a redirecționat la pagina de consimțământ. Numărul de recenzii și scorul Google rămân neconfirmate direct în profil.
 
-Site-ul public de referință [draperii-perdele.ro](https://www.draperii-perdele.ro/) afișează și adresa showroom-ului **Strada Carpaților 93A**. Aceasta poate fi o altă locație sau o informație veche; nu înlocui adresa de pe profilul Google și nu publica ambele ca aceeași locație fără confirmarea proprietarului.
+Site-ul public de referință [draperii-perdele.ro](https://www.draperii-perdele.ro/) afișează și adresa showroom-ului **Strada Carpaților 93A**. Aceasta poate fi o altă locație sau o informație veche; nu o publica drept adresă a operatorului și nu o prezenta ca showroom curent fără confirmarea proprietarului.
 
 ## Referințe pentru navigație și conținut
 
@@ -58,6 +58,6 @@ Acest URL este referința video furnizată de proiect, nu un fișier media desc�
 ## Reguli de publicare
 
 - Scrie conținutul destinat vizitatorilor în română, cu diacritice, conform [CONTENT-GUIDELINES.md](CONTENT-GUIDELINES.md).
-- Verifică direct cu proprietarul orice adresă sau informație de contact contradictorie înainte de publicare.
+- Folosește adresa Bloc D5, Strada Zorilor 5 ca adresă a operatorului; nu o prezenta drept showroom fără confirmare. Verifică separat orice adresă de showroom contradictorie înainte de publicare.
 - Verifică din nou numărul recenziilor și scorul Google înainte de a le afișa; nu transforma numărul de recenzii într-un scor cu stele.
 - Nu copia conținut sau materiale vizuale de pe site-urile de referință fără permisiunea necesară.

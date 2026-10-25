@@ -75,11 +75,13 @@ Scopul este extinderea pluginului existent `brodart-measurement-calculator` înt
 
 ## Milestone 6 — Pagini secundare
 
-- [ ] Pagina "Despre noi" (poveste brand, imagini editoriale)
-- [ ] Pagina "Contact" (formular simplu + hartă/detalii, minimalist)
-- [ ] Completează paginile existente cu datele Brodart confirmate din [STORE-INFORMATION.md](STORE-INFORMATION.md) (telefon 0723 137 399 și adresa verificată înainte de publicare)
+- [x] Pagina "Despre noi" (poveste brand, imagini editoriale)
+- [ ] Pagina "Contact" (formular simplu + hartă/detalii, minimalist; formularul WPForms nu se inițializează pe frontend, iar fallback-ul actual afișează e-mailul)
+- [ ] Completează paginile existente cu datele Brodart confirmate din [STORE-INFORMATION.md](STORE-INFORMATION.md) (telefon 0723 137 399 și adresa verificată înainte de publicare; adresa showroomului rămâne de confirmat)
 - [ ] Pagina "Întrebări frecvente" / Livrare & Retur
-- [ ] Pagini legale (Termeni, Confidențialitate, Cookies)
+- [ ] Pagini legale
+  - [x] Confidențialitate, Retur și Termeni: publicate în Gutenberg și configurate în Yoast
+  - [ ] Cookies: pagina este pregătită ca draft; inventarul Complianz nu se generează deoarece tabelele pluginului sunt inaccesibile în baza de date
 
 ## Milestone 7 — Rafinament & performanță
 

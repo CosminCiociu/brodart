@@ -7,6 +7,20 @@ Existing Components:
 - CTA Banner
 - Testimonial Card
 
+Homepage category cards:
+
+- Cardurile „Perdele” și „Draperii” sunt linkuri accesibile către magazin, cu
+  filtrul categoriei preselectat prin parametrul românesc `categorii`.
+- Filtrul de categorie permite o singură categorie selectată; alegerea unei
+  categorii o înlocuiește pe cea precedentă.
+- CTA-ul din hero-ul principal folosește filtrul potrivit slide-ului („Perdele”
+  sau „Draperii”); dacă textul CTA nu indică o categorie, deschide filtrul
+  „Perdele”.
+- Mu-plugin-ul traduce eticheta taxonomiei în „Categorii”, mapează intern
+  parametrul românesc `categorii` la parametrul WooCommerce `categories` și
+  redirecționează URL-urile generate de filtru înapoi la parametrul românesc,
+  păstrând o singură categorie selectată și ceilalți parametri.
+
 Shop archive (magazin, sidebar WooCommerce):
 
 - Filter panel — bloc `woocommerce/product-filters` (widget block 11, sidebar-woocommerce)
