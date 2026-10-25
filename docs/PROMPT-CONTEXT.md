@@ -21,6 +21,7 @@ Fișierele din `docs/` sunt sursa de referință a proiectului. Consultă docume
 - [BLOCKSY-RULES.md](BLOCKSY-RULES.md): responsabilitățile Blocksy, Gutenberg și codului custom.
 - [ROADMAP.md](ROADMAP.md): milestone-uri și progresul proiectului.
 - [SEO-RULES.md](SEO-RULES.md): reguli SEO aplicate pe orice pagină sau componentă modificată.
+- [MOBILE-AUDIT-AND-RECOMMENDATIONS.md](MOBILE-AUDIT-AND-RECOMMENDATIONS.md): audit mobil și recomandări de evaluat înainte de implementare.
 
 Documentul specific domeniului taskului guvernează detaliile acelui domeniu. Dacă două reguli par să intre în conflict, verifică ghidurile implicate și păstrează intenția lor; nu inventa reguli noi.
 

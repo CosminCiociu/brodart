@@ -87,7 +87,7 @@ Scopul este extinderea pluginului existent `brodart-measurement-calculator` înt
 
 - [ ] Verifică consistența vizuală pe toate paginile (folosește checklist-ul din
       [STYLE-GUIDE.md](STYLE-GUIDE.md#10-reguli-de-consistență-checklist-înainte-de-a-publica-o-pagină-nouă))
-- [ ] Testează site-ul pe mobil, tabletă, desktop
+- [ ] Testează site-ul pe mobil, tabletă, desktop (audit la 375 px pentru cele 111 URL-uri unice din sitemapurile Yoast; fără overflow orizontal. Rămân verificarea la 390 px, tabletă, desktop și trierea constatărilor din [MOBILE-AUDIT-AND-RECOMMENDATIONS.md](MOBILE-AUDIT-AND-RECOMMENDATIONS.md))
 - [ ] Optimizează viteza (caching, imagini, minificare CSS/JS)
 - [ ] Verifică SEO de bază (titluri, meta descrieri, alt text imagini)
 - [ ] Testează fluxul complet de cumpărare (de la produs la comandă finalizată)
