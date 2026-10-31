@@ -192,6 +192,18 @@ Cerințe:
 -   Verifică la lățimi de aproximativ 360 px, 390 px și 430 px.
 -   Previne scroll-ul orizontal.
 
+## Meniul lateral
+
+Meniul se deschide în panoul lateral nativ Blocksy, din stânga, cu fundal alb
+și linkuri închise la culoare. Pe desktop, panoul are aproximativ 310 px; pe
+tabletă și mobil se adaptează la lățimea ecranului. Elementele părinte, precum
+„Colecții”, își extind submeniul la atingere sau clic.
+
+Linkurile nu sunt implementate custom. Pentru a le modifica, intră în
+WordPress la **Aspect → Meniuri**, selectează „Main Menu” și adaugă, elimină
+sau reordonează paginile. Meniul este folosit în header pe desktop și mobil;
+modificările se reflectă automat pe site.
+
 ## Accesibilitate și funcționalitate
 
 -   Folosește elemente HTML semantice: `header`, `nav`, liste și
