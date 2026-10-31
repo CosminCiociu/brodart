@@ -12,6 +12,31 @@ declare(strict_types=1);
  * - Restyles shop UI bits (badges, chips, hover image) to the Brodart palette.
  */
 
+function brodart_global_typography(): void
+{
+    wp_register_style('brodart-global-typography', false, array(), null);
+    wp_enqueue_style('brodart-global-typography');
+    wp_add_inline_style(
+        'brodart-global-typography',
+        ':root, body { --theme-font-family: Arial, Helvetica, sans-serif; }
+        h1, h2, h3, h4, h5, h6, .wp-block-pullquote {
+            --theme-font-family: Arial, Helvetica, sans-serif;
+        }
+        .brodart-image-submenu > .sub-menu > li.current-menu-item > .ct-menu-link {
+            --theme-link-initial-color: #8B8175;
+            --theme-link-hover-color: #8B8175;
+        }
+        .brodart-image-submenu > .sub-menu > li.current-menu-item .brodart-menu-card__title {
+            color: #8B8175;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: #A9A296;
+            text-underline-offset: 3px;
+        }'
+    );
+}
+add_action('wp_enqueue_scripts', 'brodart_global_typography', 100);
+
 /**
  * Localizes the product category taxonomy labels (WooCommerce registers them
  * in English; the block filters use singular_name for group labels).
@@ -38,6 +63,77 @@ function brodart_normalize_category_filter_value(string $value): string
 
     return $categories ? (string) end($categories) : '';
 }
+
+function brodart_is_current_shop_filter_menu_item(WP_Post $menu_item): bool
+{
+    $request = $GLOBALS['brodart_category_filter_request'] ?? null;
+
+    if (is_shop() && is_array($request) && is_string($request['value'] ?? null)) {
+        $current_category = brodart_normalize_category_filter_value($request['value']);
+
+        if (in_array($current_category, array('perdele', 'draperii'), true)) {
+            $menu_query = wp_parse_url($menu_item->url, PHP_URL_QUERY);
+
+            if (is_string($menu_query)) {
+                parse_str($menu_query, $menu_args);
+                $menu_category = $menu_args['categorii'] ?? $menu_args['categories'] ?? null;
+
+                if (
+                    is_string($menu_category)
+                    && brodart_normalize_category_filter_value($menu_category) === $current_category
+                ) {
+                    return true;
+                }
+            }
+        }
+    }
+
+    if (! is_shop() || ! isset($_GET['filter_colectie']) || ! is_string($_GET['filter_colectie'])) {
+        return false;
+    }
+
+    $current_collection = sanitize_title(wp_unslash($_GET['filter_colectie']));
+
+    if ('' === $current_collection) {
+        return false;
+    }
+
+    $menu_query = wp_parse_url($menu_item->url, PHP_URL_QUERY);
+
+    if (is_string($menu_query)) {
+        parse_str($menu_query, $menu_args);
+        $menu_collection = $menu_args['filter_colectie'] ?? null;
+
+        if (is_string($menu_collection) && sanitize_title($menu_collection) === $current_collection) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function brodart_shop_filter_menu_item_classes(array $classes, WP_Post $menu_item): array
+{
+    if (
+        brodart_is_current_shop_filter_menu_item($menu_item)
+        && ! in_array('current-menu-item', $classes, true)
+    ) {
+        $classes[] = 'current-menu-item';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'brodart_shop_filter_menu_item_classes', 10, 2);
+
+function brodart_shop_filter_menu_item_link_attributes(array $atts, WP_Post $menu_item): array
+{
+    if (brodart_is_current_shop_filter_menu_item($menu_item)) {
+        $atts['aria-current'] = 'page';
+    }
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'brodart_shop_filter_menu_item_link_attributes', 10, 2);
 
 /**
  * Adapts category filter requests to WooCommerce while retaining a Romanian,

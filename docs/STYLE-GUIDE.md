@@ -41,9 +41,10 @@ Reguli:
 
 ## 3. Tipografie
 
-- Familie de fonturi: 1 font serif elegant pentru titluri (ex: **Playfair Display**,
-  **Cormorant**, sau **Marcellus**) + 1 font sans-serif curat pentru text (ex:
-  **Poppins**, **Inter**, **Jost**).
+- Familie globală: **Arial**, cu fallback `Helvetica, sans-serif`, preluată din
+  meniul de referință și folosită consecvent pentru text, titluri, navigație,
+  butoane și formulare. Nu reintroduce Merriweather, Georgia sau alte familii
+  pentru titluri ori citate.
 - Scară tipografică (desktop):
   - H1: 48–64px, line-height 1.1, letter-spacing -0.5px
   - H2: 32–40px, line-height 1.2
@@ -53,7 +54,8 @@ Reguli:
     "NOU", "COLECȚIE 2026")
 - Titlurile pot fi scrise cu spațiere mai mare între litere (letter-spacing) pentru un
   aer premium.
-- Nu amesteca mai mult de 2 familii de fonturi în tot site-ul.
+- Păstrează Arial pentru tipografia site-ului; fonturile funcționale pentru
+  pictograme și monospațiate rămân neschimbate.
 
 ## 4. Spațiere & grid
 

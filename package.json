@@ -4,9 +4,15 @@
   "private": true,
   "scripts": {
     "deploy:test": "node tools\\sftp-deploy-watcher.js test",
-    "deploy:watch": "node tools\\sftp-deploy-watcher.js watch"
+    "deploy:watch": "node tools\\sftp-deploy-watcher.js watch",
+    "deploy:ftps:test": "node tools\\ftps-deploy-watcher.js test",
+    "deploy:ftps:sync": "node tools\\ftps-deploy-watcher.js sync",
+    "deploy:ftps:watch": "node tools\\ftps-deploy-watcher.js watch",
+    "test:ftps": "node --test tools\\ftps-deploy-watcher.test.js"
   },
   "dependencies": {
+    "basic-ftp": "^6.2.4",
+    "brodart-sftp-deploy-watcher": "file:",
     "chokidar": "^4.0.3",
     "dotenv": "^16.4.7",
     "ssh2-sftp-client": "^12.0.1"

@@ -27,6 +27,13 @@ iar rândul navigației de 50 px.
 Headerul transparent pe pagina principală și sticky-ul cu micșorare la
 scroll sunt păstrate. Meniul „Colecții” are deja un dropdown cu imagini
 pentru subcolecții; nu crea un al doilea meniu sau un dropdown duplicat.
+Linkul „Perdele” sau „Draperii” primește starea activă (`current-menu-item`
+și `aria-current="page"`) când filtrul categoriei respective este selectat
+în magazin, atât în navigația desktop, cât și în meniul mobil.
+Linkul subcolecției selectate primește aceeași stare activă când este folosit
+filtrul `filter_colectie` în magazin; denumirea este evidențiată vizibil cu
+accent taupe și subliniere. Meniul mobil actual nu include linkuri pentru
+colecții; acestea există în dropdown-ul desktop „Colecții”.
 
 Referințele din `docs/references/NewDesignHeaderPhotos/` rămân sursă de
 inspirație pentru compoziție, nu pentru etichete, categorii sau conținut de

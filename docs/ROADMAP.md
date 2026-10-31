@@ -12,9 +12,9 @@ adăuga conținut.
 ## Milestone 1 — Design system global
 
 - [x] Configurează **Global Colors** în Customizer conform [STYLE-GUIDE.md](STYLE-GUIDE.md#2-paletă-de-culori)
-- [x] Configurează **Global Typography** (font titluri + font body) conform secțiunii 3
+- [x] Configurează **Global Typography** cu Arial pentru titluri și corp conform secțiunii 3
 - [x] Setează container width, spacing, border-radius global (Customizer → Layout)
-- [x] Alege/instalează fonturile (Google Fonts prin Blocksy) și verifică încărcarea rapidă
+- [x] Aplică Arial, fontul meniului de referință, consecvent pe întregul site
 - [x] Creează un buton "primar" și unul "secundar" ca stiluri reutilizabile (Blocksy Content Blocks sau Global Blocks)
 
 ## Milestone 2 — Header & Footer (o singură dată, moștenite peste tot)

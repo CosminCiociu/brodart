@@ -5,6 +5,7 @@ Site WordPress cu o direcție vizuală premium, minimalistă, inspirată de Zara
 - Local: `C:\xampp\htdocs\brodart\`
 - URL: `http://localhost/brodart/`
 - Stack: WordPress, Blocksy, Blocksy Companion, WooCommerce, Modula Gallery, Gutenberg, **Yoast SEO** (activ — meta title/description, sitemap XML, schema.org și breadcrumb-urile se configurează prin Yoast) și **Loco Translate** pentru șirurile gettext netraduse ale temei și pluginurilor. Site-ul rămâne într-o singură limbă (`ro_RO`), fără selector; conținutul și slugurile URL se traduc direct în WordPress, deoarece Loco nu modifică pagini sau URL-uri.
+- Tipografie globală: **Arial**, familia folosită de meniul de referință, se aplică uniform textului, titlurilor, butoanelor și formularelor; detaliile sunt în [STYLE-GUIDE.md](STYLE-GUIDE.md#3-tipografie).
 
 ## Documentație
 
