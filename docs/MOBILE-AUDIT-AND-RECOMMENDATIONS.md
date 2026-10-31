@@ -33,6 +33,13 @@ limitele și confirmările încă necesare sunt menționate la final.
   fără să depășească lățimea ecranului.
 - Paginile și arhivele verificate nu au overflow orizontal la 375 px.
 
+**Implementare header (31 octombrie 2026):** compoziția din referința mobilă
+a fost aplicată în Blocksy Header Builder. Verificarea a folosit lățimi cerute
+de 360, 390, 430 și 768 px (viewporturi măsurate de 345, 375, 415 și 753 px
+în browser); nu s-a observat overflow. Drawer-ul afișează navigația și
+legătura „Autentificare”. Rezultatele auditului inițial la 375 px rămân
+valabile; nu au fost testate dispozitive fizice.
+
 ## Probleme observate — de triat înainte de rafinări
 
 Pentru fiecare punct, bifează o singură opțiune după ce alegi direcția.

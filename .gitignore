@@ -27,6 +27,9 @@ wp-content/*.log
 # ----------------------------------
 # Local environment and editor files
 # ----------------------------------
+.env
+.env.*
+!.env.example
 .DS_Store
 Thumbs.db
 *.log
@@ -45,6 +48,7 @@ vendor/
 composer.lock
 package-lock.json
 yarn.lock
+!/package-lock.json
 
 # Optional: if you keep custom theme/plugin code in Git, do NOT ignore:
 # wp-content/themes/

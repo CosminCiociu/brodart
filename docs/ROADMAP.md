@@ -20,10 +20,10 @@ adăuga conținut.
 ## Milestone 2 — Header & Footer (o singură dată, moștenite peste tot)
 
 - [x] Creează meniul principal și atribuie-l headerului desktop și mobil (meniul conține Acasă, Magazin, Colecții → Toate colecțiile + cele 11 subcolecții, Despre noi și Contact și este atribuit ambelor locații; dropdown-ul Colecții afișează imagini pentru 10 subcolecții, iar Destination Kitchen așteaptă fotografia dedicată; link-urile subcolecțiilor duc la magazinul cu filtrul Colecție preselectat, ex: /shop/?filter_colectie=scandi, iar părintele Colecții duce la /shop/)
-- [ ] Configurează header-ul în Blocksy Header Builder (logo, cont, coș, wishlist) (Logo, Account și Cart sunt active; wishlist nu este instalat)
+- [x] Configurează header-ul în Blocksy Header Builder (logo centrat, trigger „Meniu” și controale în dreapta, navigație pe rând separat; pe mobil: hamburger, logo, căutare și coș, cu acces la cont în drawer. Wishlist-ul nu este instalat. Bara cu pragul de 500 lei rămâne ascunsă fără confirmare comercială. Vezi [INSTRUCTIUNI-HEADER-BRODART.md](INSTRUCTIUNI-HEADER-BRODART.md).)
 - [x] Comportament header: transparent peste hero → solid la scroll (Transparent este activ pe Home; Sticky este activ pe desktop și mobil în Blocksy)
 - [x] Construiește footer-ul (coloane: Despre, Ajutor, Explorează și Contact) (datele oficiale Carmiram Brodart sunt afișate în română, cu adresa din Strada Zorilor și telefonul 0723 137 399; fundalul este #F8F7F5)
-- [x] Testează header/footer pe mobil (meniu hamburger elegant) (testat la 390 px: drawer-ul afișează Acasă și Magazin, coloanele se așază vertical și nu există overflow; lipsește încă wishlist-ul)
+- [x] Testează header/footer pe mobil (headerul cu un singur rând a fost verificat la lățimi cerute de 360, 390 și 430 px; browserul a raportat viewporturi de 345, 375 și 415 px din cauza barei verticale, fără overflow; drawer-ul păstrează meniul și accesul la cont. Wishlist-ul nu este instalat.)
 
 ## Milestone 3 — Pagina de start (Home)
 

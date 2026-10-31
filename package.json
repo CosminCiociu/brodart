@@ -1,0 +1,14 @@
+{
+  "name": "brodart-sftp-deploy-watcher",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy:test": "node tools\\sftp-deploy-watcher.js test",
+    "deploy:watch": "node tools\\sftp-deploy-watcher.js watch"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "dotenv": "^16.4.7",
+    "ssh2-sftp-client": "^12.0.1"
+  }
+}
